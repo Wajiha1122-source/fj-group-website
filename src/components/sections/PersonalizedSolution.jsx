@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import "../../../styles/components/personalSolution.scss"
+import "../../styles/components/personalSolution.scss"
 
 export default function PersonalizedSolution() {
 
