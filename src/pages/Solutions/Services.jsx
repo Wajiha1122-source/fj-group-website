@@ -4,8 +4,9 @@ import "../../styles/components/services.scss"
 // icons
 import { FiTool, FiDroplet, FiSun, FiLayers } from "react-icons/fi"
 
-// one case video
-import caseVideo from "../../assets/videos/case2.mp4"
+// ================= CLOUDINARY VIDEO =================
+const caseVideo =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
 
 const services = [
   {

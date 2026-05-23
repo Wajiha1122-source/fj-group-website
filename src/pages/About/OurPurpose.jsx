@@ -1,6 +1,9 @@
 import { motion } from "framer-motion"
 import "../../styles/components/ourPurpose.scss"
-import sampleVideo from "../../assets/videos/case4.mp4"
+
+// ================= CLOUDINARY VIDEO =================
+const sampleVideo =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
 
 export default function OurPurpose() {
 

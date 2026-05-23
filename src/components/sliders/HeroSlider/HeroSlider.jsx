@@ -3,9 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/pagination"
 import { Autoplay, Pagination } from "swiper/modules"
+const video1 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/slide1_n5hgxh.mp4"
 
-import video1 from "../../../assets/videos/slide1.mp4"
-import video2 from "../../../assets/videos/slide2.mp4"
+const video2 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/slide2_bontor.mp4"
 
 export default function HeroSlider() {
 

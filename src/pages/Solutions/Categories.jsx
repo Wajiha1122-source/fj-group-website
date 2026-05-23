@@ -1,11 +1,18 @@
 import { motion } from "framer-motion"
 import "../../styles/components/categories.scss"
 
-// sample videos (replace with yours)
-import vid1 from "../../assets/videos/case1.mp4"
-import vid2 from "../../assets/videos/case2.mp4"
-import vid3 from "../../assets/videos/case3.mp4"
-import vid4 from "../../assets/videos/case4.mp4"
+// ================= CLOUDINARY VIDEOS =================
+const vid1 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
+
+const vid2 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
+
+const vid3 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
+
+const vid4 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
 
 const categories = [
   {
@@ -34,7 +41,7 @@ export default function Categories() {
   return (
     <section className="categories-page">
 
-      {/* HERO → FIXED (was animate, now scroll-based like Services) */}
+      {/* HERO */}
       <div className="categories-hero">
         <motion.div
           className="container"

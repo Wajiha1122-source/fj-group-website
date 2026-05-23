@@ -9,14 +9,17 @@ import {
 
 import "../../styles/components/contact.scss"
 
-import caseVideo from "../../assets/videos/case2.mp4"
+// ================= CLOUDINARY VIDEO =================
+const caseVideo =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
+
 import logo from "../../assets/icons/logo1.png"
 
 export default function Contact() {
   return (
     <div className="contact-page">
 
-      {/* HERO → FIXED (now scroll-based like other pages) */}
+      {/* HERO */}
       <section className="contact-hero">
 
         <motion.div

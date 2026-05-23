@@ -2,11 +2,20 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/Case.scss"
 
-import case1 from "../../assets/videos/case1.mp4"
-import case2 from "../../assets/videos/case2.mp4"
-import case3 from "../../assets/videos/case3.mp4"
-import case4 from "../../assets/videos/case4.mp4"
+// ================= CLOUDINARY VIDEOS =================
+const case1 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
 
+const case2 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
+
+const case3 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
+
+const case4 =
+  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
+
+// ================= DATA =================
 const cases = [
   {
     title: "Industrial Water Pumping System",

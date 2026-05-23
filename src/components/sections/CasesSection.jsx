@@ -2,38 +2,43 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/cases.scss"
 
-import case1 from "../../assets/videos/case1.mp4"
-import case2 from "../../assets/videos/case2.mp4"
-import case3 from "../../assets/videos/case3.mp4"
-import case4 from "../../assets/videos/case4.mp4"
+// ================= CLOUDINARY VIDEOS =================
 
 const cases = [
   {
     title: "Industrial Water Pumping System",
     location: "Pakistan",
-    video: case1,
-    desc: "Delivered high-efficiency submersible pumping system for continuous industrial water supply.",
+    video:
+      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4",
+    desc:
+      "Delivered high-efficiency submersible pumping system for continuous industrial water supply.",
     slug: "/cases/water-pumping"
   },
   {
     title: "Solar Powered Irrigation Project",
     location: "Agriculture Sector",
-    video: case2,
-    desc: "Implemented INVT-based solar solution (GD100 series) for off-grid irrigation systems.",
+    video:
+      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4",
+    desc:
+      "Implemented INVT-based solar solution (GD100 series) for off-grid irrigation systems.",
     slug: "/cases/solar-irrigation"
   },
   {
     title: "Deep Well Drilling Project",
     location: "Rural Infrastructure",
-    video: case3,
-    desc: "Executed precision deep well drilling for reliable groundwater extraction.",
+    video:
+      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4",
+    desc:
+      "Executed precision deep well drilling for reliable groundwater extraction.",
     slug: "/cases/deep-well-drilling"
   },
   {
     title: "Water Distribution Network Upgrade",
     location: "Urban Development",
-    video: case4,
-    desc: "Modernized water supply infrastructure with advanced fittings and accessories.",
+    video:
+      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4",
+    desc:
+      "Modernized water supply infrastructure with advanced fittings and accessories.",
     slug: "/cases/water-network"
   }
 ]
@@ -90,11 +95,9 @@ export default function CasesSection() {
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
 
-                {/* ✅ ADDED BUTTON */}
                 <Link to={item.slug} className="case-btn">
                   Learn More →
                 </Link>
-
               </div>
 
             </motion.div>
