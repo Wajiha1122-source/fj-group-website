@@ -293,67 +293,41 @@
   background: #f2f2f2;
 }
 
+
+/* ===================== */
+/* HAMBURGER (HIDDEN ON DESKTOP) */
+/* ===================== */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* ===================== */
+/* MOBILE ONLY */
+/* ===================== */
 @media (max-width: 768px) {
 
-  /* ===================== */
-  /* TOP BAR FIX */
-  /* ===================== */
-  .top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 14px;
-  }
-
-  .logo img {
-    height: 70px; /* FIX: bigger logo for visibility */
-  }
-
-  /* ===================== */
-  /* HAMBURGER IDEA (if you have it later) */
-  /* ===================== */
   .hamburger {
-    font-size: 26px;
-    cursor: pointer;
-    color: var(--text-color);
+    display: block;
   }
 
-  /* ===================== */
-  /* BOTTOM CONTENT CLEAN */
-  /* ===================== */
-  .bottom-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-  }
-
-  /* ===================== */
-  /* MENU → CONVERT TO DROPDOWN CARD */
-  /* ===================== */
+  /* menu hidden by default */
   .menu {
+    display: none;
+    flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 90%;
-    max-width: 320px;
-
-    display: none; /* hidden by default */
-    flex-direction: column;
-    gap: 8px;
-
+    left: 0;
+    width: 100%;
     background: #0b1f3a;
-    padding: 12px;
-
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-
+    padding: 15px 0;
     z-index: 999999;
+    gap: 10px;
   }
 
-  /* IMPORTANT: when active (you already have this class logic in React) */
+  /* open menu */
   .menu.active {
     display: flex;
   }
@@ -364,63 +338,9 @@
 
   .menu li a {
     display: block;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 8px;
-  }
-
-  /* ===================== */
-  /* SEARCH FIX */
-  /* ===================== */
-  .search-box {
-    width: 90%;
-    right: 5%;
-    left: 5%;
-  }
-
-  .search-btn {
-    font-size: 18px;
-  }
-
-  /* ===================== */
-  /* MEGA MENU FIX */
-  /* ===================== */
-  .mega-menu {
-    padding: 20px 0;
-  }
-
-  .mega-menu .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .mega-links {
-    align-items: center;
-  }
-
-  .mega-title h3 {
-    text-align: center;
+    padding: 12px;
   }
 }
-
-/* ===================== */
-/* VERY SMALL PHONES */
-/* ===================== */
-@media (max-width: 360px) {
-
-  .logo img {
-    height: 60px;
-  }
-
-  .menu {
-    width: 92%;
-  }
-
-  .menu li a {
-    font-size: 13px;
-  }
-}
-
 
 /* ANIMATION */
 @keyframes fadeIn {

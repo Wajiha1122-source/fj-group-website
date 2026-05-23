@@ -8,6 +8,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
 
+  // ✅ MOBILE MENU STATE (ADDED)
+  const [menuOpen, setMenuOpen] = useState(false)
+
   // ✅ SEARCH STATE
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
@@ -25,7 +28,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // MENU DATA
   const menu = [
     {
       title: "About Us",
@@ -67,7 +69,6 @@ export default function Navbar() {
     }
   ]
 
-  // FLATTEN SEARCH INDEX
   const searchIndex = menu.flatMap(item => {
     if (item.type === "single") {
       return [{ name: item.title, path: item.path }]
@@ -79,7 +80,6 @@ export default function Navbar() {
     }))
   })
 
-  // SEARCH HANDLER (NO REDIRECT HERE)
   const handleSearch = (value) => {
     setQuery(value)
 
@@ -95,11 +95,11 @@ export default function Navbar() {
     setResults(filtered)
   }
 
-  // CLICK RESULT → NAVIGATE
   const goToPage = (path) => {
     setSearchOpen(false)
     setQuery("")
     setResults([])
+    setMenuOpen(false) // ✅ CLOSE MENU ON CLICK (MOBILE FIX)
     window.location.href = path
   }
 
@@ -118,6 +118,11 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {/* ✅ HAMBURGER (MOBILE ONLY) */}
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
       </div>
 
       {/* BOTTOM ROW */}
@@ -127,10 +132,14 @@ export default function Navbar() {
 
         <div className="bottom-content container">
 
-          {/* MENU */}
-          <ul className="menu">
+          {/* ✅ MENU UPDATED */}
+          <ul className={`menu ${menuOpen ? "active" : ""}`}>
             {menu.map((item, index) => (
-              <li key={index} onMouseEnter={() => setActiveMenu(index)}>
+              <li
+                key={index}
+                onMouseEnter={() => setActiveMenu(index)}
+                onClick={() => setMenuOpen(false)} // close on mobile click
+              >
                 {item.type === "single" ? (
                   <Link to={item.path}>{item.title}</Link>
                 ) : (
@@ -148,7 +157,7 @@ export default function Navbar() {
             <FiSearch />
           </button>
 
-          {/* SEARCH DROPDOWN */}
+          {/* SEARCH BOX */}
           {searchOpen && (
             <div className="search-box">
 
@@ -160,7 +169,6 @@ export default function Navbar() {
                 autoFocus
               />
 
-              {/* RESULTS */}
               {results.length > 0 && (
                 <div className="search-results">
                   {results.map((item, i) => (
