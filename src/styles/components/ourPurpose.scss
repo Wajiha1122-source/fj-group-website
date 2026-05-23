@@ -1,0 +1,175 @@
+.our-purpose-page {
+  background: #ffffff;
+  color: #0b1f3a;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+
+.purpose-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #f4f8fc, #ffffff);
+}
+
+.hero-logo img {
+  height: 120px;
+}
+
+.purpose-hero h1 {
+  font-size: 54px;
+  margin-top: 30px;
+}
+
+.subtitle {
+  max-width: 750px;
+  margin: 0 auto;
+  color: #5d6673;
+  line-height: 1.8;
+}
+
+/* ================= VIDEO SECTION ================= */
+
+.purpose-video {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.video-content {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  color: white;
+  max-width: 500px;
+}
+
+.video-content h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.video-content p {
+  font-size: 15px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ================= FOUNDATION ================= */
+
+.purpose-pillars {
+  padding: 70px 0;
+}
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pillars-header span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #4f7dbd;
+  font-weight: 700;
+}
+
+.pillars-header h2 {
+  font-size: 46px;
+  margin-top: 10px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.pillar-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.05);
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+}
+
+.pillar-number {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 65px;
+  opacity: 0.08;
+  font-weight: 700;
+}
+
+/* ================= ANIMATION ================= */
+/* ================= ANIMATION (FIXED SAFE VERSION) ================= */
+
+
+.purpose-video {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  opacity: 1;          /* IMPORTANT: ensure no hidden state */
+  transform: none;     /* prevent leftover animation effects */
+}
+
+/* ================= HERO ================= */
+
+.purpose-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #f4f8fc, #ffffff);
+  opacity: 1;
+  transform: none;
+}
+
+/* ================= FOUNDATION HEADER ================= */
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 1;
+  transform: none;
+}
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purpose-video {
+    height: 380px;
+  }
+
+  .video-content {
+    left: 20px;
+    bottom: 30px;
+  }
+
+  .purpose-hero h1 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,252 @@
+.footer-main {
+  background: #071a33;
+  color: white;
+  padding: 40px 0 40px;
+}
+
+/* ================= GRID ================= */
+
+.footer-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr) 1.5fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ================= BRAND ================= */
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.75;
+  max-width: 300px;
+}
+
+/* ================= HEADINGS ================= */
+
+.footer-main h6 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+/* ================= LIST STYLE (NAV STYLE) ================= */
+
+.footer-main ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-main ul li {
+  font-size: 13px;
+  margin-bottom: 9px;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.footer-main ul li:hover {
+  opacity: 1;
+  transform: translateX(4px);
+  color: #4f7dbd;
+}
+
+/* ================= CONTACT ================= */
+
+.footer-contact p {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* ================= DIVIDER ================= */
+
+.footer-line {
+  height: 1px;
+  width: 100%;
+  background: rgba(255,255,255,0.15);
+  margin: 20px 0;
+}
+
+/* ================= MIDDLE ================= */
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-address p {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* ================= SOCIAL ================= */
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  color: rgba(255,255,255,0.75);
+
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+/* =========================
+   LARGE LAPTOP / SMALL DESKTOP
+   ========================= */
+@media (max-width: 1100px) {
+
+  .footer-row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+}
+
+
+/* =========================
+   TABLET (MAIN FIX)
+   ========================= */
+@media (max-width: 768px) {
+
+  .footer-row {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  /* Brand section isolation */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Prevent nav blocks from behaving like desktop columns */
+  .footer-row > div {
+    text-align: center;
+  }
+
+  .footer-main h6 {
+    margin-top: 10px;
+  }
+
+  /* Middle section stacking */
+  .footer-middle {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .footer-address p {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+
+/* =========================
+   MOBILE LARGE
+   ========================= */
+@media (max-width: 600px) {
+
+  .footer-main {
+    padding: 40px 20px;
+  }
+
+  .footer-logo {
+    width: 110px;
+  }
+
+  .footer-main ul li {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   MOBILE SMALL
+   ========================= */
+@media (max-width: 480px) {
+
+  .footer-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+  }
+
+  .footer-main h6 {
+    font-size: 12px;
+  }
+
+  .footer-main ul li {
+    font-size: 13px;
+  }
+
+  .footer-middle {
+    gap: 15px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-icons a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+    padding: 10px;
+  }
+}

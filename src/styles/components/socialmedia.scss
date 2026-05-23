@@ -1,0 +1,138 @@
+.social-page {
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* ================= HEADER (EXACT SAME SYSTEM AS OTHER PAGES) ================= */
+
+.page-header {
+  text-align: center;
+  padding: 110px 20px 60px;
+  background: #f7f9fc;
+}
+
+.page-header span {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #2f6fb2;
+}
+
+.page-header h2 {
+  font-size: 42px; /* IMPORTANT: same as other pages */
+  font-weight: 500; /* NOT bold hero style */
+  margin-top: 10px;
+}
+
+.page-header p {
+  max-width: 750px;
+  margin: 15px auto 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5d6673;
+}
+
+/* ================= GRID ================= */
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 50px 0 70px;
+}
+
+/* ================= CARD ================= */
+
+.social-card {
+  background: #ffffff;
+  border-radius: 16px;
+
+  padding: 35px 28px;
+
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  transition: all 0.35s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover glow line */
+.social-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0%;
+  height: 3px;
+
+  background: linear-gradient(90deg, #2f6fb2, #0b1f3a);
+
+  transition: 0.4s ease;
+}
+
+.social-card:hover::before {
+  width: 100%;
+}
+
+.social-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* ================= ICON ================= */
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #0b1f3a, #2f6fb2);
+  color: white;
+
+  font-size: 22px;
+
+  margin-bottom: 18px;
+}
+
+/* ================= TEXT ================= */
+
+.social-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.social-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5d6673;
+  margin-bottom: 18px;
+}
+
+/* LINK */
+.link {
+  font-weight: 600;
+  color: #2f6fb2;
+  position: relative;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h2 {
+    font-size: 32px;
+  }
+}

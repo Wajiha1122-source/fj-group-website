@@ -1,0 +1,304 @@
+.what-we-do-page {
+  overflow-x: hidden;
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* ================= HERO ================= */
+
+.what-hero {
+  position: relative;
+  padding: 120px 0 70px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 26, 51, 0.92),
+      rgba(11, 31, 58, 0.86)
+    ),
+    url("../../assets/images/news2.png");
+
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(79,125,189,0.25),
+      transparent 40%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.hero-content span {
+  color: #8cb8ff;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-content h1 {
+  font-size: 68px;
+  line-height: 1.1;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-content p {
+  color: rgba(255,255,255,0.82);
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+/* ================= INTRO ================= */
+
+.what-intro {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.mini-tag {
+  color: #4f7dbd;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.intro-left h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-top: 20px;
+}
+
+.intro-right p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5d6673;
+  margin-bottom: 22px;
+}
+
+/* ================= SOLUTIONS ================= */
+
+.solutions-wrapper {
+  padding: 40px 0 70px;
+  background: #f7f1f3;
+}
+
+.solutions-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.solutions-header span {
+  color: #4f7dbd;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.solutions-header h2 {
+  font-size: 52px;
+  margin-top: 20px;
+  max-width: 900px;
+  margin-inline: auto;
+  line-height: 1.2;
+}
+
+/* ================= GRID ================= */
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* ================= CARD (FIXED ALIGNMENT SYSTEM) ================= */
+
+.solution-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+
+  padding: 45px;
+  border-radius: 24px;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.45s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-12px);
+  background: #ffffff;
+  box-shadow: 0 28px 60px rgba(0,0,0,0.12);
+}
+
+/* TOP LINE */
+.solution-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #4f7dbd, #8cb8ff);
+  transition: 0.5s ease;
+}
+
+.solution-card:hover::before {
+  width: 100%;
+}
+
+/* ================= ICON ================= */
+
+.solution-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0b1f3a, #2f6fb2);
+  color: white;
+  font-size: 32px;
+
+  margin-bottom: 25px;
+}
+
+/* ================= TEXT ================= */
+
+.solution-card h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+
+  /* FIX: equal alignment across cards */
+  min-height: 10px;
+}
+
+.solution-card p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #5d6673;
+
+  /* FIX: prevents vertical shift */
+  min-height: 80px;
+}
+
+/* ================= LINE (FIXED VISUAL CONSISTENCY) ================= */
+
+.solution-line {
+  width: 70px;
+  height: 2px;
+  background: #4f7dbd;
+
+  margin: 10px 0 20px 0;
+
+  align-self: flex-start;
+}
+
+/* ================= DETAILS ================= */
+
+.solution-details {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #7a8593;
+}
+
+/* ================= BUTTON ================= */
+
+.solution-card button {
+  margin-top: 28px;
+
+  border: none;
+  background: transparent;
+
+  color: #0b1f3a;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.3s ease;
+}
+
+.solution-card button:hover {
+  gap: 16px;
+  color: #2f6fb2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .intro-left h2,
+  .solutions-header h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .what-hero {
+    padding: 150px 0 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .solution-card {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .solution-card h3 {
+    font-size: 24px;
+  }
+}

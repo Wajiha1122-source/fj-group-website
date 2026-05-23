@@ -1,0 +1,229 @@
+.who-we-are-page {
+  background: #ffffff;
+  color: #0b1f3a;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.who-hero {
+  padding: 80px 0 20px;
+  background: linear-gradient(135deg, #f4f8fc, #ffffff);
+  text-align: center;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.hero-logo img {
+  height: 120px;
+  width: auto;
+}
+
+.who-hero h1 {
+  font-size: 52px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.subtitle {
+  font-size: 16px;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ================= INTRO ================= */
+.who-intro {
+  padding: 30px 0; /* FIXED spacing (was too tight) */
+}
+
+.who-grid {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ================= TEXT ANIMATION ================= */
+.who-text {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.9s ease;
+}
+
+.who-text.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.who-text h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.who-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* ================= IMAGE ANIMATION ================= */
+.who-image {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.9s ease;
+}
+
+.who-image.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.who-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.who-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ================= VALUES SECTION (FIXED SPACING ISSUE) ================= */
+.who-values {
+  padding: 50px 0; /* 🔥 FIX: added bottom breathing space */
+  background: #f6f9fc;
+  margin-bottom: 30px; /* 🔥 prevents touching footer */
+  margin-top: 10px;
+}
+/* ================= SECTION TAG (GLOBAL STYLE MATCH) ================= */
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #4f7dbd;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ================= TITLE STYLE (CONSISTENT WITH HOMEPAGE SECTIONS) ================= */
+.section-title {
+  font-size: 42px;
+  font-weight: 500;
+  color: #0b1f3a;
+  margin-bottom: 35px;
+  line-height: 1.2;
+}
+/* SECTION ANIMATION */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+.reveal-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GRID */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARDS */
+.value-card {
+  background: white;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+
+  cursor: pointer;
+}
+
+/* ENTRY ANIMATION */
+.reveal-section.active .value-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STAGGER */
+.reveal-section.active .value-card:nth-child(1) { transition-delay: 0.1s; }
+.reveal-section.active .value-card:nth-child(2) { transition-delay: 0.2s; }
+.reveal-section.active .value-card:nth-child(3) { transition-delay: 0.3s; }
+.reveal-section.active .value-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* HOVER MICRO INTERACTION */
+.value-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ICON INSIDE CARD (IF YOU ADD) */
+.value-card span {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ================= STRIP ================= */
+.who-strip {
+  background: #0b1f3a;
+  color: white;
+  overflow: hidden;
+  padding: 18px 0;
+  margin-top: 40px;
+}
+
+.strip-track {
+  display: flex;
+  width: max-content;
+  gap: 70px;
+  white-space: nowrap;
+  animation: scroll-left 18s linear infinite;
+}
+
+.strip-track div {
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .who-grid {
+    flex-direction: column;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-hero h1 {
+    font-size: 36px;
+  }
+}

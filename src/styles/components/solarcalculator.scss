@@ -1,0 +1,126 @@
+.solar-section {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #f7f9fc, #ffffff);
+}
+
+.solar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* LEFT */
+.solar-content {
+  flex: 1;
+}
+
+.solar-content .tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #2f6fb2;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.solar-content h2 {
+  font-size: 44px;
+  margin-top: 15px;
+  color: #0b1f3a;
+  line-height: 1.2;
+}
+
+.solar-content p {
+  margin-top: 18px;
+  font-size: 16px;
+  color: #5d6673;
+  line-height: 1.8;
+}
+
+/* CARD */
+.solar-card {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+}
+
+.solar-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #0b1f3a;
+}
+
+/* INPUT */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.field label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.field input {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.field input:focus {
+  border-color: #2f6fb2;
+  box-shadow: 0 0 0 4px rgba(47,111,178,0.15);
+}
+
+/* BUTTON */
+.solar-card button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #0b1f3a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.solar-card button:hover {
+  background: #2f6fb2;
+  transform: translateY(-3px);
+}
+
+/* RESULT */
+.result-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f1f7ff;
+  color: #0b1f3a;
+  font-weight: 600;
+}
+
+.result-box span {
+  display: block;
+  font-size: 26px;
+  color: #2f6fb2;
+  margin-top: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .solar-wrapper {
+    flex-direction: column;
+  }
+
+  .solar-content h2 {
+    font-size: 34px;
+  }
+}

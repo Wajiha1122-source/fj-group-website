@@ -1,0 +1,85 @@
+.applications-page {
+  background: #ffffff;
+  color: #0b1f3a;
+}
+
+/* ================= HERO ================= */
+
+.applications-hero {
+  padding: 120px 0 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #f4f8fc, #ffffff);
+}
+
+.applications-hero h1 {
+  font-size: 54px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.applications-hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #5d6673;
+  line-height: 1.8;
+}
+
+/* ================= GRID ================= */
+
+.applications-grid {
+  padding: 30px 0 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.app-card {
+  background: #f7f9fc;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.app-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.app-card .icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+/* TITLE */
+.app-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0b1f3a;
+}
+
+/* TEXT */
+.app-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5d6673;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .applications-hero h1 {
+    font-size: 38px;
+  }
+}

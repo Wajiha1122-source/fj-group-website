@@ -1,0 +1,134 @@
+.cases-section {
+  background: #f7f1f3;
+  padding: 70px 0 100px; /* reduced bottom padding */
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* REMOVE THE OLD ::after COMPLETELY */
+
+/* HEADER */
+.cases-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.cases-header span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #2f6fb2;
+  font-weight: 700;
+}
+
+.cases-header h2 {
+  font-size: 52px;
+  margin-top: 18px;
+  color: #0b1f3a;
+}
+
+.cases-header p {
+  max-width: 750px;
+  margin: 18px auto 0;
+  font-size: 17px;
+  color: rgba(11,31,58,0.75);
+  line-height: 1.7;
+}
+
+/* GRID */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.case-card {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  border-radius: 14px;
+}
+
+.case-card:hover {
+  transform: scale(1.02);
+}
+
+/* VIDEO */
+.case-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.case-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.2)
+  );
+}
+
+/* CONTENT */
+.case-content {
+  position: absolute;
+  bottom: 0;
+  padding: 25px;
+  z-index: 2;
+}
+
+.case-location {
+  font-size: 12px;
+  color: #9cc3ff;
+  letter-spacing: 2px;
+}
+
+.case-content h3 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.case-content p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+.case-btn {
+  display: inline-block;
+  margin-top: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+
+  transition: 0.3s ease;
+}
+
+.case-btn:hover {
+  color: #9cc3ff;
+  border-color: #9cc3ff;
+  transform: translateX(5px);
+}
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cases-header h2 {
+    font-size: 38px;
+  }
+}
