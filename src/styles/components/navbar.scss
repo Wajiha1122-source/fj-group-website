@@ -294,83 +294,147 @@
 }
 
 /* ===================== */
-/* RESPONSIVE FIX */
+/* LAPTOP / SMALL DESKTOP */
 /* ===================== */
-
-@media (max-width: 1024px) {
-
+@media (max-width: 1200px) {
   .menu {
-    gap: 20px;
+    gap: 25px;
   }
 
   .logo img {
-    height: 70px;
+    height: 75px;
+  }
+
+  .bottom-content {
+    padding: 12px 15px;
+  }
+}
+
+/* ===================== */
+/* TABLET VIEW */
+/* ===================== */
+@media (max-width: 992px) {
+  .menu {
+    gap: 18px;
+    font-size: 14px;
+  }
+
+  .menu li a {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  .logo img {
+    height: 65px;
+  }
+
+  .signin-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ===================== */
+/* SMALL TABLET / LARGE PHONE */
+/* ===================== */
+@media (max-width: 768px) {
+
+  .top-row {
+    padding: 0 12px;
+  }
+
+  .bottom-content {
+    padding: 10px 12px;
+  }
+
+  .menu {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu li a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  .search-btn {
+    font-size: 18px;
+  }
+
+  .mega-menu .container {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
 /* ===================== */
 /* MOBILE VIEW */
 /* ===================== */
+@media (max-width: 576px) {
 
-@media (max-width: 768px) {
-
-  .navbar-main {
-    padding: 10px 0;
-  }
-
-  /* hide full menu */
-  .menu {
-    display: none;
+  .top-row {
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #0b1f3a;
-    padding: 20px 0;
-    gap: 15px;
+    gap: 10px;
     text-align: center;
-    z-index: 999999;
   }
 
-  /* when active */
-  .menu.active {
-    display: flex;
+  .bottom-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 
   .menu li a {
-    font-size: 16px;
-    padding: 10px;
+    font-size: 14px;
     display: block;
+    width: 100%;
   }
 
-  /* top row adjustments */
-  .top-row {
-    padding: 0 15px;
-  }
-
-  /* hide search button on mobile (optional) */
-  .search-btn {
-    display: none;
-  }
-
-  /* reduce logo */
   .logo img {
-    height: 55px;
+    height: 50px;
   }
 
-  /* hamburger button */
-  .hamburger {
-    display: block;
-    font-size: 26px;
-    color: var(--text-color);
-    cursor: pointer;
+  .signin-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-box {
+    right: 10px;
+    width: 90%;
+  }
+
+  .mega-menu {
+    padding: 20px 0;
   }
 }
 
-/* default hide hamburger on desktop */
-.hamburger {
-  display: none;
+/* ===================== */
+/* VERY SMALL PHONES */
+/* ===================== */
+@media (max-width: 400px) {
+
+  .menu li a {
+    font-size: 13px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+  }
 }
 
 

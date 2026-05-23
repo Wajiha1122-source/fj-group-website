@@ -8,10 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
 
-  // MOBILE MENU STATE ✅
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  // SEARCH STATE
+  // ✅ SEARCH STATE
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
@@ -28,6 +25,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // MENU DATA
   const menu = [
     {
       title: "About Us",
@@ -69,16 +67,19 @@ export default function Navbar() {
     }
   ]
 
+  // FLATTEN SEARCH INDEX
   const searchIndex = menu.flatMap(item => {
     if (item.type === "single") {
       return [{ name: item.title, path: item.path }]
     }
+
     return item.links.map(link => ({
       name: link.name,
       path: link.path
     }))
   })
 
+  // SEARCH HANDLER (NO REDIRECT HERE)
   const handleSearch = (value) => {
     setQuery(value)
 
@@ -94,11 +95,11 @@ export default function Navbar() {
     setResults(filtered)
   }
 
+  // CLICK RESULT → NAVIGATE
   const goToPage = (path) => {
     setSearchOpen(false)
     setQuery("")
     setResults([])
-    setMenuOpen(false) // CLOSE MOBILE MENU
     window.location.href = path
   }
 
@@ -112,17 +113,9 @@ export default function Navbar() {
       <div className="top-row container">
 
         <div className="logo">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
+          <Link to="/">
             <img src={logo} alt="FJ Group" />
           </Link>
-        </div>
-
-        {/* HAMBURGER ICON ✅ */}
-        <div
-          className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
         </div>
 
       </div>
@@ -134,14 +127,10 @@ export default function Navbar() {
 
         <div className="bottom-content container">
 
-          {/* MENU (NOW RESPONSIVE) */}
-          <ul className={`menu ${menuOpen ? "active" : ""}`}>
+          {/* MENU */}
+          <ul className="menu">
             {menu.map((item, index) => (
-              <li
-                key={index}
-                onMouseEnter={() => setActiveMenu(index)}
-                onClick={() => setMenuOpen(false)} // close on click
-              >
+              <li key={index} onMouseEnter={() => setActiveMenu(index)}>
                 {item.type === "single" ? (
                   <Link to={item.path}>{item.title}</Link>
                 ) : (
@@ -159,9 +148,10 @@ export default function Navbar() {
             <FiSearch />
           </button>
 
-          {/* SEARCH BOX */}
+          {/* SEARCH DROPDOWN */}
           {searchOpen && (
             <div className="search-box">
+
               <input
                 type="text"
                 placeholder="Search website..."
@@ -170,6 +160,7 @@ export default function Navbar() {
                 autoFocus
               />
 
+              {/* RESULTS */}
               {results.length > 0 && (
                 <div className="search-results">
                   {results.map((item, i) => (
@@ -183,6 +174,7 @@ export default function Navbar() {
                   ))}
                 </div>
               )}
+
             </div>
           )}
 
@@ -190,10 +182,12 @@ export default function Navbar() {
 
         <div className="full-line"></div>
 
-        {/* MEGA MENU (desktop only) */}
-        {activeMenu !== null && menu[activeMenu]?.links && !menuOpen && (
+        {/* MEGA MENU */}
+        {activeMenu !== null && menu[activeMenu]?.links && (
           <div className="mega-menu">
+
             <div className="container mega-grid">
+
               <div className="mega-title">
                 <h3>{menu[activeMenu].title}</h3>
               </div>
@@ -205,7 +199,9 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
+
             </div>
+
           </div>
         )}
 
