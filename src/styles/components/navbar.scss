@@ -346,6 +346,28 @@ box-sizing: border-box;
     display: block;
     padding: 12px;
   }
+
+  /* Hide mega menu on mobile */
+  .mega-menu {
+    display: none !important;
+  }
+
+  /* Adjust search box for mobile */
+  .search-box {
+    right: 20px;
+    left: 20px;
+    width: auto;
+  }
+
+  /* Adjust logo size for mobile */
+  .logo img {
+    height: 60px;
+  }
+
+  /* Adjust bottom content spacing */
+  .bottom-content {
+    padding: 8px 0;
+  }
 }
 
 /* ANIMATION */

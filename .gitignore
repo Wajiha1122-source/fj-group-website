@@ -26,3 +26,4 @@ dist-ssr
 # videos
 src/assets/videos/
 *.mp4
+.vercel

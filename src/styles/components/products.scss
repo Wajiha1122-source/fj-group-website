@@ -1,0 +1,203 @@
+.products-page {
+  background: #ffffff;
+  color: #0b1f3a;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.products-hero {
+  padding: 120px 0 40px;
+  background: linear-gradient(135deg, #f4f8fc, #ffffff);
+  text-align: center;
+}
+
+.products-hero h1 {
+  font-size: 54px;
+  margin-bottom: 18px;
+}
+
+.products-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #5d6673;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ================= PRODUCTS OVERVIEW ================= */
+.products-overview {
+  padding: 50px 0;
+}
+
+.products-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.products-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: #eef4fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  color: #4f7dbd;
+  transition: 0.4s ease;
+}
+
+.products-content:hover .products-icon {
+  transform: rotate(8deg) scale(1.08);
+}
+
+.products-content h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.products-content p {
+  font-size: 16px;
+  color: #5d6673;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+/* ================= CTA SECTION ================= */
+.products-cta {
+  padding: 40px 0 80px;
+}
+
+.cta-card {
+  background: white;
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-card:hover {
+  transform: translateY(-8px);
+}
+
+.cta-card h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.cta-card p {
+  font-size: 16px;
+  color: #5d6673;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  background: #0b1f3a;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.store-btn:hover {
+  background: #2f6fb2;
+  transform: translateY(-4px);
+}
+
+.store-btn svg {
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.store-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .products-hero h1 {
+    font-size: 42px;
+  }
+
+  .products-content h2 {
+    font-size: 34px;
+  }
+
+  .cta-card h2 {
+    font-size: 32px;
+  }
+
+  .cta-card {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-hero {
+    padding: 100px 0 30px;
+  }
+
+  .products-hero h1 {
+    font-size: 36px;
+  }
+
+  .products-hero p {
+    font-size: 15px;
+  }
+
+  .products-overview {
+    padding: 30px 0;
+  }
+
+  .products-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .products-content h2 {
+    font-size: 28px;
+  }
+
+  .products-content p {
+    font-size: 15px;
+  }
+
+  .products-cta {
+    padding: 30px 0 60px;
+  }
+
+  .cta-card {
+    padding: 35px 25px;
+  }
+
+  .cta-card h2 {
+    font-size: 28px;
+  }
+
+  .cta-card p {
+    font-size: 15px;
+  }
+
+  .store-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
