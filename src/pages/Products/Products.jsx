@@ -79,7 +79,7 @@ export default function Products() {
             </p>
 
             <a
-              href="#"
+              href="https://irshadandcompany.com/shop/"
               className="store-btn"
               target="_blank"
               rel="noopener noreferrer"
