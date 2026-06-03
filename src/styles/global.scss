@@ -12,13 +12,19 @@
 /* BASE BODY STYLES */
 /* ========================= */
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
   background: #ffffff; /* IMPORTANT: prevents blue bleed issues */
   color: #0b1f3a;
   line-height: 1.6;
-  
+  margin: 0;
+  padding: 0;
 }
 
 /* ========================= */
