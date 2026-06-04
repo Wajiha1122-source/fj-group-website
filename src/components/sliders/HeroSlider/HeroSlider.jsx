@@ -20,6 +20,28 @@ export default function HeroSlider() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
+  const handleSubmit = () => {
+    const message = `
+*New Quote Request - FJ Group*
+
+*Name:* ${form.name || 'Not provided'}
+*Phone:* ${form.phone || 'Not provided'}
+*City:* ${form.city || 'Not provided'}
+*System Type:* ${form.system || 'Not selected'}
+*Monthly Consumption:* ${form.consumption || 'Not provided'}
+
+---
+Sent from FJ Group Website
+    `.trim()
+
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappNumber = '923459637111'
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+    window.open(whatsappUrl, '_blank')
+    closeModal()
+  }
+
   // OPEN with animation delay (IMPORTANT)
   const openModal = () => {
     setOpen(true)
@@ -87,7 +109,7 @@ export default function HeroSlider() {
               <input name="consumption" />
             </div>
 
-            <button className="submit-btn">Get My Quote</button>
+            <button className="submit-btn" onClick={handleSubmit}>Get My Quote</button>
 
             <button className="close-btn" onClick={closeModal}>×</button>
 
