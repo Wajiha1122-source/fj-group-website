@@ -4,7 +4,7 @@ import "../../styles/components/about-glance.scss"
 
 const stats = [
   { icon: <FiUsers />, value: "500+", label: "Employees Nationwide" },
-  { icon: <FiCalendar />, value: "1998", label: "Founded" },
+  { icon: <FiCalendar />, value: "1984", label: "Founded" },
   { icon: <FiBarChart2 />, value: "$120M+", label: "Annual Revenue" },
   { icon: <FiGlobe />, value: "30+", label: "Cities Served" }
 ]
