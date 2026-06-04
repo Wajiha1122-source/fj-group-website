@@ -39,10 +39,19 @@ export default function PersonalizedSolution() {
     }
   }
 
-  const shareViaWhatsApp = () => {
+  const shareViaWhatsApp = async () => {
     if (invoiceImage) {
+      // Download the invoice first
       downloadInvoice()
-      alert('Invoice downloaded! Please share the downloaded image via WhatsApp.')
+
+      // Open WhatsApp with a message
+      const message = `Hello! I've attached my personalized quote request invoice for FJ Group. Please review the details.`
+      const encodedMessage = encodeURIComponent(message)
+      const whatsappNumber = '923459637111'
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank')
     }
   }
 

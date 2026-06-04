@@ -49,13 +49,19 @@ export default function HeroSlider() {
     }
   }
 
-  const shareViaWhatsApp = () => {
+  const shareViaWhatsApp = async () => {
     if (invoiceImage) {
-      // For image sharing, we need to use WhatsApp's share functionality
-      // Since we can't directly send images via wa.me URL, we'll download it first
-      // and then the user can share it manually
+      // Download the invoice first
       downloadInvoice()
-      alert('Invoice downloaded! Please share the downloaded image via WhatsApp.')
+
+      // Open WhatsApp with a message
+      const message = `Hello! I've attached my quote request invoice for FJ Group. Please review the details.`
+      const encodedMessage = encodeURIComponent(message)
+      const whatsappNumber = '923459637111'
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank')
     }
   }
 
@@ -245,7 +251,7 @@ export default function HeroSlider() {
 
             <div className="field full">
               <span className="label">Monthly Consumption (kWh)</span>
-              <input name="consumption" />
+              <input name="consumption" onChange={handleChange} />
             </div>
 
             <button className="submit-btn" onClick={handleSubmit}>Get My Quote</button>
