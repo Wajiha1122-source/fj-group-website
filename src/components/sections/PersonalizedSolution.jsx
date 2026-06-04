@@ -12,17 +12,26 @@ export default function PersonalizedSolution() {
 
   const handleSubmit = () => {
     const message = `
-*Personalized Quote Request - FJ Group*
+📋 *PERSONALIZED QUOTE REQUEST*
+━━━━━━━━━━━━━━━━━━━━━
 
-*Name:* ${form.name || 'Not provided'}
-*Phone:* ${form.phone || 'Not provided'}
-*City:* ${form.city || 'Not provided'}
-*System Type:* ${form.system || 'Not selected'}
-*Panel Type:* ${form.panelType || 'Not selected'}
-*Inverter:* ${form.inverter || 'Not selected'}
+🏢 *FJ Group - Industrial Solutions*
 
----
-Sent from FJ Group Website
+📝 *Customer Details*
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${form.name || 'Not provided'}
+📱 *Phone:* ${form.phone || 'Not provided'}
+📍 *City:* ${form.city || 'Not provided'}
+
+⚙️ *System Specifications*
+━━━━━━━━━━━━━━━━━━━━━
+🔧 *System Type:* ${form.system || 'Not selected'}
+☀️ *Panel Type:* ${form.panelType || 'Not selected'}
+🔌 *Inverter:* ${form.inverter || 'Not selected'}
+
+━━━━━━━━━━━━━━━━━━━━━
+📅 *Date:* ${new Date().toLocaleDateString()}
+🌐 *Sent via:* FJ Group Website
     `.trim()
 
     const encodedMessage = encodeURIComponent(message)

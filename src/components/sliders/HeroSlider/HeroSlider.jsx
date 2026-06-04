@@ -22,16 +22,25 @@ export default function HeroSlider() {
 
   const handleSubmit = () => {
     const message = `
-*New Quote Request - FJ Group*
+📋 *QUOTE REQUEST*
+━━━━━━━━━━━━━━━━━━━━━
 
-*Name:* ${form.name || 'Not provided'}
-*Phone:* ${form.phone || 'Not provided'}
-*City:* ${form.city || 'Not provided'}
-*System Type:* ${form.system || 'Not selected'}
-*Monthly Consumption:* ${form.consumption || 'Not provided'}
+🏢 *FJ Group - Industrial Solutions*
 
----
-Sent from FJ Group Website
+📝 *Customer Details*
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${form.name || 'Not provided'}
+📱 *Phone:* ${form.phone || 'Not provided'}
+📍 *City:* ${form.city || 'Not provided'}
+
+⚙️ *System Requirements*
+━━━━━━━━━━━━━━━━━━━━━
+🔧 *System Type:* ${form.system || 'Not selected'}
+⚡ *Monthly Consumption:* ${form.consumption || 'Not provided'} kWh
+
+━━━━━━━━━━━━━━━━━━━━━
+📅 *Date:* ${new Date().toLocaleDateString()}
+🌐 *Sent via:* FJ Group Website
     `.trim()
 
     const encodedMessage = encodeURIComponent(message)
