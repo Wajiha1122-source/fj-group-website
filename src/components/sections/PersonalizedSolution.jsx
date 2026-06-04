@@ -1,48 +1,178 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import "../../styles/components/personalSolution.scss"
 
 export default function PersonalizedSolution() {
 
   const [form, setForm] = useState({})
+  const [invoiceGenerated, setInvoiceGenerated] = useState(false)
+  const [invoiceImage, setInvoiceImage] = useState(null)
+  const invoiceRef = useRef(null)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = () => {
-    const message = `
-📋 *PERSONALIZED QUOTE REQUEST*
-━━━━━━━━━━━━━━━━━━━━━
+  const generateInvoice = async () => {
+    if (invoiceRef.current) {
+      try {
+        const canvas = await html2canvas(invoiceRef.current, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff'
+        })
+        const imageData = canvas.toDataURL('image/png')
+        setInvoiceImage(imageData)
+        setInvoiceGenerated(true)
+      } catch (error) {
+        console.error('Error generating invoice:', error)
+      }
+    }
+  }
 
-🏢 *FJ Group - Industrial Solutions*
+  const downloadInvoice = () => {
+    if (invoiceImage) {
+      const link = document.createElement('a')
+      link.href = invoiceImage
+      link.download = `FJ_Group_Personalized_Quote_${form.name || 'Customer'}.png`
+      link.click()
+    }
+  }
 
-📝 *Customer Details*
-━━━━━━━━━━━━━━━━━━━━━
-👤 *Name:* ${form.name || 'Not provided'}
-📱 *Phone:* ${form.phone || 'Not provided'}
-📍 *City:* ${form.city || 'Not provided'}
+  const shareViaWhatsApp = () => {
+    if (invoiceImage) {
+      downloadInvoice()
+      alert('Invoice downloaded! Please share the downloaded image via WhatsApp.')
+    }
+  }
 
-⚙️ *System Specifications*
-━━━━━━━━━━━━━━━━━━━━━
-🔧 *System Type:* ${form.system || 'Not selected'}
-☀️ *Panel Type:* ${form.panelType || 'Not selected'}
-🔌 *Inverter:* ${form.inverter || 'Not selected'}
-
-━━━━━━━━━━━━━━━━━━━━━
-📅 *Date:* ${new Date().toLocaleDateString()}
-🌐 *Sent via:* FJ Group Website
-    `.trim()
-
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappNumber = '923459637111'
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
-
-    window.open(whatsappUrl, '_blank')
+  const handleSubmit = async () => {
+    await generateInvoice()
   }
 
   return (
     <section className="personal-section">
+
+      {/* ================= INVOICE TEMPLATE (HIDDEN) ================= */}
+      <div style={{ position: 'fixed', left: '-9999px', top: '0' }}>
+        <div ref={invoiceRef} style={{
+          width: '600px',
+          padding: '40px',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '20px',
+            padding: '40px',
+            boxShadow: '0 25px 50px rgba(0,0,0,0.15)'
+          }}>
+            {/* Header */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '30px',
+              paddingBottom: '20px',
+              borderBottom: '3px solid #667eea'
+            }}>
+              <h1 style={{
+                color: '#667eea',
+                fontSize: '32px',
+                margin: '0 0 10px 0',
+                fontWeight: 'bold'
+              }}>📋 PERSONALIZED QUOTE REQUEST</h1>
+              <p style={{
+                color: '#666',
+                fontSize: '14px',
+                margin: '0'
+              }}>FJ Group - Industrial Solutions</p>
+            </div>
+
+            {/* Customer Details */}
+            <div style={{ marginBottom: '25px' }}>
+              <h2 style={{
+                color: '#333',
+                fontSize: '18px',
+                margin: '0 0 15px 0',
+                paddingBottom: '10px',
+                borderBottom: '2px solid #eee'
+              }}>👤 CUSTOMER DETAILS</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>NAME</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.name || 'Not provided'}</p>
+                </div>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>PHONE</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.phone || 'Not provided'}</p>
+                </div>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>CITY</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.city || 'Not provided'}</p>
+                </div>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>DATE</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{new Date().toLocaleDateString()}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* System Specifications */}
+            <div style={{ marginBottom: '25px' }}>
+              <h2 style={{
+                color: '#333',
+                fontSize: '18px',
+                margin: '0 0 15px 0',
+                paddingBottom: '10px',
+                borderBottom: '2px solid #eee'
+              }}>⚙️ SYSTEM SPECIFICATIONS</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>SYSTEM TYPE</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.system || 'Not selected'}</p>
+                </div>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>PANEL TYPE</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.panelType || 'Not selected'}</p>
+                </div>
+                <div>
+                  <p style={{ color: '#999', fontSize: '12px', margin: '0 0 5px 0' }}>INVERTER</p>
+                  <p style={{ color: '#333', fontSize: '16px', margin: '0', fontWeight: '500' }}>{form.inverter || 'Not selected'}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div style={{
+              marginTop: '30px',
+              paddingTop: '20px',
+              borderTop: '2px solid #eee',
+              textAlign: 'center'
+            }}>
+              <p style={{ color: '#999', fontSize: '12px', margin: '0' }}>🌐 Generated via FJ Group Website</p>
+              <p style={{ color: '#667eea', fontSize: '14px', margin: '5px 0 0 0', fontWeight: 'bold' }}>📞 +92 345 963 7111</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= INVOICE GENERATED MODAL ================= */}
+      {invoiceGenerated && (
+        <div className="invoice-modal-overlay" onClick={() => setInvoiceGenerated(false)}>
+          <div className="invoice-modal" onClick={(e) => e.stopPropagation()}>
+            <h2>📋 Invoice Generated!</h2>
+            <p>Your personalized quote request has been converted to a professional invoice image.</p>
+            <div className="invoice-actions">
+              <button className="download-btn" onClick={downloadInvoice}>
+                📥 Download Invoice
+              </button>
+              <button className="whatsapp-btn" onClick={shareViaWhatsApp}>
+                📱 Share via WhatsApp
+              </button>
+            </div>
+            <button className="close-btn" onClick={() => setInvoiceGenerated(false)}>×</button>
+          </div>
+        </div>
+      )}
 
       <div className="container personal-grid">
 
