@@ -358,45 +358,6 @@ box-sizing: border-box;
     display: none !important;
   }
 
-  /* Mobile menu item styling */
-  .mobile-menu-item {
-    display: block;
-    padding: 12px;
-    cursor: pointer;
-  }
-
-  /* Hide mobile submenu on desktop */
-  .mobile-submenu {
-    display: none;
-  }
-
-  /* Mobile submenu styling - only on mobile */
-  @media (max-width: 768px) {
-    .mobile-submenu {
-      display: flex;
-      flex-direction: column;
-      background: #1a3a5c;
-      padding: 10px 0;
-      margin: 5px 0;
-      border-radius: 8px;
-    }
-  }
-
-  .mobile-submenu li {
-    padding: 0;
-  }
-
-  .mobile-submenu li a {
-    padding: 10px 20px;
-    font-size: 14px;
-    color: #e0e0e0;
-    transition: background 0.3s ease;
-  }
-
-  .mobile-submenu li a:hover {
-    background: #2f6fb2;
-  }
-
   /* Adjust search box for mobile */
   .search-box {
     right: 20px;
