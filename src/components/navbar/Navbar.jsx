@@ -10,6 +10,7 @@ export default function Navbar() {
 
   // ✅ MOBILE MENU STATE (ADDED)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null)
 
   // ✅ SEARCH STATE
   const [searchOpen, setSearchOpen] = useState(false)
@@ -100,7 +101,25 @@ export default function Navbar() {
     setQuery("")
     setResults([])
     setMenuOpen(false) // ✅ CLOSE MENU ON CLICK (MOBILE FIX)
+    setMobileSubmenuOpen(null)
     window.location.href = path
+  }
+
+  const handleMenuClick = (item, index) => {
+    if (item.type === "single") {
+      // Single link items (like Products) - close menu and navigate
+      setMenuOpen(false)
+    } else {
+      // Items with subpages - toggle submenu on mobile
+      if (menuOpen) {
+        // Only toggle if mobile menu is open
+        if (mobileSubmenuOpen === index) {
+          setMobileSubmenuOpen(null)
+        } else {
+          setMobileSubmenuOpen(index)
+        }
+      }
+    }
   }
 
   return (
@@ -138,12 +157,24 @@ export default function Navbar() {
               <li
                 key={index}
                 onMouseEnter={() => setActiveMenu(index)}
-                onClick={() => setMenuOpen(false)} // close on mobile click
+                onClick={() => handleMenuClick(item, index)}
               >
                 {item.type === "single" ? (
                   <Link to={item.path}>{item.title}</Link>
                 ) : (
-                  <Link to="#">{item.title}</Link>
+                  <span className="mobile-menu-item">{item.title}</span>
+                )}
+                {/* Mobile Submenu - only visible on mobile */}
+                {item.links && mobileSubmenuOpen === index && (
+                  <ul className="mobile-submenu">
+                    {item.links.map((link, i) => (
+                      <li key={i}>
+                        <Link to={link.path} onClick={() => goToPage(link.path)}>
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))}
