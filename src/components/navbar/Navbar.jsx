@@ -10,7 +10,6 @@ export default function Navbar() {
 
   // ✅ MOBILE MENU STATE (ADDED)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null)
 
   // ✅ SEARCH STATE
   const [searchOpen, setSearchOpen] = useState(false)
@@ -101,16 +100,7 @@ export default function Navbar() {
     setQuery("")
     setResults([])
     setMenuOpen(false) // ✅ CLOSE MENU ON CLICK (MOBILE FIX)
-    setMobileSubmenuOpen(null)
     window.location.href = path
-  }
-
-  const toggleMobileSubmenu = (index) => {
-    if (mobileSubmenuOpen === index) {
-      setMobileSubmenuOpen(null)
-    } else {
-      setMobileSubmenuOpen(index)
-    }
   }
 
   return (
@@ -148,33 +138,12 @@ export default function Navbar() {
               <li
                 key={index}
                 onMouseEnter={() => setActiveMenu(index)}
-                onClick={() => {
-                  if (item.type === "single") {
-                    setMenuOpen(false)
-                  } else {
-                    toggleMobileSubmenu(index)
-                  }
-                }}
+                onClick={() => setMenuOpen(false)} // close on mobile click
               >
                 {item.type === "single" ? (
                   <Link to={item.path}>{item.title}</Link>
                 ) : (
-                  <span className="menu-item-with-submenu">
-                    {item.title}
-                    <span className="submenu-arrow">{mobileSubmenuOpen === index ? '▼' : '▶'}</span>
-                  </span>
-                )}
-                {/* Mobile Submenu */}
-                {item.links && mobileSubmenuOpen === index && (
-                  <ul className="mobile-submenu">
-                    {item.links.map((link, i) => (
-                      <li key={i}>
-                        <Link to={link.path} onClick={() => goToPage(link.path)}>
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <Link to="#">{item.title}</Link>
                 )}
               </li>
             ))}
