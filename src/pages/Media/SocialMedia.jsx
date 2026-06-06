@@ -14,13 +14,13 @@ const socialLinks = [
     name: "Instagram",
     icon: <FaInstagram />,
     desc: "Behind the scenes, projects and field work.",
-    link: "#"
+    link: "https://www.instagram.com/fjgroup.pk?igsh=dzRwdWY5am54dXAw"
   },
   {
     name: "YouTube",
     icon: <FaYoutube />,
     desc: "Engineering systems, installations and demos.",
-    link: "#"
+    link: "https://youtube.com/@fjgrouppk?si=f5DvNaA1kXabAEx2"
   }
 ]
 

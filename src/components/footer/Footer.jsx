@@ -186,11 +186,11 @@ export default function Footer() {
               <FaFacebookF />
             </a>
 
-            <a href="#">
+            <a href="https://www.instagram.com/fjgroup.pk?igsh=dzRwdWY5am54dXAw">
               <FaInstagram />
             </a>
 
-            <a href="#">
+            <a href="https://youtube.com/@fjgrouppk?si=f5DvNaA1kXabAEx2">
               <FaYoutube />
             </a>
 
