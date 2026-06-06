@@ -16,6 +16,7 @@ html, body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 body {
@@ -80,7 +81,10 @@ img {
   max-width: 100%;
   display: block;
 }
-.layout-offset{padding-top: 100px;}
+.layout-offset{
+  padding-top: 100px;
+  min-height: 100vh;
+}
 /* ========================= */
 /* IMPORT COMPONENT STYLES */
 /* ========================= */
