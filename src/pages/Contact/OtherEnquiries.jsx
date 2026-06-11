@@ -55,10 +55,10 @@ export default function OtherEnquiries() {
             </p>
 
             <a
-              href="mailto:contact@fjtcgroup.com?subject=FJ%20Group%20Support%20Inquiry"
+              href="mailto:Info@fjgroup.pk?subject=FJ%20Group%20Support%20Inquiry"
               className="support-btn"
             >
-              contact@fjtcgroup.com
+              Info@fjgroup.pk
             </a>
 
           </motion.div>

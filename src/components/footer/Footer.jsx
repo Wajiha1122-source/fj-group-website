@@ -150,7 +150,7 @@ export default function Footer() {
 
             <p>📞 03111777286</p>
 
-            <p>✉ contact@fjtcgroup.com</p>
+            <p>✉ Info@fjgroup.pk</p>
 
             <p>
               📍 Main Bohr Gate Market,<br />
@@ -173,10 +173,15 @@ export default function Footer() {
           <div className="footer-address">
 
             <p>
-              <b>Office:</b> Chowk Shaheedan, Multan
+              <b>Main office:</b> Chowk Shaheedan, Multan
             </p>
 
             <p>Opposite Faisal Bank</p>
+
+            <p>
+              <b>Other:</b> New Chungi #14, Near Fazal Model, Bahawalpur Road,
+              Multan
+            </p>
 
           </div>
 

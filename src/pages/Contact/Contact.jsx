@@ -83,7 +83,7 @@ export default function Contact() {
                 <div className="info-icon"><FiMail /></div>
                 <div>
                   <h4>Email Address</h4>
-                  <p>contact@fjtcgroup.com</p>
+                  <p>Info@fjgroup.pk</p>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ export default function Contact() {
               </h3>
 
               <a
-                href="mailto:contact@fjtcgroup.com?subject=FJ%20Group%20Inquiry"
+                href="mailto:Info@fjgroup.pk?subject=FJ%20Group%20Inquiry"
                 className="video-btn"
               >
                 Contact Our Team
