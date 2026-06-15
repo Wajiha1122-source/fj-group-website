@@ -34,7 +34,7 @@ export default function NewsSection() {
         {/* NEWS GRID */}
         <div className="news-grid">
 
-          {newsData.map((item, index) => (
+          {newsData.slice(0, 3).map((item, index) => (
             <motion.div
               className="news-card"
               key={index}

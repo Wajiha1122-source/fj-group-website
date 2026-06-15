@@ -6,61 +6,10 @@ import aePowerPartnership from "../assets/images/partnerships/fj-ae-power-partne
 
 export const newsData = [
   {
-    image: solisPartnership,
-    title: "FJ Group announces partnership with Solis",
-    desc: "A new collaboration focused on dependable solar inverter technology and better-integrated energy solutions.",
-    number: "01",
-    slug: "fj-group-partnership-solis",
-    category: "Partnerships",
-    readTime: "4 min read",
-    intro:
-      "FJ Group has entered into a partnership with Solis, bringing together local engineering insight and an established solar inverter technology portfolio. The collaboration creates a stronger foundation for well-planned, reliable, and maintainable solar energy systems.",
-    highlights: [
-      "Collaboration centred on solar inverter technology",
-      "Stronger coordination from system planning to commissioning",
-      "A shared focus on dependable long-term performance"
-    ],
-    sections: [
-      {
-        heading: "A partnership built around system quality",
-        paragraphs: [
-          "Solar performance depends on more than individual products. Inverters, panels, protection, monitoring, storage, and the site electrical system must be considered together. This partnership supports a more coordinated approach to those decisions.",
-          "FJ Group will apply its practical engineering perspective to help connect technology selection with real operating requirements, installation conditions, and future maintenance needs."
-        ]
-      },
-      {
-        heading: "About Solis",
-        paragraphs: [
-          "Solis is the inverter brand of Ginlong Technologies, a company established in 2005. Its official portfolio includes photovoltaic inverters, energy-storage inverters, monitoring tools, and solutions for residential, commercial, industrial, and utility-scale applications.",
-          "The company describes its approach as combining research, manufacturing, global supply capabilities, and local support teams. That mix aligns with FJ Group's focus on solutions that remain practical after installation."
-        ]
-      },
-      {
-        heading: "What the collaboration means for customers",
-        paragraphs: [
-          "The partnership creates an opportunity for closer coordination around inverter selection, system compatibility, technical planning, commissioning, monitoring, and after-sales support.",
-          "For customers, the objective is straightforward: clearer engineering decisions, equipment suited to the application, and solar systems designed with operation and maintenance in mind."
-        ]
-      },
-      {
-        heading: "Moving forward",
-        paragraphs: [
-          "FJ Group and Solis will build on this relationship by identifying practical ways to support solar projects across different operating environments. Further project and solution updates will be shared as the collaboration develops."
-        ]
-      }
-    ],
-    sources: [
-      {
-        label: "Solis - Company Profile",
-        url: "https://www.solisinverters.com/pk/companyprofile.html"
-      }
-    ]
-  },
-  {
     image: aePowerPartnership,
     title: "FJ Group strengthens solar collaboration with AE Power",
     desc: "Working together to expand access to practical, well-engineered solar energy solutions.",
-    number: "02",
+    number: "01",
     slug: "fj-group-partnership-ae-power",
     category: "Partnerships",
     readTime: "4 min read",
@@ -104,6 +53,57 @@ export const newsData = [
       {
         label: "AE Power - Official Website",
         url: "https://aepower.pk/"
+      }
+    ]
+  },
+  {
+    image: solisPartnership,
+    title: "FJ Group announces partnership with Solis",
+    desc: "A new collaboration focused on dependable solar inverter technology and better-integrated energy solutions.",
+    number: "02",
+    slug: "fj-group-partnership-solis",
+    category: "Partnerships",
+    readTime: "4 min read",
+    intro:
+      "FJ Group has entered into a partnership with Solis, bringing together local engineering insight and an established solar inverter technology portfolio. The collaboration creates a stronger foundation for well-planned, reliable, and maintainable solar energy systems.",
+    highlights: [
+      "Collaboration centred on solar inverter technology",
+      "Stronger coordination from system planning to commissioning",
+      "A shared focus on dependable long-term performance"
+    ],
+    sections: [
+      {
+        heading: "A partnership built around system quality",
+        paragraphs: [
+          "Solar performance depends on more than individual products. Inverters, panels, protection, monitoring, storage, and the site electrical system must be considered together. This partnership supports a more coordinated approach to those decisions.",
+          "FJ Group will apply its practical engineering perspective to help connect technology selection with real operating requirements, installation conditions, and future maintenance needs."
+        ]
+      },
+      {
+        heading: "About Solis",
+        paragraphs: [
+          "Solis is the inverter brand of Ginlong Technologies, a company established in 2005. Its official portfolio includes photovoltaic inverters, energy-storage inverters, monitoring tools, and solutions for residential, commercial, industrial, and utility-scale applications.",
+          "The company describes its approach as combining research, manufacturing, global supply capabilities, and local support teams. That mix aligns with FJ Group's focus on solutions that remain practical after installation."
+        ]
+      },
+      {
+        heading: "What the collaboration means for customers",
+        paragraphs: [
+          "The partnership creates an opportunity for closer coordination around inverter selection, system compatibility, technical planning, commissioning, monitoring, and after-sales support.",
+          "For customers, the objective is straightforward: clearer engineering decisions, equipment suited to the application, and solar systems designed with operation and maintenance in mind."
+        ]
+      },
+      {
+        heading: "Moving forward",
+        paragraphs: [
+          "FJ Group and Solis will build on this relationship by identifying practical ways to support solar projects across different operating environments. Further project and solution updates will be shared as the collaboration develops."
+        ]
+      }
+    ],
+    sources: [
+      {
+        label: "Solis - Company Profile",
+        url: "https://www.solisinverters.com/pk/companyprofile.html"
       }
     ]
   },
