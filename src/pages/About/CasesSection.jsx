@@ -1,51 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/Case.scss"
-
-// ================= CLOUDINARY VIDEOS =================
-const case1 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
-
-const case2 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
-
-const case3 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
-
-const case4 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
-
-// ================= DATA =================
-const cases = [
-  {
-    title: "Industrial Water Pumping System",
-    location: "Pakistan",
-    video: case1,
-    desc: "Delivered high-efficiency submersible pumping system for continuous industrial water supply.",
-    slug: "/cases/water-pumping"
-  },
-  {
-    title: "Solar Powered Irrigation Project",
-    location: "Agriculture Sector",
-    video: case2,
-    desc: "Implemented INVT-based solar solution for off-grid irrigation systems.",
-    slug: "/cases/solar-irrigation"
-  },
-  {
-    title: "Deep Well Drilling Project",
-    location: "Rural Infrastructure",
-    video: case3,
-    desc: "Executed precision deep well drilling for reliable groundwater extraction.",
-    slug: "/cases/deep-well-drilling"
-  },
-  {
-    title: "Water Distribution Network Upgrade",
-    location: "Urban Development",
-    video: case4,
-    desc: "Modernized water supply infrastructure with advanced engineering systems.",
-    slug: "/cases/water-network"
-  }
-]
+import { caseStudies } from "../../data/caseStudies"
 
 export default function CasesSection() {
   return (
@@ -84,7 +40,7 @@ export default function CasesSection() {
 
           <div className="cases-grid">
 
-            {cases.map((item, index) => (
+            {caseStudies.map((item, index) => (
               <motion.div
                 className="case-card"
                 key={index}
@@ -116,7 +72,7 @@ export default function CasesSection() {
 
                   <p>{item.desc}</p>
 
-                  <Link to={item.slug} className="case-btn">
+                  <Link to={`/cases/${item.slug}`} className="case-btn">
                     Learn More →
                   </Link>
 

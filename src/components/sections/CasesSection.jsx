@@ -1,47 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/cases.scss"
-
-// ================= CLOUDINARY VIDEOS =================
-
-const cases = [
-  {
-    title: "Industrial Water Pumping System",
-    location: "Pakistan",
-    video:
-      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4",
-    desc:
-      "Delivered high-efficiency submersible pumping system for continuous industrial water supply.",
-    slug: "/cases/water-pumping"
-  },
-  {
-    title: "Solar Powered Irrigation Project",
-    location: "Agriculture Sector",
-    video:
-      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4",
-    desc:
-      "Implemented INVT-based solar solution (GD100 series) for off-grid irrigation systems.",
-    slug: "/cases/solar-irrigation"
-  },
-  {
-    title: "Deep Well Drilling Project",
-    location: "Rural Infrastructure",
-    video:
-      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4",
-    desc:
-      "Executed precision deep well drilling for reliable groundwater extraction.",
-    slug: "/cases/deep-well-drilling"
-  },
-  {
-    title: "Water Distribution Network Upgrade",
-    location: "Urban Development",
-    video:
-      "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4",
-    desc:
-      "Modernized water supply infrastructure with advanced fittings and accessories.",
-    slug: "/cases/water-network"
-  }
-]
+import { caseStudies } from "../../data/caseStudies"
 
 export default function CasesSection() {
   return (
@@ -68,7 +28,7 @@ export default function CasesSection() {
         {/* GRID */}
         <div className="cases-grid">
 
-          {cases.map((item, index) => (
+          {caseStudies.map((item, index) => (
             <motion.div
               className="case-card"
               key={index}
@@ -95,7 +55,7 @@ export default function CasesSection() {
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
 
-                <Link to={item.slug} className="case-btn">
+                <Link to={`/cases/${item.slug}`} className="case-btn">
                   Learn More →
                 </Link>
               </div>

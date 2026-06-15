@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import "../../styles/components/ownerIntro.scss"
 
 // Add your image here
@@ -52,7 +53,9 @@ export default function OwnerIntroSection() {
             integration — delivering reliable infrastructure for the future.
           </p>
 
-          <button>Learn More</button>
+          <Link className="owner-learn-more" to="/about/leadership">
+            Learn More
+          </Link>
 
         </motion.div>
 

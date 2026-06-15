@@ -65,7 +65,8 @@
 }
 
 /* BUTTON */
-.owner-content button {
+.owner-learn-more {
+  display: inline-flex;
   margin-top: 28px;
   padding: 14px 30px;
   border: none;
@@ -77,7 +78,8 @@
   transition: 0.3s ease;
 }
 
-.owner-content button:hover {
+.owner-learn-more:hover {
+  color: white;
   background: #2f6fb2;
   transform: translateY(-3px);
 }

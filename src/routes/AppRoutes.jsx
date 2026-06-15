@@ -19,6 +19,10 @@ import OtherEnquiries from "../pages/Contact/OtherEnquiries"
 import LatestNews from "../pages/Media/LatestNews"
 import SocialMedia from "../pages/Media/SocialMedia"
 import NotFound from "../pages/NotFound/NotFound"
+import NewsArticle from "../pages/Media/NewsArticle"
+import CaseStudyDetail from "../pages/About/CaseStudyDetail"
+import SolutionDetail from "../pages/About/SolutionDetail"
+import Leadership from "../pages/About/Leadership"
 
 export default function AppRoutes() {
   return (
@@ -62,6 +66,22 @@ export default function AppRoutes() {
           </MainLayout>
         }
       />
+      <Route
+        path="/about/what-we-do/:slug"
+        element={
+          <MainLayout>
+            <SolutionDetail />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/about/leadership"
+        element={
+          <MainLayout>
+            <Leadership />
+          </MainLayout>
+        }
+      />
       {/* ✅ our purpose SUBPAGE */}
       <Route
         path="/about/purpose"
@@ -87,6 +107,14 @@ export default function AppRoutes() {
         element={
           <MainLayout>
             <CasesSection />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/cases/:slug"
+        element={
+          <MainLayout>
+            <CaseStudyDetail />
           </MainLayout>
         }
       />
@@ -167,6 +195,14 @@ export default function AppRoutes() {
         element={
           <MainLayout>
             <LatestNews />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="media/news/:slug"
+        element={
+          <MainLayout>
+            <NewsArticle />
           </MainLayout>
         }
       />

@@ -6,6 +6,7 @@ import {
   FiTool,
   FiArrowRight
 } from "react-icons/fi"
+import { Link } from "react-router-dom"
 
 import "../../styles/components/whatWeDo.scss"
 
@@ -15,28 +16,32 @@ const solutions = [
     title: "Industrial Drilling",
     desc: "We provide advanced drilling systems engineered for infrastructure, industrial, and water extraction projects with a focus on precision, operational efficiency, and long-term durability.",
     details:
-      "Our drilling operations are designed to support demanding environments using modern engineering methods and high-performance equipment."
+      "Our drilling operations are designed to support demanding environments using modern engineering methods and high-performance equipment.",
+    slug: "industrial-drilling"
   },
   {
     icon: <FiDroplet />,
     title: "Pumping Systems",
     desc: "We design and deliver efficient pumping solutions for agricultural, industrial, and commercial water movement applications.",
     details:
-      "From pressure optimization to energy-efficient flow systems, our pumping solutions are built for reliability and consistent output."
+      "From pressure optimization to energy-efficient flow systems, our pumping solutions are built for reliability and consistent output.",
+    slug: "pumping-systems"
   },
   {
     icon: <FiSun />,
     title: "Solar Energy Solutions",
     desc: "We integrate sustainable solar technologies using advanced inverter systems and intelligent energy infrastructure.",
     details:
-      "Our solar solutions help industries reduce operational costs while improving long-term energy sustainability."
+      "Our solar solutions help industries reduce operational costs while improving long-term energy sustainability.",
+    slug: "solar-energy-solutions"
   },
   {
     icon: <FiTool />,
     title: "Water Infrastructure",
     desc: "We supply complete water distribution accessories including pipes, fittings, valves, and industrial system components.",
     details:
-      "Our infrastructure solutions are developed to support reliable water supply networks across multiple sectors."
+      "Our infrastructure solutions are developed to support reliable water supply networks across multiple sectors.",
+    slug: "water-infrastructure"
   }
 ]
 
@@ -185,10 +190,13 @@ export default function WhatWeDo() {
                   {item.details}
                 </span>
 
-                <button>
+                <Link
+                  className="solution-learn-more"
+                  to={`/about/what-we-do/${item.slug}`}
+                >
                   Learn More
                   <FiArrowRight />
-                </button>
+                </Link>
 
               </motion.div>
 

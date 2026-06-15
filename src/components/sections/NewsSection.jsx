@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import "../../styles/components/news.scss"
 
 import { newsData } from "../../data/newsData"
@@ -60,9 +61,9 @@ export default function NewsSection() {
 
                 <p>{item.desc}</p>
 
-                <button>
+                <Link to={`/media/news/${item.slug}`}>
                   Read More
-                </button>
+                </Link>
 
               </div>
 
