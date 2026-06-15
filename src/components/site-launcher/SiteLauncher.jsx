@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 
 import "./siteLauncher.scss"
 
-const STORAGE_KEY = "fj-group-site-intro-seen-v2"
-const INTRO_DURATION = 4200
+const STORAGE_KEY = "fj-group-site-intro-seen-v4"
+const INTRO_DURATION = 6200
 
 export default function SiteLauncher() {
   const [visible, setVisible] = useState(() => {

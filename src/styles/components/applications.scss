@@ -1,12 +1,13 @@
 .applications-page {
   background: #ffffff;
   color: #0b1f3a;
+  padding-top: 70px;
 }
 
 /* ================= HERO ================= */
 
 .applications-hero {
-  padding: 120px 0 80px;
+  padding: 50px 0 20px;
   text-align: center;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
 }
@@ -28,7 +29,8 @@
 /* ================= GRID ================= */
 
 .applications-grid {
-  padding: 30px 0 30px;
+  padding-top: 30px;
+  padding-bottom: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;

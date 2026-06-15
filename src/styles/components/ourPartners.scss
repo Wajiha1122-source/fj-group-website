@@ -2,12 +2,13 @@
   background: #ffffff;
   color: #0b1f3a;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 /* ================= HERO ================= */
 
 .partners-hero {
-  padding: 120px 0 80px;
+  padding: 50px 0 20px;
   text-align: center;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
 }
@@ -28,14 +29,14 @@
 /* ================= PARTNER ROW ================= */
 
 .partners-list {
-  padding: 80px 0 120px;
+  padding: 30px 0 70px;
 }
 
 .partner-row {
   display: flex;
   align-items: center;
   gap: 60px;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
 }
 
 /* alternate layout */

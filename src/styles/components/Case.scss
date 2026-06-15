@@ -1,13 +1,13 @@
 .cases-page {
   background: #ffffff;
   color: #0b1f3a;
+  padding-top: 70px;
 }
 
 /* ================= HERO ================= */
 
 .cases-hero {
-  padding-top: 130px;
-  padding-bottom: 10px; /* FIXED: reduced from large gap */
+  padding: 50px 0 20px;
   text-align: center;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
 }
@@ -15,7 +15,7 @@
 /* ================= HEADER ================= */
 
 .cases-header {
-  margin-bottom: 30px; /* FIXED: removes extra space under paragraph */
+  margin-bottom: 0;
 }
 
 .cases-header h1 {
@@ -36,7 +36,7 @@
 /* ================= CASES SECTION ================= */
 
 .cases-list {
-  padding: 20px 0 80px; /* FIXED: removed top padding causing gap */
+  padding: 30px 0 70px;
 }
 
 /* ================= GRID ================= */
@@ -44,7 +44,7 @@
 .cases-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 25px;
 }
 
 /* ================= CARD ================= */
@@ -136,11 +136,7 @@
     font-size: 38px;
   }
 
-  .cases-hero {
-    padding: 120px 0 40px; /* balanced mobile fix */
-  }
-
   .cases-list {
-    padding: 0 0 60px;
+    padding: 30px 0 60px;
   }
 }

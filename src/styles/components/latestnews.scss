@@ -2,12 +2,13 @@
   background: #ffffff;
   color: #0b1f3a;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 /* ================= HERO (MATCH SUBPAGE STYLE) ================= */
 
 .news-hero {
-  padding: 120px 0 70px;
+  padding: 50px 0 20px;
   text-align: center;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
 }
@@ -30,8 +31,9 @@
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-  padding: 80px 0 120px;
+  gap: 25px;
+  padding-top: 30px;
+  padding-bottom: 70px;
 }
 
 /* ================= CARD (UNCHANGED BUT CLEANED) ================= */

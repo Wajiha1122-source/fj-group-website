@@ -2,11 +2,12 @@
   background: #ffffff;
   color: #0b1f3a;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 /* ================= HERO ================= */
 .products-hero {
-  padding: 120px 0 40px;
+  padding: 50px 0 20px;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
   text-align: center;
 }
@@ -26,7 +27,7 @@
 
 /* ================= PRODUCTS OVERVIEW ================= */
 .products-overview {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .products-content {
@@ -68,7 +69,7 @@
 
 /* ================= CTA SECTION ================= */
 .products-cta {
-  padding: 40px 0 80px;
+  padding: 30px 0 70px;
 }
 
 .cta-card {
@@ -150,10 +151,6 @@
 }
 
 @media (max-width: 768px) {
-  .products-hero {
-    padding: 100px 0 30px;
-  }
-
   .products-hero h1 {
     font-size: 36px;
   }

@@ -3,11 +3,12 @@
   color: #0b1f3a;
   overflow-x: hidden;
   height: auto;
+  padding-top: 70px;
 }
 
 /* ================= HERO ================= */
 .who-hero {
-  padding: 80px 0 20px;
+  padding: 50px 0 20px;
   background: linear-gradient(135deg, #f4f8fc, #ffffff);
   text-align: center;
 }
@@ -27,7 +28,7 @@
   font-size: 52px;
   font-weight: 500;
   margin-bottom: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .subtitle {
@@ -45,7 +46,7 @@
 
 .who-grid {
   display: flex;
-  gap: 30px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -138,7 +139,7 @@
 .values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
 }
 
 /* CARDS */
