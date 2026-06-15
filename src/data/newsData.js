@@ -13,6 +13,7 @@ export const newsData = [
     slug: "fj-group-partnership-ae-power",
     category: "Partnerships",
     readTime: "4 min read",
+    spaciousHero: true,
     intro:
       "FJ Group has formed a partnership with AE Power to support the development of practical solar energy solutions for customers in Pakistan. The relationship brings together engineering experience, product knowledge, and local project coordination.",
     highlights: [

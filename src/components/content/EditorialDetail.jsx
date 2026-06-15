@@ -37,7 +37,9 @@ export default function EditorialDetail({
   return (
     <article
       ref={articleRef}
-      className={`editorial-detail editorial-detail--${variant}`}
+      className={`editorial-detail editorial-detail--${variant}${
+        content.spaciousHero ? " editorial-detail--spacious-hero" : ""
+      }`}
     >
       <header className="editorial-detail__hero">
         {content.image && (
