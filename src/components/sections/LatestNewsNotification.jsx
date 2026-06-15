@@ -5,7 +5,7 @@ import { latestNews } from "../../data/newsData"
 import "../../styles/components/latestNewsNotification.scss"
 
 const DISMISS_KEY =
-  `fj-news-notification-${latestNews.number}-${latestNews.title}`
+  `fj-news-notification-v2-${latestNews.number}-${latestNews.title}`
 
 export default function LatestNewsNotification() {
   const [visible, setVisible] = useState(false)
@@ -64,9 +64,12 @@ export default function LatestNewsNotification() {
       className={`latest-news-notification ${closing ? "is-closing" : ""}`}
       aria-label="Latest FJ Group news"
     >
+      <div className="latest-news-notification__signal" />
+
       <div className="latest-news-notification__image">
         <img src={latestNews.image} alt="" />
-        <span>New update</span>
+        <div className="latest-news-notification__shade" />
+        <div className="latest-news-notification__sweep" />
       </div>
 
       <button
@@ -80,7 +83,8 @@ export default function LatestNewsNotification() {
 
       <div className="latest-news-notification__body">
         <div className="latest-news-notification__eyebrow">
-          Latest from FJ Group
+          <span />
+          New update
         </div>
         <h3>{latestNews.title}</h3>
         <p>{latestNews.desc}</p>
@@ -90,7 +94,7 @@ export default function LatestNewsNotification() {
           type="button"
           onClick={scrollToNews}
         >
-          Read the update
+          Read more
           <FiArrowDown />
         </button>
       </div>
