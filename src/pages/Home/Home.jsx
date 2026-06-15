@@ -7,20 +7,22 @@ import CasesSection from "../../components/sections/CasesSection.jsx"
 import SolarCalculatorSection from "../../components/sections/SolarCalculatorSection.jsx"
 import OwnerIntroSection from "../../components/sections/OwnerIntroSection.jsx"
 import BrandsSection from "../../components/sections/BrandsSection.jsx"
+import LatestNewsNotification from "../../components/sections/LatestNewsNotification.jsx"
 
 
 export default function Home() {
   return (
     <>
       <HeroSlider />
+      <NewsSection />
       <AboutGlanceSection />
       <SolutionsSection />
       <PersonalizedSolution/>
-      <NewsSection />
       <CasesSection />
       <SolarCalculatorSection />
       <OwnerIntroSection />
       <BrandsSection />
+      <LatestNewsNotification />
     </>
   )
 }
