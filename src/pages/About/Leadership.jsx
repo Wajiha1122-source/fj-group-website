@@ -17,6 +17,7 @@ export default function Leadership() {
       backTo="/"
       backLabel="Back to home"
       typeLabel="FJ Group profile"
+      variant="leadership"
       related={related}
     />
   )

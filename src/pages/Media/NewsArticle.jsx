@@ -26,6 +26,7 @@ export default function NewsArticle() {
       backTo="/media/news"
       backLabel="Back to latest news"
       typeLabel="FJ Group insight"
+      variant="news"
       related={related}
     />
   )

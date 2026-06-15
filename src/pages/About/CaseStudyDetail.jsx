@@ -25,6 +25,7 @@ export default function CaseStudyDetail() {
       backTo="/about/case-studies"
       backLabel="Back to case studies"
       typeLabel="Case study"
+      variant="case"
       related={related}
     />
   )

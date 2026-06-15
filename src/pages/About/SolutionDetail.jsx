@@ -25,6 +25,7 @@ export default function SolutionDetail() {
       backTo="/about/what-we-do"
       backLabel="Back to what we do"
       typeLabel="Capability overview"
+      variant="capability"
       related={related}
     />
   )

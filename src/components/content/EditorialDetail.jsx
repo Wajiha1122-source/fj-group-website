@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { FiArrowLeft, FiArrowRight, FiCheck } from "react-icons/fi"
 
@@ -8,10 +9,36 @@ export default function EditorialDetail({
   backTo,
   backLabel,
   typeLabel,
+  variant = "news",
   related = []
 }) {
+  const articleRef = useRef(null)
+
+  useEffect(() => {
+    const elements = articleRef.current?.querySelectorAll("[data-reveal]")
+    if (!elements?.length) return undefined
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -55px" }
+    )
+
+    elements.forEach((element) => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <article className="editorial-detail">
+    <article
+      ref={articleRef}
+      className={`editorial-detail editorial-detail--${variant}`}
+    >
       <header className="editorial-detail__hero">
         {content.image && (
           <img
@@ -34,27 +61,39 @@ export default function EditorialDetail({
         <div className="editorial-detail__overlay" />
 
         <div className="container editorial-detail__hero-content">
-          <Link className="editorial-detail__back" to={backTo}>
-            <FiArrowLeft />
-            {backLabel}
-          </Link>
+          <div className="editorial-detail__hero-nav">
+            <Link className="editorial-detail__back" to={backTo}>
+              <FiArrowLeft />
+              {backLabel}
+            </Link>
 
-          <div className="editorial-detail__meta">
-            <span>{typeLabel}</span>
-            <span>{content.category}</span>
-            {content.readTime && <span>{content.readTime}</span>}
-            {content.location && <span>{content.location}</span>}
+            <div className="editorial-detail__meta">
+              <span>{typeLabel}</span>
+              <span>{content.category}</span>
+              {content.readTime && <span>{content.readTime}</span>}
+              {content.location && <span>{content.location}</span>}
+            </div>
           </div>
 
-          <h1>{content.title}</h1>
-          <p>{content.intro}</p>
+          <div className="editorial-detail__hero-copy">
+            <h1>{content.title}</h1>
+            <p>{content.intro}</p>
+          </div>
         </div>
       </header>
 
       <div className="container editorial-detail__layout">
         <main className="editorial-detail__main">
-          {content.sections.map((section) => (
-            <section className="editorial-detail__section" key={section.heading}>
+          {content.sections.map((section, index) => (
+            <section
+              className="editorial-detail__section"
+              key={section.heading}
+              data-reveal
+              style={{ "--section-index": index + 1 }}
+            >
+              <span className="editorial-detail__section-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <h2>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -63,7 +102,7 @@ export default function EditorialDetail({
           ))}
 
           {content.sources?.length > 0 && (
-            <section className="editorial-detail__sources">
+            <section className="editorial-detail__sources" data-reveal>
               <h2>Further reading</h2>
               <p>
                 These independent technical resources provide additional
@@ -84,7 +123,7 @@ export default function EditorialDetail({
           )}
         </main>
 
-        <aside className="editorial-detail__aside">
+        <aside className="editorial-detail__aside" data-reveal>
           <div className="editorial-detail__summary">
             <span>Key considerations</span>
             <h2>What matters most</h2>
@@ -115,7 +154,7 @@ export default function EditorialDetail({
       {related.length > 0 && (
         <section className="editorial-detail__related">
           <div className="container">
-            <div className="editorial-detail__related-heading">
+            <div className="editorial-detail__related-heading" data-reveal>
               <span>Continue exploring</span>
               <h2>Related insights</h2>
             </div>
@@ -128,6 +167,7 @@ export default function EditorialDetail({
                   }`}
                   to={item.to}
                   key={item.title}
+                  data-reveal
                 >
                   {item.image && <img src={item.image} alt="" />}
                   <div>
