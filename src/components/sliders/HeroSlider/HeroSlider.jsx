@@ -6,7 +6,6 @@ import solarWaterSystem from "../../../assets/images/hero-showcase/solar-water-s
 import solarPanelField from "../../../assets/images/hero-showcase/solar-panel-field.jpeg"
 import solarArrayWide from "../../../assets/images/hero-showcase/solar-array-wide.jpeg"
 import drillingWaterSite from "../../../assets/images/hero-showcase/drilling-water-site.jpeg"
-import caseStudyVideo from "../../../assets/videos/case2.mp4"
 
 const video1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/slide1_n5hgxh.mp4"
@@ -48,7 +47,7 @@ const heroScenes = [
       "Practical engineering for groundwater access, pumping systems and infrastructure projects that need long-term confidence.",
     button: "Discuss Requirements",
     mediaType: "video",
-    media: caseStudyVideo,
+    media: video1,
     frames: [
       { src: drillingWaterSite, label: "Drilling Site" },
       { src: solarPumpFlow, label: "Water Delivery" }
