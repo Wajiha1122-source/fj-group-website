@@ -20,9 +20,7 @@ export default function Home() {
     const root = homeRef.current
     if (!root) return undefined
 
-    const motionSections = Array.from(
-      root.querySelectorAll(":scope > .hero-section, :scope > section")
-    )
+    const motionSections = Array.from(root.querySelectorAll(":scope > section"))
 
     motionSections.forEach((section, index) => {
       section.classList.add("home-motion-section")

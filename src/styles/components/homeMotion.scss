@@ -20,6 +20,13 @@
   filter: blur(0);
 }
 
+.home-motion-page .quote-overlay,
+.home-motion-page .invoice-modal-overlay,
+.home-motion-page .latest-news-notification {
+  transform: none;
+  filter: none;
+}
+
 .home-motion-section > .container,
 .home-motion-section .news-header,
 .home-motion-section .solution-header,
