@@ -1,16 +1,78 @@
 import { useState, useEffect, useRef } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/pagination"
-import { Autoplay, Pagination } from "swiper/modules"
+
+import ownerImg from "../../../assets/images/owner.jpeg"
+import solarPumpFlow from "../../../assets/images/hero-showcase/solar-pump-flow.jpeg"
+import solarWaterSystem from "../../../assets/images/hero-showcase/solar-water-system.jpeg"
+import solarPanelField from "../../../assets/images/hero-showcase/solar-panel-field.jpeg"
+import solarArrayWide from "../../../assets/images/hero-showcase/solar-array-wide.jpeg"
+import drillingWaterSite from "../../../assets/images/hero-showcase/drilling-water-site.jpeg"
+import caseStudyVideo from "../../../assets/videos/case2.mp4"
+
 const video1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/slide1_n5hgxh.mp4"
 
 const video2 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/slide2_bontor.mp4"
 
+const heroScenes = [
+  {
+    eyebrow: "FJ GROUP SYSTEMS",
+    title: "Engineering Water, Energy & Industry Forward",
+    copy:
+      "Integrated solar, pumping, drilling and water infrastructure solutions built around real operating needs.",
+    button: "Start Your Project",
+    mediaType: "video",
+    media: video1,
+    frames: [
+      { src: solarPumpFlow, label: "Solar Pumping" },
+      { src: solarPanelField, label: "Energy Fields" }
+    ]
+  },
+  {
+    eyebrow: "SOLAR PUMPING",
+    title: "Built For Performance. Designed For Reliability.",
+    copy:
+      "From panel sizing to controlled water flow, FJ Group connects renewable energy with dependable field output.",
+    button: "Get Solar Quote",
+    mediaType: "video",
+    media: video2,
+    frames: [
+      { src: solarWaterSystem, label: "Water Flow" },
+      { src: solarArrayWide, label: "Site Scale" }
+    ]
+  },
+  {
+    eyebrow: "FIELD EXECUTION",
+    title: "From Drilling Depth To Reliable Flow",
+    copy:
+      "Practical engineering for groundwater access, pumping systems and infrastructure projects that need long-term confidence.",
+    button: "Discuss Requirements",
+    mediaType: "video",
+    media: caseStudyVideo,
+    frames: [
+      { src: drillingWaterSite, label: "Drilling Site" },
+      { src: solarPumpFlow, label: "Water Delivery" }
+    ]
+  },
+  {
+    eyebrow: "LEADERSHIP",
+    title: "Faisal Javed",
+    subtitle: "Founder & Driving Force Behind FJ Group",
+    copy:
+      "Leading practical engineering with vision, responsibility and long-term trust.",
+    button: "Connect With Us",
+    mediaType: "image",
+    media: ownerImg,
+    frames: [
+      { src: solarPanelField, label: "Energy" },
+      { src: drillingWaterSite, label: "Infrastructure" }
+    ]
+  }
+]
+
 export default function HeroSlider() {
 
+  const [activeSlide, setActiveSlide] = useState(0)
   const [open, setOpen] = useState(false)
   const [animate, setAnimate] = useState(false)
   const [invoiceGenerated, setInvoiceGenerated] = useState(false)
@@ -18,6 +80,15 @@ export default function HeroSlider() {
 
   const [form, setForm] = useState({})
   const invoiceRef = useRef(null)
+  const activeScene = heroScenes[activeSlide]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroScenes.length)
+    }, 6800)
+
+    return () => clearInterval(timer)
+  }, [])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -262,47 +333,75 @@ export default function HeroSlider() {
         </div>
       )}
 
-      {/* ================= SLIDER ================= */}
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000 }}
-        pagination={{ clickable: true }}
-        loop
-      >
-
-        <SwiperSlide>
-          <div className="hero-slide">
-            <video autoPlay muted loop playsInline className="hero-video">
-              <source src={video1} type="video/mp4" />
+      {/* ================= CINEMATIC HERO ================= */}
+      <section className="fj-hero-showcase" aria-label="FJ Group hero showcase">
+        <div className="fj-hero-bg" key={`bg-${activeSlide}`}>
+          {activeScene.mediaType === "video" ? (
+            <video autoPlay muted loop playsInline>
+              <source src={activeScene.media} type="video/mp4" />
             </video>
+          ) : (
+            <img src={activeScene.media} alt="" />
+          )}
+        </div>
 
-            <div className="hero-overlay" />
+        <div className="fj-hero-vignette" />
 
-            <div className="hero-content">
-              <h1>Smart Industrial Solutions</h1>
-              <p>Modern engineering for a better future</p>
-              <button onClick={openModal}>Get a Quote</button>
-            </div>
+        <div className="fj-hero-orbit" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+
+        <div className="container fj-hero-layout" key={`scene-${activeSlide}`}>
+          <div className="fj-hero-copy">
+            <span className="fj-hero-kicker">{activeScene.eyebrow}</span>
+            <h1>{activeScene.title}</h1>
+            {activeScene.subtitle && <h2>{activeScene.subtitle}</h2>}
+            <p>{activeScene.copy}</p>
+            <button type="button" onClick={openModal}>
+              {activeScene.button}
+            </button>
           </div>
-        </SwiperSlide>
 
-        <SwiperSlide>
-          <div className="hero-slide">
-            <video autoPlay muted loop playsInline className="hero-video">
-              <source src={video2} type="video/mp4" />
-            </video>
-
-            <div className="hero-overlay" />
-
-            <div className="hero-content">
-              <h1>Energy Efficient Systems</h1>
-              <p>Built for performance and sustainability</p>
-              <button onClick={openModal}>Get a Quote</button>
+          <div className="fj-camera-stage">
+            <div className="fj-main-frame">
+              {activeScene.mediaType === "video" ? (
+                <video autoPlay muted loop playsInline>
+                  <source src={activeScene.media} type="video/mp4" />
+                </video>
+              ) : (
+                <img src={activeScene.media} alt={activeScene.title} />
+              )}
+              <div className="fj-frame-caption">
+                <span>{String(activeSlide + 1).padStart(2, "0")}</span>
+                <strong>{activeScene.eyebrow}</strong>
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
 
-      </Swiper>
+            {activeScene.frames.map((frame, index) => (
+              <div className={`fj-mini-frame fj-mini-frame--${index + 1}`} key={frame.label}>
+                <img src={frame.src} alt="" />
+                <span>{frame.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="fj-hero-controls" aria-label="Hero slides">
+          {heroScenes.map((scene, index) => (
+            <button
+              className={activeSlide === index ? "active" : ""}
+              type="button"
+              key={scene.eyebrow}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Show ${scene.eyebrow}`}
+            >
+              <span />
+            </button>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }
