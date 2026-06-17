@@ -15,22 +15,16 @@ const video2 =
 
 const heroScenes = [
   {
-    variant: "split",
+    variant: "statement",
     eyebrow: "FJ GROUP SYSTEMS",
-    title: "Engineering Water, Energy & Industry Forward",
+    title: "Engineering Water, Energy & Industry Forward.",
     copy:
       "Integrated solar, pumping, drilling and water infrastructure solutions built around real operating needs.",
     button: "Start Your Project",
-    mediaType: "video",
-    media: video1,
-    backdrop: solarArrayWide,
-    frames: [
-      { src: solarPumpFlow, label: "Solar Pumping" },
-      { src: solarPanelField, label: "Energy Fields" }
-    ]
+    backdrop: solarArrayWide
   },
   {
-    variant: "wide",
+    variant: "video",
     eyebrow: "SOLAR PUMPING",
     title: "Built For Performance. Designed For Reliability.",
     copy:
@@ -38,42 +32,48 @@ const heroScenes = [
     button: "Get Solar Quote",
     mediaType: "video",
     media: video2,
-    backdrop: solarWaterSystem,
-    frames: [
-      { src: solarWaterSystem, label: "Water Flow" },
-      { src: solarArrayWide, label: "Site Scale" }
-    ]
+    backdrop: solarWaterSystem
   },
   {
-    variant: "stack",
+    variant: "list",
+    eyebrow: "WHAT WE DELIVER",
+    title: "One Group. Connected Engineering Disciplines.",
+    copy:
+      "Each solution is planned as part of a working system, not as an isolated product.",
+    button: "Discuss Requirements",
+    backdrop: solarPumpFlow,
+    list: ["Drilling", "Pumping", "Solar Energy", "Water Infrastructure"]
+  },
+  {
+    variant: "image",
     eyebrow: "FIELD EXECUTION",
     title: "From Drilling Depth To Reliable Flow",
     copy:
       "Practical engineering for groundwater access, pumping systems and infrastructure projects that need long-term confidence.",
     button: "Discuss Requirements",
-    mediaType: "image",
     media: drillingWaterSite,
-    backdrop: solarWaterSystem,
-    frames: [
-      { src: drillingWaterSite, label: "Drilling Site" },
-      { src: solarPumpFlow, label: "Water Delivery" }
-    ]
+    backdrop: solarWaterSystem
   },
   {
-    variant: "portrait",
+    variant: "owner",
     eyebrow: "LEADERSHIP",
     title: "Faisal Javed",
     subtitle: "Founder & Driving Force Behind FJ Group",
     copy:
       "Leading practical engineering with vision, responsibility and long-term trust.",
     button: "Connect With Us",
-    mediaType: "image",
     media: ownerImg,
-    backdrop: ownerImg,
-    frames: [
-      { src: solarPanelField, label: "Energy" },
-      { src: drillingWaterSite, label: "Infrastructure" }
-    ]
+    backdrop: ownerImg
+  },
+  {
+    variant: "kinetic",
+    eyebrow: "PROJECT MOMENTUM",
+    title: "Designed To Move From Site Challenge To Working System.",
+    copy:
+      "Our teams connect assessment, equipment, installation and support into one practical delivery path.",
+    button: "Get a Quote",
+    backdrop: solarPanelField,
+    gallery: [solarPumpFlow, solarArrayWide, drillingWaterSite]
   }
 ]
 
@@ -92,7 +92,7 @@ export default function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroScenes.length)
-    }, 4200)
+    }, 3600)
 
     return () => clearInterval(timer)
   }, [])
@@ -368,33 +368,50 @@ export default function HeroSlider() {
             </button>
           </div>
 
-          <div className="fj-camera-stage">
-            <div className="fj-main-frame">
-              {activeScene.mediaType === "video" ? (
-                <video autoPlay muted loop playsInline>
-                  <source src={activeScene.media} type="video/mp4" />
-                </video>
-              ) : (
-                <img src={activeScene.media} alt={activeScene.title} />
-              )}
-              <div className="fj-frame-caption">
-                <span>{String(activeSlide + 1).padStart(2, "0")}</span>
-                <strong>{activeScene.eyebrow}</strong>
-              </div>
+          {activeScene.variant === "video" && (
+            <div className="fj-video-panel">
+              <video autoPlay muted loop playsInline>
+                <source src={activeScene.media} type="video/mp4" />
+              </video>
+              <span>Solar pumping systems</span>
             </div>
+          )}
 
-            <div className="fj-frame-strip">
-              {activeScene.frames.map((frame, index) => (
-                <div
-                  className={`fj-mini-frame fj-mini-frame--${index + 1}`}
-                  key={frame.label}
-                >
-                  <img src={frame.src} alt="" />
-                  <span>{frame.label}</span>
+          {activeScene.variant === "list" && (
+            <div className="fj-work-list">
+              {activeScene.list.map((item, index) => (
+                <div className="fj-work-item" key={item}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item}</strong>
                 </div>
               ))}
             </div>
-          </div>
+          )}
+
+          {activeScene.variant === "image" && (
+            <div className="fj-image-mask">
+              <img src={activeScene.media} alt={activeScene.title} />
+              <span>Field execution</span>
+            </div>
+          )}
+
+          {activeScene.variant === "owner" && (
+            <div className="fj-owner-panel">
+              <img src={activeScene.media} alt={activeScene.title} />
+              <div>
+                <span>Leadership profile</span>
+                <strong>FJ Group</strong>
+              </div>
+            </div>
+          )}
+
+          {activeScene.variant === "kinetic" && (
+            <div className="fj-kinetic-gallery">
+              {activeScene.gallery.map((image, index) => (
+                <img src={image} alt="" key={image} className={`gallery-${index + 1}`} />
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="fj-hero-controls" aria-label="Hero slides">
@@ -402,7 +419,7 @@ export default function HeroSlider() {
             <button
               className={activeSlide === index ? "active" : ""}
               type="button"
-              key={scene.eyebrow}
+              key={`${scene.eyebrow}-${index}`}
               onClick={() => setActiveSlide(index)}
               aria-label={`Show ${scene.eyebrow}`}
             >
