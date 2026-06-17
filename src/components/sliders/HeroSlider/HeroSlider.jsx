@@ -15,6 +15,7 @@ const video2 =
 
 const heroScenes = [
   {
+    variant: "split",
     eyebrow: "FJ GROUP SYSTEMS",
     title: "Engineering Water, Energy & Industry Forward",
     copy:
@@ -22,12 +23,14 @@ const heroScenes = [
     button: "Start Your Project",
     mediaType: "video",
     media: video1,
+    backdrop: solarArrayWide,
     frames: [
       { src: solarPumpFlow, label: "Solar Pumping" },
       { src: solarPanelField, label: "Energy Fields" }
     ]
   },
   {
+    variant: "wide",
     eyebrow: "SOLAR PUMPING",
     title: "Built For Performance. Designed For Reliability.",
     copy:
@@ -35,25 +38,29 @@ const heroScenes = [
     button: "Get Solar Quote",
     mediaType: "video",
     media: video2,
+    backdrop: solarWaterSystem,
     frames: [
       { src: solarWaterSystem, label: "Water Flow" },
       { src: solarArrayWide, label: "Site Scale" }
     ]
   },
   {
+    variant: "stack",
     eyebrow: "FIELD EXECUTION",
     title: "From Drilling Depth To Reliable Flow",
     copy:
       "Practical engineering for groundwater access, pumping systems and infrastructure projects that need long-term confidence.",
     button: "Discuss Requirements",
-    mediaType: "video",
-    media: video1,
+    mediaType: "image",
+    media: drillingWaterSite,
+    backdrop: solarWaterSystem,
     frames: [
       { src: drillingWaterSite, label: "Drilling Site" },
       { src: solarPumpFlow, label: "Water Delivery" }
     ]
   },
   {
+    variant: "portrait",
     eyebrow: "LEADERSHIP",
     title: "Faisal Javed",
     subtitle: "Founder & Driving Force Behind FJ Group",
@@ -62,6 +69,7 @@ const heroScenes = [
     button: "Connect With Us",
     mediaType: "image",
     media: ownerImg,
+    backdrop: ownerImg,
     frames: [
       { src: solarPanelField, label: "Energy" },
       { src: drillingWaterSite, label: "Infrastructure" }
@@ -84,7 +92,7 @@ export default function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroScenes.length)
-    }, 6800)
+    }, 4200)
 
     return () => clearInterval(timer)
   }, [])
@@ -333,15 +341,12 @@ export default function HeroSlider() {
       )}
 
       {/* ================= CINEMATIC HERO ================= */}
-      <section className="fj-hero-showcase" aria-label="FJ Group hero showcase">
+      <section
+        className={`fj-hero-showcase fj-hero-showcase--${activeScene.variant}`}
+        aria-label="FJ Group hero showcase"
+      >
         <div className="fj-hero-bg" key={`bg-${activeSlide}`}>
-          {activeScene.mediaType === "video" ? (
-            <video autoPlay muted loop playsInline>
-              <source src={activeScene.media} type="video/mp4" />
-            </video>
-          ) : (
-            <img src={activeScene.media} alt="" />
-          )}
+          <img src={activeScene.backdrop} alt="" />
         </div>
 
         <div className="fj-hero-vignette" />
@@ -378,12 +383,17 @@ export default function HeroSlider() {
               </div>
             </div>
 
-            {activeScene.frames.map((frame, index) => (
-              <div className={`fj-mini-frame fj-mini-frame--${index + 1}`} key={frame.label}>
-                <img src={frame.src} alt="" />
-                <span>{frame.label}</span>
-              </div>
-            ))}
+            <div className="fj-frame-strip">
+              {activeScene.frames.map((frame, index) => (
+                <div
+                  className={`fj-mini-frame fj-mini-frame--${index + 1}`}
+                  key={frame.label}
+                >
+                  <img src={frame.src} alt="" />
+                  <span>{frame.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
