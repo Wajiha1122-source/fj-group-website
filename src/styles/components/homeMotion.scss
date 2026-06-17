@@ -1,0 +1,135 @@
+.home-motion-page {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+.home-motion-section {
+  opacity: 0;
+  transform: translate3d(0, 56px, 0);
+  filter: blur(10px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.home-motion-section.is-home-visible {
+  opacity: 1;
+  transform: translate3d(0, var(--home-scroll-drift, 0px), 0);
+  filter: blur(0);
+}
+
+.home-motion-section > .container,
+.home-motion-section .news-header,
+.home-motion-section .solution-header,
+.home-motion-section .cases-header,
+.home-motion-section .owner-content,
+.home-motion-section .solar-content,
+.home-motion-section .brands-header {
+  transition:
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-motion-section:not(.is-home-visible) > .container,
+.home-motion-section:not(.is-home-visible) .news-header,
+.home-motion-section:not(.is-home-visible) .solution-header,
+.home-motion-section:not(.is-home-visible) .cases-header,
+.home-motion-section:not(.is-home-visible) .owner-content,
+.home-motion-section:not(.is-home-visible) .solar-content,
+.home-motion-section:not(.is-home-visible) .brands-header {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+}
+
+.home-motion-section.is-home-visible > .container,
+.home-motion-section.is-home-visible .news-header,
+.home-motion-section.is-home-visible .solution-header,
+.home-motion-section.is-home-visible .cases-header,
+.home-motion-section.is-home-visible .owner-content,
+.home-motion-section.is-home-visible .solar-content,
+.home-motion-section.is-home-visible .brands-header {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.home-motion-section img,
+.home-motion-section video {
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-motion-section.is-home-visible img,
+.home-motion-section.is-home-visible video {
+  transform: translate3d(0, calc(var(--home-scroll-drift, 0px) * -0.18), 0) scale(1.015);
+}
+
+.home-motion-section .news-card,
+.home-motion-section .solution-card,
+.home-motion-section .case-card,
+.home-motion-section .brand-card,
+.home-motion-section .stat-card {
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+.home-motion-section:not(.is-home-visible) .news-card,
+.home-motion-section:not(.is-home-visible) .solution-card,
+.home-motion-section:not(.is-home-visible) .case-card,
+.home-motion-section:not(.is-home-visible) .brand-card,
+.home-motion-section:not(.is-home-visible) .stat-card {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0) scale(0.98);
+}
+
+.home-motion-section.is-home-visible .news-card,
+.home-motion-section.is-home-visible .solution-card,
+.home-motion-section.is-home-visible .case-card,
+.home-motion-section.is-home-visible .brand-card,
+.home-motion-section.is-home-visible .stat-card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.home-motion-section.is-home-visible .news-card:nth-child(2),
+.home-motion-section.is-home-visible .solution-card:nth-child(2),
+.home-motion-section.is-home-visible .case-card:nth-child(2),
+.home-motion-section.is-home-visible .brand-card:nth-child(2),
+.home-motion-section.is-home-visible .stat-card:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.home-motion-section.is-home-visible .news-card:nth-child(3),
+.home-motion-section.is-home-visible .solution-card:nth-child(3),
+.home-motion-section.is-home-visible .case-card:nth-child(3),
+.home-motion-section.is-home-visible .brand-card:nth-child(3),
+.home-motion-section.is-home-visible .stat-card:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.home-motion-section.is-home-visible .news-card:nth-child(4),
+.home-motion-section.is-home-visible .solution-card:nth-child(4),
+.home-motion-section.is-home-visible .case-card:nth-child(4),
+.home-motion-section.is-home-visible .brand-card:nth-child(4),
+.home-motion-section.is-home-visible .stat-card:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-motion-page,
+  .home-motion-section,
+  .home-motion-section *,
+  .home-motion-section::before,
+  .home-motion-section::after {
+    scroll-behavior: auto;
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
