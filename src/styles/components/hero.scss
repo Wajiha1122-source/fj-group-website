@@ -563,14 +563,18 @@
   left: 22px;
   bottom: 20px;
   z-index: 2;
-  padding: 9px 13px;
+  max-width: calc(100% - 44px);
+  padding: 10px 18px;
   border-radius: 999px;
   background: rgba(7, 26, 47, 0.74);
   color: #ffffff;
-  font-size: 11px;
+  font-size: clamp(9px, 0.86vw, 11px);
   font-weight: 800;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
   text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .fj-hero-showcase--list .fj-hero-layout {

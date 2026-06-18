@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react"
 
-import ownerImg from "../../../assets/images/owner.jpeg"
 import solarPumpFlow from "../../../assets/images/hero-showcase/solar-pump-flow.jpeg"
 import solarWaterSystem from "../../../assets/images/hero-showcase/solar-water-system.jpeg"
 import solarPanelField from "../../../assets/images/hero-showcase/solar-panel-field.jpeg"
@@ -53,17 +52,6 @@ const heroScenes = [
     button: "Discuss Requirements",
     media: drillingWaterSite,
     backdrop: solarWaterSystem
-  },
-  {
-    variant: "owner",
-    eyebrow: "LEADERSHIP",
-    title: "Faisal Javed",
-    subtitle: "Founder & Driving Force Behind FJ Group",
-    copy:
-      "Leading practical engineering with vision, responsibility and long-term trust.",
-    button: "Connect With Us",
-    media: ownerImg,
-    backdrop: ownerImg
   },
   {
     variant: "kinetic",
@@ -392,31 +380,6 @@ export default function HeroSlider() {
             <div className="fj-image-mask">
               <img src={activeScene.media} alt={activeScene.title} />
               <span>Field execution</span>
-            </div>
-          )}
-
-          {activeScene.variant === "owner" && (
-            <div className="fj-owner-launcher">
-              <div className="fj-owner-brand-card">
-                <span>FJ</span>
-                <div>
-                  <strong>FJ Group</strong>
-                  <small>Engineering leadership</small>
-                </div>
-              </div>
-
-              <div className="fj-owner-photo-card">
-                <img src={activeScene.media} alt={activeScene.title} />
-                <div className="fj-owner-photo-caption">
-                  <span>Founder</span>
-                  <strong>Faisal Javed</strong>
-                </div>
-              </div>
-
-              <div className="fj-owner-trust-row">
-                <span>Practical systems</span>
-                <span>Long-term trust</span>
-              </div>
             </div>
           )}
 

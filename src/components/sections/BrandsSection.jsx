@@ -1,18 +1,8 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import "../../styles/components/brands.scss"
 
-// You should replace these with your actual local assets later
-import rotex from "../../assets/images/rotex.png"
-import komax from "../../assets/images/komax.png"
-import oswal from "../../assets/images/oswal.png"
-import invt from "../../assets/images/invt.jpg"
-
-const brands = [
-  { img: rotex, name: "Rotex" },
-  { img: komax, name: "Komax" },
-  { img: oswal, name: "Oswal" },
-  { img: invt, name: "INVT" }
-]
+import { brandPartners } from "../../data/brandPartners"
 
 export default function BrandsSection() {
   return (
@@ -34,7 +24,7 @@ export default function BrandsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Trusted Global Brands
+          Trusted Brand Partners
         </motion.h2>
 
         <motion.p
@@ -42,8 +32,9 @@ export default function BrandsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          We collaborate with world-leading engineering and industrial brands
-          to ensure quality, reliability and performance.
+          We work with selected technology partners across solar, energy
+          management and mechanical systems to support dependable project
+          delivery for FJ Group customers.
         </motion.p>
 
       </div>
@@ -53,21 +44,32 @@ export default function BrandsSection() {
 
         <div className="brands-grid">
 
-          {brands.map((item, index) => (
+          {brandPartners.map((item, index) => (
             <motion.div
               className="brand-card"
-              key={index}
+              key={item.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
 
-              <img src={item.img} alt={item.name} />
+              <div className="brand-logo">
+                <img src={item.image} alt={`${item.name} logo`} />
+              </div>
+
+              <div className="brand-copy">
+                <h3>{item.name}</h3>
+                <p>{item.focus}</p>
+              </div>
 
             </motion.div>
           ))}
 
+        </div>
+
+        <div className="brands-action">
+          <Link to="/about/partners">Read more about our partners</Link>
         </div>
 
       </div>
