@@ -29,15 +29,15 @@
 /* ================= PARTNER ROW ================= */
 
 .partners-list {
-  padding: 42px 0 80px;
+  padding: 34px 0 64px;
 }
 
 .partner-row {
   display: flex;
   align-items: center;
-  gap: 60px;
-  margin-bottom: 60px;
-  padding: 28px;
+  gap: 38px;
+  margin-bottom: 34px;
+  padding: 22px;
   border: 1px solid rgba(47, 111, 178, 0.08);
   border-radius: 28px;
   background: linear-gradient(135deg, #ffffff, #f8fbff);
@@ -56,7 +56,7 @@
   border-radius: 18px;
   box-shadow: inset 0 0 0 1px rgba(47, 111, 178, 0.08);
   background: #ffffff;
-  min-height: 280px;
+  min-height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@
 
 .partner-image img {
   width: 82%;
-  height: 220px;
+  height: 145px;
   object-fit: contain;
   transition: 0.5s ease;
 }
@@ -80,20 +80,20 @@
 
 .partner-content span {
   display: inline-flex;
-  margin-bottom: 14px;
-  padding: 8px 14px;
+  margin-bottom: 10px;
+  padding: 7px 12px;
   border-radius: 999px;
   background: rgba(47, 111, 178, 0.1);
   color: #2f6fb2;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .partner-content h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 12px;
   position: relative;
 }
 
@@ -108,8 +108,8 @@
 }
 
 .partner-content p {
-  font-size: 15px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.7;
   color: #555;
 }
 
@@ -122,7 +122,18 @@
   }
 
   .partner-image img {
-    height: 180px;
+    height: 110px;
+  }
+
+  .partner-row {
+    gap: 20px;
+    margin-bottom: 24px;
+    padding: 18px;
+  }
+
+  .partner-image {
+    min-height: 150px;
+    width: 100%;
   }
 
   .partners-hero h1 {
