@@ -92,8 +92,8 @@ export default function Contact() {
                 <div>
                   <h4>Office Location</h4>
                   <p>
-                    Main Bohr Gate Market, Chowk Shaheedan,
-                    Opposite Faisal Bank
+                    Opp. Faysal Bank, Railway Road,
+                    Chowk Shahedan, Multan
                   </p>
                 </div>
               </div>

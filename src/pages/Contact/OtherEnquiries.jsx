@@ -100,9 +100,9 @@ export default function OtherEnquiries() {
               <div>
                 <FiMapPin />
                 <p>
-                  Main Bohr Gate Market,
-                  Chowk Shaheedan,
-                  Opposite Faisal Bank
+                  Opp. Faysal Bank,
+                  Railway Road,
+                  Chowk Shahedan, Multan
                 </p>
               </div>
 
@@ -126,7 +126,7 @@ export default function OtherEnquiries() {
 
             <iframe
               title="FJ Group Location"
-              src="https://www.google.com/maps?q=Irshad%20%26%20Company%20Pvt%20Ltd%20Chowk%20Shaheedan%20Multan&output=embed"
+              src="https://www.google.com/maps?q=Opp.%20Faysal%20Bank%20Railway%20Road%20Chowk%20Shahedan%20Multan&output=embed"
               loading="lazy"
             ></iframe>
 

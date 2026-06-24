@@ -153,9 +153,9 @@ export default function Footer() {
             <p>✉ Info@fjgroup.pk</p>
 
             <p>
-              📍 Main Bohr Gate Market,<br />
-              Chowk Shaheedan,<br />
-              Opposite Faisal Bank, Multan
+              📍 Opp. Faysal Bank,<br />
+              Railway Road,<br />
+              Chowk Shahedan, Multan
             </p>
 
             <p>🕒 10:00 AM – 8:00 PM</p>
@@ -173,10 +173,9 @@ export default function Footer() {
           <div className="footer-address">
 
             <p>
-              <b>Main office:</b> Chowk Shaheedan, Multan
+              <b>Main office:</b> Opp. Faysal Bank, Railway Road,
+              Chowk Shahedan, Multan
             </p>
-
-            <p>Opposite Faisal Bank</p>
 
             <p>
               <b>Other:</b> New Chungi #14, Near Fazal Model, Bahawalpur Road,
