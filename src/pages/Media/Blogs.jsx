@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { FiArrowUpRight, FiBookOpen, FiCheckCircle, FiDownload } from "react-icons/fi"
+import { Link } from "react-router-dom"
+import { FiArrowRight, FiBookOpen, FiCheckCircle } from "react-icons/fi"
 
 import { blogData } from "../../data/blogData"
 import "../../styles/components/blogs.scss"
@@ -33,7 +34,7 @@ export default function Blogs() {
           >
             <FiBookOpen />
             <strong>{blogData.length}</strong>
-            <span>Technical blog PDFs</span>
+            <span>Written blog guides</span>
           </motion.div>
         </div>
       </header>
@@ -84,22 +85,11 @@ export default function Blogs() {
               </ul>
 
               <div className="blog-feature__actions">
-                <a href={blog.pdfPath} target="_blank" rel="noreferrer">
-                  Open PDF
-                  <FiArrowUpRight />
-                </a>
-                <a href={blog.pdfPath} download>
-                  Download
-                  <FiDownload />
-                </a>
+                <Link to={`/blogs/${blog.slug}`}>
+                  Read More
+                  <FiArrowRight />
+                </Link>
               </div>
-            </div>
-
-            <div className="blog-feature__pdf">
-              <iframe
-                title={`${blog.title} PDF`}
-                src={`${blog.pdfPath}#toolbar=0&navpanes=0&view=FitH`}
-              />
             </div>
           </motion.article>
         ))}

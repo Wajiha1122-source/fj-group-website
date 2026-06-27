@@ -19,6 +19,7 @@ import OtherEnquiries from "../pages/Contact/OtherEnquiries"
 import LatestNews from "../pages/Media/LatestNews"
 import SocialMedia from "../pages/Media/SocialMedia"
 import Blogs from "../pages/Media/Blogs"
+import BlogArticle from "../pages/Media/BlogArticle"
 import NotFound from "../pages/NotFound/NotFound"
 import NewsArticle from "../pages/Media/NewsArticle"
 import CaseStudyDetail from "../pages/About/CaseStudyDetail"
@@ -134,6 +135,15 @@ export default function AppRoutes() {
         element={
           <MainLayout>
             <Blogs />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/blogs/:slug"
+        element={
+          <MainLayout>
+            <BlogArticle />
           </MainLayout>
         }
       />
