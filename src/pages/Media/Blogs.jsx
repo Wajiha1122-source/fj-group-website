@@ -49,11 +49,14 @@ export default function Blogs() {
             transition={{ duration: 0.65, delay: index * 0.08 }}
             viewport={{ once: false, amount: 0.2 }}
           >
-            <div className="blog-feature__media">
-              <img src={blog.image} alt={blog.title} />
+            <div className={`blog-feature__media blog-feature__media--${blog.accent}`}>
               <div className="blog-feature__badge">
                 <span>{blog.number}</span>
                 {blog.category}
+              </div>
+              <div className="blog-feature__document">
+                <span>Original PDF Topic</span>
+                <strong>{blog.title}</strong>
               </div>
             </div>
 

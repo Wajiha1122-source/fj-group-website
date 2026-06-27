@@ -15,12 +15,10 @@ export default function BlogArticle() {
 
   return (
     <article className="blog-article">
-      <header className="blog-article__hero">
-        <img src={blog.heroImage || blog.image} alt="" />
-        <div className="blog-article__overlay" />
-
+      <header className={`blog-article__hero blog-article__hero--${blog.accent}`}>
         <div className="container blog-article__hero-content">
           <motion.div
+            className="blog-article__masthead"
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75 }}
@@ -38,14 +36,36 @@ export default function BlogArticle() {
             <h1>{blog.title}</h1>
             <p>{blog.intro}</p>
           </motion.div>
+
+          <motion.div
+            className="blog-article__brief"
+            initial={{ opacity: 0, y: 34 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.12 }}
+          >
+            <span>Inside this guide</span>
+            <strong>{blog.sections.length}</strong>
+            <p>Practical sections written from the supplied blog material.</p>
+          </motion.div>
         </div>
       </header>
 
       <div className="container blog-article__layout">
+        <nav className="blog-article__rail" aria-label="Blog sections">
+          <span>Article</span>
+          {blog.sections.map((section, index) => (
+            <a href={`#section-${index + 1}`} key={section.heading}>
+              {String(index + 1).padStart(2, "0")}
+              {section.heading}
+            </a>
+          ))}
+        </nav>
+
         <main className="blog-article__content">
           {blog.sections.map((section, index) => (
             <motion.section
               className="blog-article__section"
+              id={`section-${index + 1}`}
               key={section.heading}
               initial={{ opacity: 0, y: 42 }}
               whileInView={{ opacity: 1, y: 0 }}

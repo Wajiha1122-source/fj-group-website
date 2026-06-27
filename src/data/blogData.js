@@ -1,7 +1,3 @@
-import solarWaterSystem from "../assets/images/hero-showcase/solar-water-system.jpeg"
-import solarPumpFlow from "../assets/images/hero-showcase/solar-pump-flow.jpeg"
-import solarPanelField from "../assets/images/hero-showcase/solar-panel-field.jpeg"
-
 export const blogData = [
   {
     number: "01",
@@ -11,8 +7,7 @@ export const blogData = [
     title: "Solar Tube Well Price in Pakistan",
     subtitle:
       "A practical pricing guide for farmers, landowners, and agricultural investors planning a solar-powered tube well system.",
-    image: solarWaterSystem,
-    heroImage: solarPanelField,
+    accent: "pricing",
     intro:
       "If you are planning a water project in Pakistan, one of the first questions is simple: how much does a solar tube well cost? The honest answer depends on the depth of the bore, the required water flow, pump horsepower, solar panel capacity, inverter quality, structure, wiring, and installation conditions.",
     highlights: [
@@ -73,8 +68,7 @@ export const blogData = [
     title: "Solar vs Diesel Tube Well",
     subtitle:
       "A clear comparison of operating cost, reliability, maintenance, and long-term value for irrigation pumping.",
-    image: solarPumpFlow,
-    heroImage: solarPumpFlow,
+    accent: "comparison",
     intro:
       "Diesel tube wells have been used for decades because they are familiar and can run when fuel is available. Solar tube wells are now becoming a stronger option because they reduce fuel dependency, lower operating costs, and fit naturally with daytime irrigation schedules.",
     highlights: [
