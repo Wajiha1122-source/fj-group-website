@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
 import logo from "../../assets/images/logo.png"
 
@@ -18,6 +18,7 @@ export default function Navbar() {
   const [results, setResults] = useState([])
 
   const location = useLocation()
+  const navigate = useNavigate()
   const isHome = location.pathname === "/"
 
   useEffect(() => {
@@ -53,6 +54,11 @@ export default function Navbar() {
       title: "Products",
       type: "single",
       path: "/products"
+    },
+    {
+      title: "Blogs",
+      type: "single",
+      path: "/blogs"
     },
     {
       title: "Contact Us",
@@ -102,7 +108,7 @@ export default function Navbar() {
     setResults([])
     setMenuOpen(false) // ✅ CLOSE MENU ON CLICK (MOBILE FIX)
     setMobileSubmenuOpen(null)
-    window.location.href = path
+    navigate(path)
   }
 
   const isMobile = () => window.innerWidth <= 768
