@@ -52,21 +52,34 @@ export default function BlogArticle() {
 
         <main className="blog-article__content">
           {blog.sections.map((section, index) => (
-            <motion.section
-              className="blog-article__section"
-              id={`section-${index + 1}`}
-              key={section.heading}
-              initial={{ opacity: 0, y: 42 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.04 }}
-              viewport={{ once: false, amount: 0.18 }}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h2>{section.heading}</h2>
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </motion.section>
+            <div className="blog-article__block" key={section.heading}>
+              <motion.section
+                className="blog-article__section"
+                id={`section-${index + 1}`}
+                initial={{ opacity: 0, y: 42 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.04 }}
+                viewport={{ once: false, amount: 0.18 }}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h2>{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </motion.section>
+
+              {index === 0 && (
+                <motion.figure
+                  className="blog-article__image"
+                  initial={{ opacity: 0, y: 38 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.65, delay: 0.08 }}
+                  viewport={{ once: false, amount: 0.22 }}
+                >
+                  <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+                </motion.figure>
+              )}
+            </div>
           ))}
         </main>
 
