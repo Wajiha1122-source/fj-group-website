@@ -51,6 +51,16 @@ export default function BlogArticle() {
         </nav>
 
         <main className="blog-article__content">
+          <motion.figure
+            className="blog-article__image"
+            initial={{ opacity: 0, y: 38 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.08 }}
+            viewport={{ once: false, amount: 0.22 }}
+          >
+            <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+          </motion.figure>
+
           {blog.sections.map((section, index) => (
             <div className="blog-article__block" key={section.heading}>
               <motion.section
@@ -67,18 +77,6 @@ export default function BlogArticle() {
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </motion.section>
-
-              {index === 0 && (
-                <motion.figure
-                  className="blog-article__image"
-                  initial={{ opacity: 0, y: 38 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.65, delay: 0.08 }}
-                  viewport={{ once: false, amount: 0.22 }}
-                >
-                  <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
-                </motion.figure>
-              )}
             </div>
           ))}
         </main>
