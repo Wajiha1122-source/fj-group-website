@@ -49,6 +49,10 @@ export default function Blogs() {
             transition={{ duration: 0.65, delay: index * 0.08 }}
             viewport={{ once: false, amount: 0.2 }}
           >
+            <Link className="blog-feature__media" to={`/blogs/${blog.slug}`}>
+              <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+            </Link>
+
             <div className="blog-feature__content">
               <div className="blog-feature__meta">
                 <span>{blog.number}</span>

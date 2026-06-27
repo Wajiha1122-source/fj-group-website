@@ -1,3 +1,6 @@
+import solarTubeWellPriceImage from "../assets/images/blogs/solar-tube-well-price-in-pakistan.png"
+import solarVsDieselTubeWellImage from "../assets/images/blogs/solar-vs-diesel-tube-well.png"
+
 export const blogData = [
   {
     number: "01",
@@ -5,6 +8,9 @@ export const blogData = [
     category: "Solar Tube Wells",
     readTime: "6 min read",
     title: "Solar Tube Well Price in Pakistan",
+    image: solarTubeWellPriceImage,
+    imageAlt:
+      "Solar panels powering a tube well water pump in an agricultural field",
     subtitle:
       "A practical pricing guide for farmers, landowners, and agricultural investors planning a solar-powered tube well system.",
     accent: "pricing",
@@ -66,6 +72,9 @@ export const blogData = [
     category: "Energy Comparison",
     readTime: "7 min read",
     title: "Solar vs Diesel Tube Well",
+    image: solarVsDieselTubeWellImage,
+    imageAlt:
+      "Comparison graphic showing solar and diesel tube well systems side by side",
     subtitle:
       "A clear comparison of operating cost, reliability, maintenance, and long-term value for irrigation pumping.",
     accent: "comparison",
