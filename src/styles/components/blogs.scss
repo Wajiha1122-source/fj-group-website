@@ -131,8 +131,20 @@
   transition: transform 0.45s ease;
 }
 
+.blog-feature__media--contain {
+  background: #f6f9fc;
+}
+
+.blog-feature__media--contain img {
+  object-fit: contain;
+}
+
 .blog-feature:hover .blog-feature__media img {
   transform: scale(1.04);
+}
+
+.blog-feature:hover .blog-feature__media--contain img {
+  transform: none;
 }
 
 .blog-feature__content {

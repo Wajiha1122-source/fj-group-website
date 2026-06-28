@@ -73,6 +73,7 @@ export const blogData = [
     readTime: "7 min read",
     title: "Solar vs Diesel Tube Well",
     image: solarVsDieselTubeWellImage,
+    imageFit: "contain",
     imageAlt:
       "Comparison graphic showing solar and diesel tube well systems side by side",
     subtitle:

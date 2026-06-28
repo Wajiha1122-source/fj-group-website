@@ -8,7 +8,7 @@ const socialLinks = [
     name: "Facebook",
     icon: <FaFacebookF />,
     desc: "Updates, announcements and company news.",
-    link: "#"
+    link: "https://www.facebook.com/fjtradingcorporation/"
   },
   {
     name: "Instagram",

@@ -186,7 +186,7 @@ export default function Footer() {
 
           <div className="social-icons">
 
-            <a href="#">
+            <a href="https://www.facebook.com/fjtradingcorporation/">
               <FaFacebookF />
             </a>
 
