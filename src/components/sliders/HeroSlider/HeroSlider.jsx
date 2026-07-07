@@ -19,7 +19,6 @@ const heroScenes = [
     title: "Engineering Water, Energy & Industry Forward.",
     copy:
       "Integrated solar, pumping, drilling and water infrastructure solutions built around real operating needs.",
-    button: "Start Your Project",
     backdrop: solarArrayWide
   },
   {
@@ -28,7 +27,6 @@ const heroScenes = [
     title: "Built For Performance. Designed For Reliability.",
     copy:
       "From panel sizing to controlled water flow, FJ Group connects renewable energy with dependable field output.",
-    button: "Get Solar Quote",
     mediaType: "video",
     media: video2,
     backdrop: solarWaterSystem
@@ -39,7 +37,6 @@ const heroScenes = [
     title: "One Group. Connected Engineering Disciplines.",
     copy:
       "Each solution is planned as part of a working system, not as an isolated product.",
-    button: "Discuss Requirements",
     backdrop: solarPumpFlow,
     list: ["Drilling", "Pumping", "Solar Energy", "Water Infrastructure"]
   },
@@ -58,7 +55,6 @@ const heroScenes = [
     title: "Designed To Move From Site Challenge To Working System.",
     copy:
       "Our teams connect assessment, equipment, installation and support into one practical delivery path.",
-    button: "Get a Quote",
     backdrop: solarPanelField,
     gallery: [solarPumpFlow, solarArrayWide, drillingWaterSite]
   }

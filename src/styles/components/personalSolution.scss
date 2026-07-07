@@ -85,8 +85,25 @@
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111111;
   outline: none;
   transition: 0.3s ease;
+}
+
+.field select {
+  appearance: auto;
+  background-color: #f0f0f0;
+}
+
+.field select option {
+  background: #000000;
+  color: #ffffff;
+}
+
+.field select option:checked {
+  background: #1f66c2;
+  color: #ffffff;
 }
 
 .field input:focus,

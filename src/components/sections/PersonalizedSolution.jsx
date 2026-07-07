@@ -245,32 +245,41 @@ export default function PersonalizedSolution() {
 
             <div className="field">
               <label>System Type</label>
-              <select name="system" onChange={handleChange}>
-                <option>Select</option>
-                <option>Solar Systems</option>
-                <option>Pumping Systems</option>
-                <option>Drilling Systems</option>
-                <option>Water Accessories</option>
+              <select name="system" defaultValue="" onChange={handleChange}>
+                <option value="" disabled>Select</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Industrial</option>
+                <option>Agriculture</option>
               </select>
             </div>
 
             <div className="field">
               <label>Panel Type</label>
-              <select name="panelType" onChange={handleChange}>
-                <option>Select Panel</option>
-                <option>Monocrystalline</option>
-                <option>Polycrystalline</option>
-                <option>Half Cut Technology</option>
+              <select name="panelType" defaultValue="" onChange={handleChange}>
+                <option value="" disabled>Select Panel</option>
+                <option>JINKO</option>
+                <option>CANADIAN</option>
+                <option>LONGI</option>
+                <option>CORA DAWNX10</option>
+                <option>AIKO STELLAR</option>
+                <option>RISEN HJT</option>
+                <option>LONGI X7</option>
+                <option>TRINA</option>
+                <option>CROWN 20BB</option>
+                <option>RONMA</option>
+                <option>LONGI 225W</option>
               </select>
             </div>
 
             <div className="field">
               <label>Inverter</label>
-              <select name="inverter" onChange={handleChange}>
-                <option>Select Inverter</option>
-                <option>INVT GD100</option>
-                <option>INVT GD170</option>
-                <option>INVT GD200</option>
+              <select name="inverter" defaultValue="" onChange={handleChange}>
+                <option value="" disabled>Select Inverter</option>
+                <option>Solis</option>
+                <option>Aepower</option>
+                <option>INVT</option>
+                <option>VFD's</option>
               </select>
             </div>
 
