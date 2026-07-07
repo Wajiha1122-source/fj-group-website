@@ -49,7 +49,6 @@ const heroScenes = [
     title: "From Drilling Depth To Reliable Flow",
     copy:
       "Practical engineering for groundwater access, pumping systems and infrastructure projects that need long-term confidence.",
-    button: "Discuss Requirements",
     media: drillingWaterSite,
     backdrop: solarWaterSystem
   },
@@ -304,12 +303,12 @@ export default function HeroSlider() {
 
               <div className="field">
                 <span className="label">System Type</span>
-                <select name="system" onChange={handleChange}>
-                  <option>Select system</option>
-                  <option>Solar Systems</option>
-                  <option>Pumping Systems</option>
-                  <option>Drilling Systems</option>
-                  <option>Water Accessories</option>
+                <select name="system" defaultValue="" onChange={handleChange}>
+                  <option value="" disabled>Select system</option>
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                  <option>Industrial</option>
+                  <option>Agriculture</option>
                 </select>
               </div>
 
@@ -351,9 +350,11 @@ export default function HeroSlider() {
             <h1>{activeScene.title}</h1>
             {activeScene.subtitle && <h2>{activeScene.subtitle}</h2>}
             <p>{activeScene.copy}</p>
-            <button type="button" onClick={openModal}>
-              {activeScene.button}
-            </button>
+            {activeScene.button && (
+              <button type="button" onClick={openModal}>
+                {activeScene.button}
+              </button>
+            )}
           </div>
 
           {activeScene.variant === "video" && (
