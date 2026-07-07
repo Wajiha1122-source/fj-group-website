@@ -27,6 +27,7 @@ const heroScenes = [
     title: "Built For Performance. Designed For Reliability.",
     copy:
       "From panel sizing to controlled water flow, FJ Group connects renewable energy with dependable field output.",
+    button: "Get Solar Quote",
     mediaType: "video",
     media: video2,
     backdrop: solarWaterSystem
