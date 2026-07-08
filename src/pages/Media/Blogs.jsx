@@ -57,7 +57,7 @@ export default function Blogs() {
             </Link>
 
             <div className="blog-feature__content">
-              <div className="blog-feature__meta">
+              <div className="blog-feature__meta">    
                 <span>{blog.number}</span>
                 <span>{blog.category}</span>
                 <span>{blog.readTime}</span>
