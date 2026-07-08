@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { FiShoppingBag, FiArrowRight } from "react-icons/fi"
+import { FiArrowRight } from "react-icons/fi"
 import "../../styles/components/products.scss"
 
 import handPump from "../../assets/images/products-showcase/hand-pump.jpeg"
@@ -10,23 +10,23 @@ import productSlide4 from "../../assets/images/products-showcase/product-slide-4
 
 const productSlides = [
   {
-    title: "Water Hand Pump",
+    alt: "Water hand pump",
     image: handPump
   },
   {
-    title: "Pumping Product",
+    alt: "Pumping product",
     image: productSlide1
   },
   {
-    title: "Engineering Product",
+    alt: "Engineering product",
     image: productSlide2
   },
   {
-    title: "Water System Product",
+    alt: "Water system product",
     image: productSlide3
   },
   {
-    title: "Industrial Accessory",
+    alt: "Industrial accessory",
     image: productSlide4
   }
 ]
@@ -36,46 +36,14 @@ export default function Products() {
 
   return (
     <div className="products-page">
-
-      {/* HERO */}
-      <section className="products-hero">
-        <motion.div
-          className="container"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h1>Products</h1>
-          <p>
-            Explore our comprehensive range of industrial engineering products
-            designed for water, energy, and infrastructure applications.
-          </p>
-        </motion.div>
-      </section>
-
       {/* PRODUCT SHOWCASE */}
       <section className="products-showcase">
-        <motion.div
-          className="products-showcase__header container"
-          initial={{ opacity: 0, y: 36 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-        >
-          <span>PRODUCT RANGE</span>
-          <h2>Practical products for reliable field performance</h2>
-        </motion.div>
-
         <div className="products-marquee" aria-label="Sliding product showcase">
           <div className="products-marquee__track">
             {marqueeItems.map((item, index) => (
-              <article className="product-slide-card" key={`${item.title}-${index}`}>
-                <div className="product-slide-card__image">
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <h3>{item.title}</h3>
-              </article>
+              <div className="product-slide-item" key={`${item.alt}-${index}`}>
+                <img src={item.image} alt={item.alt} />
+              </div>
             ))}
           </div>
         </div>
