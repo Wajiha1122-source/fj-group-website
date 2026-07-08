@@ -36,7 +36,7 @@ const solutions = [
 
 export default function SolutionsSection() {
   return (
-    <section className="solutions-section">
+    <section className="solutions-section home-solutions-section">
 
       <div className="container">
 
