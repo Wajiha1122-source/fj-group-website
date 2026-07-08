@@ -25,17 +25,18 @@
 /* GRID */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 480px));
+  justify-content: center;
+  gap: 16px;
 }
 
 /* CARD */
 .solution-card {
   background: #f7f9fc;
-  padding: 20px 24px;
-  min-height: 154px;
+  padding: 16px 18px;
+  min-height: 128px;
 
-  border-radius: 16px;
+  border-radius: 14px;
 
   border-left: 3px solid transparent;
 
@@ -44,8 +45,8 @@
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 50px 1fr;
-  column-gap: 18px;
+  grid-template-columns: 40px 1fr;
+  column-gap: 14px;
   align-items: start;
 }
 
@@ -60,10 +61,12 @@
 
 /* ICON */
 .solution-icon {
-  width: 50px;
-  height: 50px;
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  width: 40px;
+  height: 40px;
 
-  border-radius: 13px;
+  border-radius: 11px;
 
   background: linear-gradient(
     135deg,
@@ -77,7 +80,7 @@
 
   margin-bottom: 0;
 
-  font-size: 20px;
+  font-size: 17px;
   color: #4f7dbd;
 
   transition: 0.4s ease;
@@ -97,17 +100,20 @@
 }
 
 .solution-card h3 {
-  font-size: 21px;
+  grid-column: 2;
+  font-size: 19px;
   color: #0b1f3a;
-  margin: 1px 0 7px;
+  margin: 0 0 5px;
+  line-height: 1.25;
 }
 
 .solution-card p {
+  grid-column: 2;
   color: #5d6673;
-  font-size: 13.5px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.45;
   margin: 0;
-  max-width: 420px;
+  max-width: none;
 }
 
 /* RESPONSIVE */
@@ -123,7 +129,7 @@
 
   .solution-card {
     min-height: auto;
-    padding: 22px;
+    padding: 16px;
   }
 
 }
