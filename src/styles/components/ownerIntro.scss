@@ -22,6 +22,7 @@
   width: 100%;
   height: 500px;
   object-fit: cover;
+  object-position: center 16%;
 
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   transition: 0.5s ease;
@@ -92,6 +93,7 @@
 
   .owner-image img {
     height: 380px;
+    object-position: center 14%;
   }
 
   .owner-content h2 {
