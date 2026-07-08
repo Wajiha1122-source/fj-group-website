@@ -1,0 +1,179 @@
+.project-process-section {
+  padding: 86px 0 94px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(47, 111, 178, 0.08), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+  color: #0b1f3a;
+  overflow: hidden;
+}
+
+.project-process-container {
+  position: relative;
+}
+
+.project-process-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 58px;
+}
+
+.project-process-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #2f6fb2;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.project-process-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f6fb2;
+  box-shadow: 0 0 0 6px rgba(47, 111, 178, 0.12);
+}
+
+.project-process-header h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.12;
+  font-weight: 800;
+  color: #0b1f3a;
+  margin: 0;
+}
+
+.project-process-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(118px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.project-process-track::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: 7%;
+  right: 7%;
+  height: 2px;
+  background: linear-gradient(90deg, #0b1f3a, #2f6fb2, #0b1f3a);
+  opacity: 0.9;
+}
+
+.project-process-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.project-process-icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #2f6fb2;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #2f6fb2;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(11, 31, 58, 0.12);
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project-process-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.project-process-step strong {
+  margin-top: 14px;
+  font-size: 17px;
+  color: #0b1f3a;
+}
+
+.project-process-step span {
+  margin-top: 4px;
+  color: #1f2f46;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.project-process-step:hover .project-process-icon {
+  transform: translateY(-8px) scale(1.06);
+  background: #0b1f3a;
+  border-color: #0b1f3a;
+  color: #ffffff;
+  box-shadow: 0 22px 48px rgba(47, 111, 178, 0.28);
+}
+
+.project-process-step:hover span {
+  color: #2f6fb2;
+}
+
+@media (max-width: 1050px) {
+  .project-process-track {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    row-gap: 34px;
+  }
+
+  .project-process-track::before {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .project-process-section {
+    padding: 68px 0 74px;
+  }
+
+  .project-process-header {
+    margin-bottom: 38px;
+    text-align: left;
+  }
+
+  .project-process-track {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-process-step {
+    min-height: 78px;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid rgba(47, 111, 178, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 16px 38px rgba(11, 31, 58, 0.06);
+  }
+
+  .project-process-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+  }
+
+  .project-process-step strong {
+    margin-top: 0;
+    min-width: 22px;
+  }
+
+  .project-process-step span {
+    margin-top: 0;
+  }
+}

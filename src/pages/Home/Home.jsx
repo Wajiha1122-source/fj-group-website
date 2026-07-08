@@ -7,6 +7,7 @@ import PersonalizedSolution from "../../components/sections/PersonalizedSolution
 import NewsSection from "../../components/sections/NewsSection.jsx"
 import CasesSection from "../../components/sections/CasesSection.jsx"
 import SolarCalculatorSection from "../../components/sections/SolarCalculatorSection.jsx"
+import ProjectProcessSection from "../../components/sections/ProjectProcessSection.jsx"
 import OwnerIntroSection from "../../components/sections/OwnerIntroSection.jsx"
 import BrandsSection from "../../components/sections/BrandsSection.jsx"
 import LatestNewsNotification from "../../components/sections/LatestNewsNotification.jsx"
@@ -79,6 +80,7 @@ export default function Home() {
       <PersonalizedSolution/>
       <CasesSection />
       <SolarCalculatorSection />
+      <ProjectProcessSection />
       <OwnerIntroSection />
       <BrandsSection />
       <LatestNewsNotification />
