@@ -32,8 +32,8 @@
 /* CARD */
 .solution-card {
   background: #f7f9fc;
-  padding: 22px 26px;
-  min-height: 220px;
+  padding: 20px 24px;
+  min-height: 154px;
 
   border-radius: 16px;
 
@@ -43,6 +43,10 @@
 
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 18px;
+  align-items: start;
 }
 
 .solution-card:hover {
@@ -56,8 +60,8 @@
 
 /* ICON */
 .solution-icon {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
 
   border-radius: 13px;
 
@@ -71,7 +75,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 14px;
+  margin-bottom: 0;
 
   font-size: 20px;
   color: #4f7dbd;
@@ -95,7 +99,7 @@
 .solution-card h3 {
   font-size: 21px;
   color: #0b1f3a;
-  margin-bottom: 7px;
+  margin: 1px 0 7px;
 }
 
 .solution-card p {
@@ -103,6 +107,7 @@
   font-size: 13.5px;
   line-height: 1.5;
   margin: 0;
+  max-width: 420px;
 }
 
 /* RESPONSIVE */
@@ -121,4 +126,18 @@
     padding: 22px;
   }
 
+}
+
+@media (max-width: 640px) {
+  .solution-card {
+    display: block;
+  }
+
+  .solution-icon {
+    margin-bottom: 14px;
+  }
+
+  .solution-card p {
+    max-width: none;
+  }
 }
