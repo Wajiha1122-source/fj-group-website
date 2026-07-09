@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import { FiArrowRight } from "react-icons/fi"
 import "../../styles/components/products.scss"
 
@@ -32,18 +33,57 @@ const productSlides = [
 ]
 
 export default function Products() {
-  const marqueeItems = [...productSlides, ...productSlides]
+  const [activeProduct, setActiveProduct] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveProduct((current) => (current + 1) % productSlides.length)
+    }, 3200)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  const currentProduct = productSlides[activeProduct]
 
   return (
     <div className="products-page">
       {/* PRODUCT SHOWCASE */}
       <section className="products-showcase">
-        <div className="products-marquee" aria-label="Sliding product showcase">
-          <div className="products-marquee__track">
-            {marqueeItems.map((item, index) => (
-              <div className="product-slide-item" key={`${item.alt}-${index}`}>
-                <img src={item.image} alt={item.alt} />
-              </div>
+        <motion.div
+          className="products-showcase__header container"
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+        >
+          <span>PRODUCT RANGE</span>
+          <h2>Practical products for reliable field performance</h2>
+        </motion.div>
+
+        <div className="product-premium-slider" aria-label="Product slideshow">
+          <div className="product-premium-stage">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentProduct.alt}
+                src={currentProduct.image}
+                alt={currentProduct.alt}
+                initial={{ opacity: 0, x: 90, scale: 0.94 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: -90, scale: 0.94 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </AnimatePresence>
+          </div>
+
+          <div className="product-premium-dots" aria-label="Product slide controls">
+            {productSlides.map((item, index) => (
+              <button
+                className={activeProduct === index ? "active" : ""}
+                type="button"
+                key={item.alt}
+                onClick={() => setActiveProduct(index)}
+                aria-label={`Show ${item.alt}`}
+              />
             ))}
           </div>
         </div>
