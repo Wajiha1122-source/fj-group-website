@@ -49,42 +49,44 @@ export default function Products() {
     <div className="products-page">
       {/* PRODUCT SHOWCASE */}
       <section className="products-showcase">
-        <motion.div
-          className="products-showcase__header container"
-          initial={{ opacity: 0, y: 36 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-        >
-          <span>PRODUCT RANGE</span>
-          <h2>Practical products for reliable field performance</h2>
-        </motion.div>
+        <div className="container products-showcase__layout">
+          <motion.div
+            className="products-showcase__header"
+            initial={{ opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
+            <span>PRODUCT RANGE</span>
+            <h2>Practical products for reliable field performance</h2>
+          </motion.div>
 
-        <div className="product-premium-slider" aria-label="Product slideshow">
-          <div className="product-premium-stage">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentProduct.alt}
-                src={currentProduct.image}
-                alt={currentProduct.alt}
-                initial={{ opacity: 0, x: 90, scale: 0.94 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: -90, scale: 0.94 }}
-                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </AnimatePresence>
-          </div>
+          <div className="product-premium-slider" aria-label="Product slideshow">
+            <div className="product-premium-stage">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentProduct.alt}
+                  src={currentProduct.image}
+                  alt={currentProduct.alt}
+                  initial={{ opacity: 0, x: 90, scale: 0.94 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -90, scale: 0.94 }}
+                  transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                />
+              </AnimatePresence>
+            </div>
 
-          <div className="product-premium-dots" aria-label="Product slide controls">
-            {productSlides.map((item, index) => (
-              <button
-                className={activeProduct === index ? "active" : ""}
-                type="button"
-                key={item.alt}
-                onClick={() => setActiveProduct(index)}
-                aria-label={`Show ${item.alt}`}
-              />
-            ))}
+            <div className="product-premium-dots" aria-label="Product slide controls">
+              {productSlides.map((item, index) => (
+                <button
+                  className={activeProduct === index ? "active" : ""}
+                  type="button"
+                  key={item.alt}
+                  onClick={() => setActiveProduct(index)}
+                  aria-label={`Show ${item.alt}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
