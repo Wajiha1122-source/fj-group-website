@@ -190,42 +190,48 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* SEARCH BUTTON */}
-          <button
-            className="search-btn"
-            onClick={() => setSearchOpen(!searchOpen)}
+          {/* SEARCH */}
+          <div
+            className="search-wrap"
+            onMouseEnter={() => setSearchOpen(true)}
+            onMouseLeave={() => {
+              setSearchOpen(false)
+              setQuery("")
+              setResults([])
+            }}
           >
-            <FiSearch />
-          </button>
+            <button className="search-btn" type="button" aria-label="Search website">
+              <FiSearch />
+            </button>
 
-          {/* SEARCH BOX */}
-          {searchOpen && (
-            <div className="search-box">
+            {searchOpen && (
+              <div className="search-box">
 
-              <input
-                type="text"
-                placeholder="Search website..."
-                value={query}
-                onChange={(e) => handleSearch(e.target.value)}
-                autoFocus
-              />
+                <input
+                  type="text"
+                  placeholder="Search website..."
+                  value={query}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  autoFocus
+                />
 
-              {results.length > 0 && (
-                <div className="search-results">
-                  {results.map((item, i) => (
-                    <div
-                      key={i}
-                      className="search-item"
-                      onClick={() => goToPage(item.path)}
-                    >
-                      {item.name}
-                    </div>
-                  ))}
-                </div>
-              )}
+                {results.length > 0 && (
+                  <div className="search-results">
+                    {results.map((item, i) => (
+                      <div
+                        key={i}
+                        className="search-item"
+                        onClick={() => goToPage(item.path)}
+                      >
+                        {item.name}
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-            </div>
-          )}
+              </div>
+            )}
+          </div>
 
         </div>
 
