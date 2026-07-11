@@ -1,0 +1,393 @@
+.central-pivot-section,
+.central-pivot-page {
+  color: #0b1f3a;
+}
+
+.central-pivot-section {
+  padding: 56px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.central-pivot-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.central-pivot-content {
+  max-width: 560px;
+}
+
+.central-pivot-tag {
+  display: inline-block;
+  color: #4f7dbd;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.central-pivot-content h2,
+.central-pivot-section-heading h2,
+.central-pivot-installation-card h2 {
+  margin: 16px 0 0;
+  color: #0b1f3a;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.central-pivot-content p,
+.central-pivot-detail-copy p,
+.central-pivot-installation-card p {
+  margin-top: 18px;
+  color: rgba(11, 31, 58, 0.72);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.central-pivot-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.central-pivot-point {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(11, 31, 58, 0.1);
+}
+
+.central-pivot-point__icon,
+.central-pivot-advantage__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #0b1f3a;
+  color: #ffffff;
+  box-shadow: 0 18px 38px rgba(11, 31, 58, 0.16);
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.central-pivot-point:hover .central-pivot-point__icon,
+.central-pivot-advantage:hover .central-pivot-advantage__icon {
+  transform: translateY(-5px);
+  background: #2f6fb2;
+  box-shadow: 0 22px 46px rgba(47, 111, 178, 0.26);
+}
+
+.central-pivot-point strong {
+  display: block;
+  color: #0b1f3a;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.central-pivot-point span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(11, 31, 58, 0.68);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.central-pivot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  background: #0b1f3a;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.central-pivot-btn:hover {
+  color: #ffffff;
+  background: #2f6fb2;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(47, 111, 178, 0.22);
+}
+
+.central-pivot-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.central-pivot-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.central-pivot-slider,
+.central-pivot-detail-slider {
+  position: relative;
+}
+
+.central-pivot-stage,
+.central-pivot-detail-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 390px;
+  border-radius: 8px;
+}
+
+.central-pivot-stage::before,
+.central-pivot-detail-stage::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  border: 1px solid rgba(79, 125, 189, 0.18);
+  background: radial-gradient(circle, rgba(79, 125, 189, 0.08), transparent 68%);
+}
+
+.central-pivot-stage img,
+.central-pivot-detail-stage img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 26px 58px rgba(11, 31, 58, 0.18);
+  transition: transform 0.5s ease;
+}
+
+.central-pivot-slider:hover img,
+.central-pivot-detail-slider:hover img {
+  transform: scale(1.025);
+}
+
+.central-pivot-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.central-pivot-dots button {
+  width: 34px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(11, 31, 58, 0.18);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.central-pivot-dots button.active {
+  width: 54px;
+  background: #0b1f3a;
+}
+
+.central-pivot-page {
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.central-pivot-detail-hero {
+  padding: 76px 0 64px;
+  background:
+    radial-gradient(circle at right center, rgba(79, 125, 189, 0.14), transparent 36%),
+    #f7f1f3;
+}
+
+.central-pivot-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(440px, 1.1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.central-pivot-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;
+  color: rgba(11, 31, 58, 0.68);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.central-pivot-back:hover {
+  color: #2f6fb2;
+}
+
+.central-pivot-detail-copy h1 {
+  max-width: 620px;
+  margin: 16px 0 0;
+  color: #0b1f3a;
+  font-size: 54px;
+  line-height: 1.12;
+  font-weight: 500;
+}
+
+.central-pivot-hero-actions {
+  margin-top: 2px;
+}
+
+.central-pivot-detail-stage {
+  min-height: 450px;
+}
+
+.central-pivot-detail-stage img {
+  height: 420px;
+}
+
+.central-pivot-advantages {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.central-pivot-section-heading {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.central-pivot-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.central-pivot-advantage {
+  min-height: 252px;
+  padding: 28px 24px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 56px rgba(11, 31, 58, 0.08);
+  border: 1px solid rgba(11, 31, 58, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.central-pivot-advantage:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 30px 66px rgba(11, 31, 58, 0.12);
+}
+
+.central-pivot-advantage h3 {
+  margin: 22px 0 0;
+  color: #0b1f3a;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.central-pivot-advantage p {
+  margin-top: 12px;
+  color: rgba(11, 31, 58, 0.68);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.central-pivot-installation {
+  padding: 0 0 78px;
+  background: #ffffff;
+}
+
+.central-pivot-installation-card {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(340px, 1.05fr);
+  gap: 46px;
+  align-items: center;
+  padding: 48px;
+  border-radius: 8px;
+  background: #f7f1f3;
+  box-shadow: 0 26px 62px rgba(11, 31, 58, 0.08);
+}
+
+.central-pivot-service-list {
+  display: grid;
+  gap: 14px;
+}
+
+.central-pivot-service-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0b1f3a;
+  font-weight: 600;
+  box-shadow: 0 16px 36px rgba(11, 31, 58, 0.06);
+}
+
+.central-pivot-service-item svg {
+  flex: 0 0 auto;
+  color: #2f6fb2;
+}
+
+@media (max-width: 1050px) {
+  .central-pivot-layout,
+  .central-pivot-detail-layout,
+  .central-pivot-installation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .central-pivot-content,
+  .central-pivot-detail-copy {
+    max-width: 760px;
+  }
+
+  .central-pivot-advantage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .central-pivot-section {
+    padding: 44px 0;
+  }
+
+  .central-pivot-layout,
+  .central-pivot-detail-layout {
+    gap: 34px;
+  }
+
+  .central-pivot-content h2,
+  .central-pivot-section-heading h2,
+  .central-pivot-installation-card h2 {
+    font-size: 32px;
+  }
+
+  .central-pivot-detail-copy h1 {
+    font-size: 38px;
+  }
+
+  .central-pivot-stage,
+  .central-pivot-detail-stage {
+    min-height: 280px;
+  }
+
+  .central-pivot-stage img,
+  .central-pivot-detail-stage img {
+    height: 260px;
+  }
+
+  .central-pivot-advantages {
+    padding: 52px 0;
+  }
+
+  .central-pivot-advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .central-pivot-installation-card {
+    padding: 32px 22px;
+  }
+}

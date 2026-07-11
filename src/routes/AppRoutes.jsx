@@ -13,6 +13,7 @@ import Services from "../pages/Solutions/Services"
 import TargetedIndustries from "../pages/Solutions/TargetedIndustries"
 import Applications from "../pages/Solutions/Applications"
 import Categories from "../pages/Solutions/Categories"
+import CentralPivotIrrigation from "../pages/Solutions/CentralPivotIrrigation"
 import Products from "../pages/Products/Products"
 import Contact from "../pages/Contact/Contact"
 import OtherEnquiries from "../pages/Contact/OtherEnquiries"
@@ -185,6 +186,15 @@ export default function AppRoutes() {
         element={
           <MainLayout>
             <Categories />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/central-pivot-irrigation"
+        element={
+          <MainLayout>
+            <CentralPivotIrrigation />
           </MainLayout>
         }
       />
