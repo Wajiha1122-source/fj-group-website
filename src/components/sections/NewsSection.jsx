@@ -46,7 +46,7 @@ export default function NewsSection() {
 
               {/* IMAGE */}
               <div className="news-image">
-                <img src={item.image} alt="" />
+                <img src={item.image} alt="" loading="lazy" decoding="async" />
               </div>
 
 

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import "../../styles/components/personalSolution.scss"
+import { loadHtml2Canvas } from "../../utils/loadHtml2Canvas.js"
 
 export default function PersonalizedSolution() {
 
@@ -16,6 +17,7 @@ export default function PersonalizedSolution() {
   const generateInvoice = async () => {
     if (invoiceRef.current) {
       try {
+        const html2canvas = await loadHtml2Canvas()
         const canvas = await html2canvas(invoiceRef.current, {
           scale: 2,
           useCORS: true,

@@ -55,7 +55,12 @@ export default function BrandsSection() {
             >
 
               <div className="brand-logo">
-                <img src={item.image} alt={`${item.name} logo`} />
+                <img
+                  src={item.image}
+                  alt={`${item.name} logo`}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
               <div className="brand-copy">

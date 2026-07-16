@@ -5,6 +5,7 @@ import solarWaterSystem from "../../../assets/images/hero-showcase/solar-water-s
 import solarPanelField from "../../../assets/images/hero-showcase/solar-panel-field.jpeg"
 import solarArrayWide from "../../../assets/images/hero-showcase/solar-array-wide.jpeg"
 import drillingWaterSite from "../../../assets/images/hero-showcase/drilling-water-site.jpeg"
+import { loadHtml2Canvas } from "../../../utils/loadHtml2Canvas.js"
 
 const video1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/slide1_n5hgxh.mp4"
@@ -88,6 +89,7 @@ export default function HeroSlider() {
   const generateInvoice = async () => {
     if (invoiceRef.current) {
       try {
+        const html2canvas = await loadHtml2Canvas()
         const canvas = await html2canvas(invoiceRef.current, {
           scale: 2,
           useCORS: true,
@@ -330,7 +332,13 @@ export default function HeroSlider() {
         aria-label="FJ Group hero showcase"
       >
         <div className="fj-hero-bg" key={`bg-${activeSlide}`}>
-          <img src={activeScene.backdrop} alt="" />
+          <img
+            src={activeScene.backdrop}
+            alt=""
+            loading={activeSlide === 0 ? "eager" : "lazy"}
+            fetchPriority={activeSlide === 0 ? "high" : "auto"}
+            decoding="async"
+          />
         </div>
 
         <div className="fj-hero-vignette" />
@@ -356,7 +364,7 @@ export default function HeroSlider() {
 
           {activeScene.variant === "video" && (
             <div className="fj-video-panel">
-              <video autoPlay muted loop playsInline>
+              <video autoPlay muted loop playsInline preload="metadata">
                 <source src={activeScene.media} type="video/mp4" />
               </video>
               <span>Solar pumping systems</span>
@@ -376,7 +384,12 @@ export default function HeroSlider() {
 
           {activeScene.variant === "image" && (
             <div className="fj-image-mask">
-              <img src={activeScene.media} alt={activeScene.title} />
+              <img
+                src={activeScene.media}
+                alt={activeScene.title}
+                loading="lazy"
+                decoding="async"
+              />
               <span>Field execution</span>
             </div>
           )}
@@ -384,7 +397,14 @@ export default function HeroSlider() {
           {activeScene.variant === "kinetic" && (
             <div className="fj-kinetic-gallery">
               {activeScene.gallery.map((image, index) => (
-                <img src={image} alt="" key={image} className={`gallery-${index + 1}`} />
+                <img
+                  src={image}
+                  alt=""
+                  key={image}
+                  className={`gallery-${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
             </div>
           )}

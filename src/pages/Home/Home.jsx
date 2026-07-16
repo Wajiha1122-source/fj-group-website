@@ -1,19 +1,35 @@
-import { useEffect, useRef } from "react"
+import { lazy, Suspense, useEffect, useRef } from "react"
 
 import HeroSlider from "../../components/sliders/HeroSlider/HeroSlider.jsx"
-import AboutGlanceSection from "../../components/sections/AboutGlanceSection.jsx"
-import SolutionsSection from "../../components/sections/SolutionsSection.jsx"
-import PersonalizedSolution from "../../components/sections/PersonalizedSolution.jsx"
 import NewsSection from "../../components/sections/NewsSection.jsx"
-import CasesSection from "../../components/sections/CasesSection.jsx"
-import SolarCalculatorSection from "../../components/sections/SolarCalculatorSection.jsx"
-import ProjectProcessSection from "../../components/sections/ProjectProcessSection.jsx"
-import CentralPivotSection from "../../components/sections/CentralPivotSection.jsx"
-import OwnerIntroSection from "../../components/sections/OwnerIntroSection.jsx"
-import BrandsSection from "../../components/sections/BrandsSection.jsx"
-import LatestNewsNotification from "../../components/sections/LatestNewsNotification.jsx"
 import "../../styles/components/homeMotion.scss"
 
+const AboutGlanceSection = lazy(() =>
+  import("../../components/sections/AboutGlanceSection.jsx")
+)
+const SolutionsSection = lazy(() =>
+  import("../../components/sections/SolutionsSection.jsx")
+)
+const PersonalizedSolution = lazy(() =>
+  import("../../components/sections/PersonalizedSolution.jsx")
+)
+const CasesSection = lazy(() => import("../../components/sections/CasesSection.jsx"))
+const SolarCalculatorSection = lazy(() =>
+  import("../../components/sections/SolarCalculatorSection.jsx")
+)
+const ProjectProcessSection = lazy(() =>
+  import("../../components/sections/ProjectProcessSection.jsx")
+)
+const CentralPivotSection = lazy(() =>
+  import("../../components/sections/CentralPivotSection.jsx")
+)
+const OwnerIntroSection = lazy(() =>
+  import("../../components/sections/OwnerIntroSection.jsx")
+)
+const BrandsSection = lazy(() => import("../../components/sections/BrandsSection.jsx"))
+const LatestNewsNotification = lazy(() =>
+  import("../../components/sections/LatestNewsNotification.jsx")
+)
 
 export default function Home() {
   const homeRef = useRef(null)
@@ -76,16 +92,18 @@ export default function Home() {
     <main className="home-motion-page" ref={homeRef}>
       <HeroSlider />
       <NewsSection />
-      <AboutGlanceSection />
-      <SolutionsSection />
-      <PersonalizedSolution/>
-      <CasesSection />
-      <SolarCalculatorSection />
-      <ProjectProcessSection />
-      <CentralPivotSection />
-      <OwnerIntroSection />
-      <BrandsSection />
-      <LatestNewsNotification />
+      <Suspense fallback={null}>
+        <AboutGlanceSection />
+        <SolutionsSection />
+        <PersonalizedSolution/>
+        <CasesSection />
+        <SolarCalculatorSection />
+        <ProjectProcessSection />
+        <CentralPivotSection />
+        <OwnerIntroSection />
+        <BrandsSection />
+        <LatestNewsNotification />
+      </Suspense>
     </main>
   )
 }

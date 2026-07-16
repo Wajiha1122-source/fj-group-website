@@ -19,7 +19,12 @@ export default function OwnerIntroSection() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <img src={ownerImg} alt="Faisal Javed - Owner FJ Group" />
+          <img
+            src={ownerImg}
+            alt="Faisal Javed - Owner FJ Group"
+            loading="lazy"
+            decoding="async"
+          />
         </motion.div>
 
         {/* TEXT SIDE */}
