@@ -28,6 +28,10 @@ export default function Footer() {
                 src={logo}
                 className="footer-logo"
                 alt="FJ Group"
+                width="2000"
+                height="2000"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
 

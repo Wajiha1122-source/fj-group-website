@@ -143,7 +143,7 @@ export default function Navbar() {
 
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="FJ Group" />
+            <img src={logo} alt="FJ Group" width="2000" height="2000" />
           </Link>
         </div>
 

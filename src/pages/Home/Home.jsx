@@ -37,6 +37,7 @@ export default function Home() {
   useEffect(() => {
     const root = homeRef.current
     if (!root) return undefined
+    const reduceMobileScrollWork = window.matchMedia("(max-width: 767px)").matches
 
     const motionSections = Array.from(root.querySelectorAll(":scope > section"))
 
@@ -76,14 +77,18 @@ export default function Home() {
       if (!rafId) rafId = window.requestAnimationFrame(updateScrollDrift)
     }
 
-    updateScrollDrift()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    window.addEventListener("resize", onScroll)
+    if (!reduceMobileScrollWork) {
+      updateScrollDrift()
+      window.addEventListener("scroll", onScroll, { passive: true })
+      window.addEventListener("resize", onScroll)
+    }
 
     return () => {
       observer.disconnect()
-      window.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", onScroll)
+      if (!reduceMobileScrollWork) {
+        window.removeEventListener("scroll", onScroll)
+        window.removeEventListener("resize", onScroll)
+      }
       if (rafId) window.cancelAnimationFrame(rafId)
     }
   }, [])

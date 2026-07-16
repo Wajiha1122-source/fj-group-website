@@ -6,7 +6,7 @@ import { FaTint, FaTools, FaDraftingCompass } from "react-icons/fa"
 import "../../styles/components/centralPivot.scss"
 
 import cp1 from "../../assets/images/cp1.jpg"
-import cp2 from "../../assets/images/cp2.jpg"
+import cp2 from "../../assets/images/optimized/cp2-1200.jpg"
 import cp3 from "../../assets/images/cp3.jpg"
 
 const pivotImages = [
@@ -109,6 +109,10 @@ export default function CentralPivotSection() {
                 key={currentImage.alt}
                 src={currentImage.image}
                 alt={currentImage.alt}
+                width="1200"
+                height="569"
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, x: 80, scale: 0.96 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -80, scale: 0.96 }}

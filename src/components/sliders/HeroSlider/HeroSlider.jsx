@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 
-import solarPumpFlow from "../../../assets/images/hero-showcase/solar-pump-flow.jpeg"
-import solarWaterSystem from "../../../assets/images/hero-showcase/solar-water-system.jpeg"
-import solarPanelField from "../../../assets/images/hero-showcase/solar-panel-field.jpeg"
-import solarArrayWide from "../../../assets/images/hero-showcase/solar-array-wide.jpeg"
-import drillingWaterSite from "../../../assets/images/hero-showcase/drilling-water-site.jpeg"
+import solarPumpFlow from "../../../assets/images/optimized/solar-pump-flow-1200.jpg"
+import solarWaterSystem from "../../../assets/images/optimized/solar-water-system-1200.jpg"
+import solarPanelField from "../../../assets/images/optimized/solar-panel-field-1200.jpg"
+import solarArrayWide from "../../../assets/images/optimized/solar-array-wide-1200.jpg"
+import solarArrayWideMobile from "../../../assets/images/optimized/solar-array-wide-760.jpg"
+import drillingWaterSite from "../../../assets/images/optimized/drilling-water-site-1200.jpg"
 import { loadHtml2Canvas } from "../../../utils/loadHtml2Canvas.js"
 
 const video1 =
@@ -20,7 +21,8 @@ const heroScenes = [
     title: "Engineering Water, Energy & Industry Forward.",
     copy:
       "Integrated solar, pumping, drilling and water infrastructure solutions built around real operating needs.",
-    backdrop: solarArrayWide
+    backdrop: solarArrayWide,
+    backdropMobile: solarArrayWideMobile
   },
   {
     variant: "video",
@@ -332,13 +334,20 @@ export default function HeroSlider() {
         aria-label="FJ Group hero showcase"
       >
         <div className="fj-hero-bg" key={`bg-${activeSlide}`}>
-          <img
-            src={activeScene.backdrop}
-            alt=""
-            loading={activeSlide === 0 ? "eager" : "lazy"}
-            fetchPriority={activeSlide === 0 ? "high" : "auto"}
-            decoding="async"
-          />
+          <picture>
+            {activeScene.backdropMobile && (
+              <source media="(max-width: 767px)" srcSet={activeScene.backdropMobile} />
+            )}
+            <img
+              src={activeScene.backdrop}
+              alt=""
+              width="1600"
+              height="1040"
+              loading={activeSlide === 0 ? "eager" : "lazy"}
+              fetchPriority={activeSlide === 0 ? "high" : "auto"}
+              decoding="async"
+            />
+          </picture>
         </div>
 
         <div className="fj-hero-vignette" />
@@ -364,7 +373,7 @@ export default function HeroSlider() {
 
           {activeScene.variant === "video" && (
             <div className="fj-video-panel">
-              <video autoPlay muted loop playsInline preload="metadata">
+              <video autoPlay muted loop playsInline preload="none" poster={activeScene.backdrop}>
                 <source src={activeScene.media} type="video/mp4" />
               </video>
               <span>Solar pumping systems</span>
@@ -387,6 +396,8 @@ export default function HeroSlider() {
               <img
                 src={activeScene.media}
                 alt={activeScene.title}
+                width="1600"
+                height="1040"
                 loading="lazy"
                 decoding="async"
               />
@@ -402,6 +413,8 @@ export default function HeroSlider() {
                   alt=""
                   key={image}
                   className={`gallery-${index + 1}`}
+                  width="1600"
+                  height="1040"
                   loading="lazy"
                   decoding="async"
                 />

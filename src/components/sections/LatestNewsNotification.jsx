@@ -67,7 +67,7 @@ export default function LatestNewsNotification() {
       <div className="latest-news-notification__signal" />
 
       <div className="latest-news-notification__image">
-        <img src={latestNews.image} alt="" />
+        <img src={latestNews.image} alt="" width="1280" height="720" decoding="async" />
         <div className="latest-news-notification__shade" />
         <div className="latest-news-notification__sweep" />
       </div>
