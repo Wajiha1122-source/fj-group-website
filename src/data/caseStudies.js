@@ -9,7 +9,7 @@ const case4 =
 
 export const caseStudies = [
   {
-    title: "Industrial Water Pumping System",
+    title: "DNT for Central Pivot System",
     location: "Pakistan",
     video: case1,
     desc:
@@ -135,7 +135,7 @@ export const caseStudies = [
     ]
   },
   {
-    title: "Water Distribution Network Upgrade",
+    title: "Well Development and Yield Testing",
     location: "Urban Development",
     video: case4,
     desc:

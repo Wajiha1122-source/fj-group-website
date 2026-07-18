@@ -51,7 +51,6 @@ export default function CasesSection() {
               <div className="case-overlay" />
 
               <div className="case-content">
-                <span className="case-location">{item.location}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
 
