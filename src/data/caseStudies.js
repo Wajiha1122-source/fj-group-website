@@ -13,35 +13,35 @@ export const caseStudies = [
     location: "Pakistan",
     video: case1,
     desc:
-      "Delivered a high-efficiency submersible pumping system for continuous industrial water supply.",
-    slug: "water-pumping",
-    category: "Pumping Systems",
+      "Delivered DNT work for a central pivot irrigation system to support reliable field water coverage.",
+    slug: "dnt-central-pivot-system",
+    category: "Central Pivot Irrigation",
     intro:
-      "This project focused on creating a dependable water-transfer arrangement for an industrial operating environment where continuity, equipment protection, and maintainability were central requirements.",
+      "This project focused on DNT work for a central pivot irrigation system, supporting the movement from site preparation to practical irrigation operation. The work connected field conditions, water availability, equipment placement, and installation needs into one coordinated delivery path.",
     highlights: [
-      "Duty-focused pump and motor selection",
-      "Protection and control planning",
-      "Maintainable installation layout"
+      "Central pivot field preparation",
+      "Water delivery and system alignment",
+      "Installation support for reliable coverage"
     ],
     sections: [
       {
-        heading: "The engineering challenge",
+        heading: "Preparing the system foundation",
         paragraphs: [
-          "Industrial water demand can vary throughout the operating day, while the pumping equipment must continue to provide stable service. The system therefore needed to balance required flow and pressure with practical electrical and mechanical protection.",
-          "Site conditions, water source characteristics, pipe routing, and access for future maintenance formed part of the overall design review."
+          "A central pivot system depends on correct field preparation, stable water delivery, and practical equipment positioning. The DNT work supported these early requirements so the irrigation system could be planned around real site conditions.",
+          "Field access, pipeline route, discharge behavior, and installation space were considered together to support smooth central pivot operation."
         ]
       },
       {
-        heading: "Our delivery approach",
+        heading: "Coordinated irrigation support",
         paragraphs: [
-          "The project approach brought together the submersible pump, motor, pipework, electrical controls, and protection requirements as one coordinated package. Equipment selection was considered against the intended duty rather than as an isolated product choice.",
-          "Installation planning also considered safe access, cable routing, connection integrity, and commissioning checks."
+          "The delivery approach focused on aligning water source preparation, pumping needs, and central pivot installation requirements. Treating these parts as one system helped reduce mismatch between field layout and operating demand.",
+          "The team also considered practical maintenance access and future inspection needs during the setup process."
         ]
       },
       {
         heading: "Operational value",
         paragraphs: [
-          "The completed arrangement supports consistent industrial water movement with a clearer basis for operation and maintenance. A coordinated system also makes it easier to monitor performance and identify changes before they become larger operational issues."
+          "The completed work supports more dependable water coverage for the central pivot system and gives the site a clearer foundation for long-term irrigation performance."
         ]
       }
     ]
@@ -139,42 +139,42 @@ export const caseStudies = [
     location: "Urban Development",
     video: case4,
     desc:
-      "Modernized water-supply infrastructure with coordinated fittings, accessories, and engineering systems.",
-    slug: "water-network",
-    category: "Water Infrastructure",
+      "Carried out well development and yield testing to assess sustainable groundwater output.",
+    slug: "well-development-yield-testing",
+    category: "Well Development",
     intro:
-      "The network upgrade focused on improving how water moves through an urban distribution arrangement by reviewing hydraulic requirements, component condition, and practical maintainability.",
+      "This project focused on well development and yield testing to understand the practical output of a groundwater source. The work helped assess how the well performs after development and what level of pumping can be supported with greater confidence.",
     highlights: [
-      "Network and pressure review",
-      "Coordinated valves, fittings, and pipework",
-      "Improved isolation and maintenance access"
+      "Well cleaning and development support",
+      "Yield observation and pumping response",
+      "Practical output assessment"
     ],
     sections: [
       {
-        heading: "Reviewing the complete network",
+        heading: "Developing the well",
         paragraphs: [
-          "Water-distribution performance depends on pipe sizes, demand patterns, elevations, pump behavior, storage, and the arrangement of valves and branches. Upgrading individual components without understanding the network can move a problem rather than solve it.",
-          "The project approach therefore considered the connections between hydraulic performance and the physical condition of the system."
+          "Well development improves the connection between the bore and the surrounding water-bearing formation. The process helps remove fine material, improve flow paths, and prepare the well for more reliable pumping.",
+          "The work also gives the team a clearer view of water behavior before final operating assumptions are made."
         ]
       },
       {
-        heading: "Component coordination",
+        heading: "Testing practical yield",
         paragraphs: [
-          "Pipes, fittings, valves, and accessories were considered as part of a coordinated route. Material compatibility, pressure rating, jointing method, isolation requirements, and installation access all influence long-term reliability.",
-          "Clear isolation points can also reduce disruption when future inspection or maintenance is required."
+          "Yield testing observes how the well responds under pumping conditions. Flow rate, drawdown behavior, recovery, and operating stability are reviewed to understand what the source can support in practical use.",
+          "This information helps avoid overestimating capacity and supports better pump selection and operating planning."
         ]
       },
       {
-        heading: "Supporting stable distribution",
+        heading: "Supporting dependable operation",
         paragraphs: [
-          "A structured network upgrade supports more predictable pressure management and creates a more maintainable foundation for future development. Hydraulic modeling tools can further help teams evaluate network behavior under changing demand."
+          "The results of development and yield testing provide a stronger basis for long-term groundwater use. A tested well is easier to operate responsibly because its real output and recovery behavior are better understood."
         ]
       }
     ],
     sources: [
       {
-        label: "U.S. EPA - EPANET water distribution modeling",
-        url: "https://www.epa.gov/water-research/epanet"
+        label: "U.S. Geological Survey - Groundwater wells",
+        url: "https://www.usgs.gov/special-topics/water-science-school/science/groundwater-wells"
       }
     ]
   }
