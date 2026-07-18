@@ -1,4 +1,4 @@
-import news1 from "../assets/images/news1.png"
+import news1 from "../assets/images/optimized/news1-640.jpg"
 import news2 from "../assets/images/news2.png"
 import news3 from "../assets/images/news3.png"
 import solisPartnership from "../assets/images/partnerships/fj-solis-partnership.jpeg"

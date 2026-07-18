@@ -1,9 +1,8 @@
-import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 import "../../styles/components/footer.scss"
 
-import logo from "../../assets/icons/logo1.png"
+import logo from "../../assets/images/optimized/logo1-360.png"
 
 import {
   FaFacebookF,
@@ -21,15 +20,15 @@ export default function Footer() {
         <div className="footer-row">
 
           {/* BRAND */}
-          <motion.div className="footer-brand">
+          <div className="footer-brand">
 
             <Link to="/">
               <img
                 src={logo}
                 className="footer-logo"
                 alt="FJ Group"
-                width="2000"
-                height="2000"
+                width="360"
+                height="360"
                 loading="lazy"
                 decoding="async"
               />
@@ -40,10 +39,10 @@ export default function Footer() {
               pumping, drilling and industrial systems across Pakistan.
             </p>
 
-          </motion.div>
+          </div>
 
           {/* ABOUT US */}
-          <motion.div className="footer-col">
+          <div className="footer-col">
 
             <h6>About Us</h6>
 
@@ -71,10 +70,10 @@ export default function Footer() {
 
             </ul>
 
-          </motion.div>
+          </div>
 
           {/* SOLUTIONS */}
-          <motion.div className="footer-col">
+          <div className="footer-col">
 
             <h6>Solutions</h6>
 
@@ -98,19 +97,19 @@ export default function Footer() {
 
             </ul>
 
-          </motion.div>
+          </div>
 
           {/* PRODUCTS */}
-          <motion.div className="footer-col">
+          <div className="footer-col">
 
             <h6>Products</h6>
 
            
 
-          </motion.div>
+          </div>
 
           {/* CONTACT */}
-          <motion.div className="footer-col">
+          <div className="footer-col">
 
             <h6>Contact Us</h6>
 
@@ -126,10 +125,10 @@ export default function Footer() {
 
             </ul>
 
-          </motion.div>
+          </div>
 
           {/* MEDIA */}
-          <motion.div className="footer-col">
+          <div className="footer-col">
 
             <h6>Media</h6>
 
@@ -145,10 +144,10 @@ export default function Footer() {
 
             </ul>
 
-          </motion.div>
+          </div>
 
           {/* CONTACT INFO */}
-          <motion.div className="footer-contact">
+          <div className="footer-contact">
 
             <h6>Get in Touch</h6>
 
@@ -164,7 +163,7 @@ export default function Footer() {
 
             <p>🕒 10:00 AM – 8:00 PM</p>
 
-          </motion.div>
+          </div>
 
         </div>
 

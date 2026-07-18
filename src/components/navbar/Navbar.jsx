@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/optimized/logo-360.png"
 
 export default function Navbar() {
 
@@ -143,7 +143,7 @@ export default function Navbar() {
 
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="FJ Group" width="2000" height="2000" />
+            <img src={logo} alt="FJ Group" width="360" height="360" />
           </Link>
         </div>
 

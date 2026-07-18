@@ -1,35 +1,37 @@
+import { lazy, Suspense } from "react"
 import { Routes, Route } from "react-router-dom"
 
 import MainLayout from "../layouts/MainLayout"
 
 import Home from "../pages/Home/Home"
-import About from "../pages/About/About"
-import WhoWeAre from "../pages/About/WhoWeAre"   // ✅ ADDED
-import WhatWeDo from "../pages/About/WhatWeDo"
-import OurPurpose from "../pages/About/OurPurpose"
-import OurPartners from "../pages/About/OurPartners"
-import CasesSection from "../pages/About/CasesSection"
-import Services from "../pages/Solutions/Services"
-import TargetedIndustries from "../pages/Solutions/TargetedIndustries"
-import Applications from "../pages/Solutions/Applications"
-import Categories from "../pages/Solutions/Categories"
-import CentralPivotIrrigation from "../pages/Solutions/CentralPivotIrrigation"
-import Products from "../pages/Products/Products"
-import Contact from "../pages/Contact/Contact"
-import OtherEnquiries from "../pages/Contact/OtherEnquiries"
-import LatestNews from "../pages/Media/LatestNews"
-import SocialMedia from "../pages/Media/SocialMedia"
-import Blogs from "../pages/Media/Blogs"
-import BlogArticle from "../pages/Media/BlogArticle"
-import NotFound from "../pages/NotFound/NotFound"
-import NewsArticle from "../pages/Media/NewsArticle"
-import CaseStudyDetail from "../pages/About/CaseStudyDetail"
-import SolutionDetail from "../pages/About/SolutionDetail"
-import Leadership from "../pages/About/Leadership"
+const About = lazy(() => import("../pages/About/About"))
+const WhoWeAre = lazy(() => import("../pages/About/WhoWeAre"))
+const WhatWeDo = lazy(() => import("../pages/About/WhatWeDo"))
+const OurPurpose = lazy(() => import("../pages/About/OurPurpose"))
+const OurPartners = lazy(() => import("../pages/About/OurPartners"))
+const CasesSection = lazy(() => import("../pages/About/CasesSection"))
+const Services = lazy(() => import("../pages/Solutions/Services"))
+const TargetedIndustries = lazy(() => import("../pages/Solutions/TargetedIndustries"))
+const Applications = lazy(() => import("../pages/Solutions/Applications"))
+const Categories = lazy(() => import("../pages/Solutions/Categories"))
+const CentralPivotIrrigation = lazy(() => import("../pages/Solutions/CentralPivotIrrigation"))
+const Products = lazy(() => import("../pages/Products/Products"))
+const Contact = lazy(() => import("../pages/Contact/Contact"))
+const OtherEnquiries = lazy(() => import("../pages/Contact/OtherEnquiries"))
+const LatestNews = lazy(() => import("../pages/Media/LatestNews"))
+const SocialMedia = lazy(() => import("../pages/Media/SocialMedia"))
+const Blogs = lazy(() => import("../pages/Media/Blogs"))
+const BlogArticle = lazy(() => import("../pages/Media/BlogArticle"))
+const NotFound = lazy(() => import("../pages/NotFound/NotFound"))
+const NewsArticle = lazy(() => import("../pages/Media/NewsArticle"))
+const CaseStudyDetail = lazy(() => import("../pages/About/CaseStudyDetail"))
+const SolutionDetail = lazy(() => import("../pages/About/SolutionDetail"))
+const Leadership = lazy(() => import("../pages/About/Leadership"))
 
 export default function AppRoutes() {
   return (
-    <Routes>
+    <Suspense fallback={null}>
+      <Routes>
 
       {/* HOME */}
       <Route
@@ -252,6 +254,7 @@ export default function AppRoutes() {
         element={<NotFound />}
       />
 
-    </Routes>
+      </Routes>
+    </Suspense>
   )
 }

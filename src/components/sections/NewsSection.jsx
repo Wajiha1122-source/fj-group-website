@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/news.scss"
 
@@ -11,12 +10,8 @@ export default function NewsSection() {
       <div className="container">
 
         {/* HEADER */}
-        <motion.div
+        <div
           className="news-header"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
         >
           <span>READ THE LATEST NEWS</span>
 
@@ -28,20 +23,16 @@ export default function NewsSection() {
             Stay updated with the latest innovations, sustainability initiatives,
             and industrial developments shaping the future of engineering.
           </p>
-        </motion.div>
+        </div>
 
 
         {/* NEWS GRID */}
         <div className="news-grid">
 
           {newsData.slice(0, 3).map((item, index) => (
-            <motion.div
+            <div
               className="news-card"
               key={index}
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: index * 0.12 }}
             >
 
               {/* IMAGE */}
@@ -67,7 +58,7 @@ export default function NewsSection() {
 
               </div>
 
-            </motion.div>
+            </div>
           ))}
 
         </div>
