@@ -99,15 +99,6 @@ export default function Footer() {
 
           </div>
 
-          {/* PRODUCTS */}
-          <div className="footer-col">
-
-            <h6>Products</h6>
-
-           
-
-          </div>
-
           {/* CONTACT */}
           <div className="footer-col">
 

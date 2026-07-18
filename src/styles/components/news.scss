@@ -1,6 +1,6 @@
 .news-section {
   position: relative;
-  padding: 50px 0 1px; /* FIXED: reduced bottom space */
+  padding: 50px 0 64px;
   background: #f5f7fa;
   overflow: hidden;
   scroll-margin-top: 165px;
@@ -71,8 +71,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
-
-  margin-top: 1px; /* FIXED: pulls cards closer */
+  align-items: stretch;
+  margin-top: 28px;
 }
 
 /* ========================= */
@@ -80,6 +80,8 @@
 /* ========================= */
 .news-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: white;
   overflow: hidden;
   cursor: pointer;
@@ -134,6 +136,9 @@
 /* CONTENT */
 /* ========================= */
 .news-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 40px;
 }
 
@@ -165,6 +170,8 @@
 
 /* BUTTON */
 .news-content > a {
+  align-self: flex-start;
+  margin-top: auto;
   border: none;
   background: transparent;
   color: #0b1f3a;
