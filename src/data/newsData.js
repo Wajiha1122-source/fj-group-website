@@ -3,13 +3,93 @@ import news2 from "../assets/images/news2.png"
 import news3 from "../assets/images/news3.png"
 import solisPartnership from "../assets/images/partnerships/fj-solis-partnership.jpeg"
 import aePowerPartnership from "../assets/images/partnerships/fj-ae-power-partnership.jpeg"
+import psaExpo2026 from "../assets/images/news-psa-expo-2026.jpeg"
+import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.jpeg"
 
 export const newsData = [
+  {
+    image: psaExpo2026,
+    title: "FJ Group represents INVT at PSA Expo 2026",
+    desc: "FJ Group represented INVT with its partner companies at PSA Expo 2026 at Expo Center Lahore.",
+    number: "01",
+    slug: "fj-group-invt-psa-expo-2026",
+    category: "Events",
+    readTime: "4 min read",
+    intro:
+      "FJ Group represented INVT alongside its partner companies at PSA Expo 2026, held at Expo Center Lahore. The event brought together solar, energy, and technology stakeholders to discuss practical solutions for Pakistan's growing renewable energy market.",
+    highlights: [
+      "FJ Group represented INVT at PSA Expo 2026",
+      "Partner companies joined the event at Expo Center Lahore",
+      "The participation focused on solar, inverter, and energy-solution engagement"
+    ],
+    sections: [
+      {
+        heading: "Representing INVT with partner companies",
+        paragraphs: [
+          "PSA Expo 2026 created a focused platform for solar technology providers, distributors, installers, and engineering teams to connect around real market requirements.",
+          "FJ Group's presence at the event supported INVT representation and strengthened coordination with partner companies working across the energy sector."
+        ]
+      },
+      {
+        heading: "Industry engagement at Expo Center Lahore",
+        paragraphs: [
+          "The exhibition environment gave teams an opportunity to meet customers, technical partners, and business stakeholders in one place. Conversations around inverter performance, project planning, and reliable energy systems remained central to the participation.",
+          "For FJ Group, the event also supported stronger visibility in Pakistan's solar and industrial energy landscape."
+        ]
+      },
+      {
+        heading: "Focus on practical energy solutions",
+        paragraphs: [
+          "FJ Group continues to prioritize technology that can be applied confidently in field conditions. Events like PSA Expo help align product knowledge with the needs of customers, installers, and project teams.",
+          "The participation reflects FJ Group's ongoing commitment to dependable engineering support, strong partner relationships, and solutions that fit Pakistan's energy requirements."
+        ]
+      }
+    ]
+  },
+  {
+    image: komaxFlagshipStore,
+    title: "FJ Group launches KOMAX Motors and Pumps flagship store",
+    desc: "FJ Group launched a flagship store for KOMAX Motors and Pumps in South Punjab.",
+    number: "02",
+    slug: "komax-motors-pumps-flagship-store-south-punjab",
+    category: "Company Updates",
+    readTime: "4 min read",
+    intro:
+      "FJ Group has launched a flagship store for KOMAX Motors and Pumps in South Punjab, creating a stronger local access point for pumping equipment, technical guidance, and customer support.",
+    highlights: [
+      "New KOMAX Motors and Pumps flagship store launched in South Punjab",
+      "Improved access to pump and motor solutions for local customers",
+      "Focused support for agricultural, commercial, and industrial applications"
+    ],
+    sections: [
+      {
+        heading: "A dedicated access point for KOMAX solutions",
+        paragraphs: [
+          "The flagship store is designed to make KOMAX Motors and Pumps more accessible for customers across South Punjab. It supports product availability, technical consultation, and solution matching for different pumping requirements.",
+          "For agricultural, commercial, and industrial users, local access can make equipment selection and after-sales coordination more efficient."
+        ]
+      },
+      {
+        heading: "Supporting regional pumping needs",
+        paragraphs: [
+          "South Punjab has strong demand for reliable water movement, irrigation support, and motor-pump systems that can perform in demanding site conditions.",
+          "Through the new flagship store, FJ Group aims to support customers with practical product guidance, dependable supply, and a clearer path from requirement assessment to equipment selection."
+        ]
+      },
+      {
+        heading: "Strengthening service and availability",
+        paragraphs: [
+          "The launch reinforces FJ Group's focus on building regional infrastructure around trusted brands and technical support.",
+          "By combining product access with engineering understanding, the store helps customers choose solutions that are suitable for their operating environment and long-term use."
+        ]
+      }
+    ]
+  },
   {
     image: aePowerPartnership,
     title: "FJ Group strengthens solar collaboration with AE Power",
     desc: "Working together to expand access to practical, well-engineered solar energy solutions.",
-    number: "01",
+    number: "03",
     slug: "fj-group-partnership-ae-power",
     category: "Partnerships",
     readTime: "4 min read",
@@ -61,7 +141,7 @@ export const newsData = [
     image: solisPartnership,
     title: "FJ Group announces partnership with Solis",
     desc: "A new collaboration focused on dependable solar inverter technology and better-integrated energy solutions.",
-    number: "02",
+    number: "04",
     slug: "fj-group-partnership-solis",
     category: "Partnerships",
     readTime: "4 min read",
@@ -112,7 +192,7 @@ export const newsData = [
     image: news1,
     title: "FJ Group launches next-generation industrial systems",
     desc: "Building smarter infrastructure solutions for modern industries.",
-    number: "03",
+    number: "05",
     slug: "next-generation-industrial-systems",
     category: "Industrial Systems",
     readTime: "5 min read",
@@ -150,7 +230,7 @@ export const newsData = [
     image: news2,
     title: "Reducing energy consumption through intelligent engineering",
     desc: "Focused on efficient technologies for a sustainable future.",
-    number: "04",
+    number: "06",
     slug: "reducing-energy-consumption",
     category: "Energy Efficiency",
     readTime: "6 min read",
@@ -194,7 +274,7 @@ export const newsData = [
     image: news3,
     title: "Transforming industrial operations with automation",
     desc: "Delivering scalable and reliable enterprise-grade systems.",
-    number: "05",
+    number: "07",
     slug: "industrial-operations-automation",
     category: "Automation",
     readTime: "5 min read",
