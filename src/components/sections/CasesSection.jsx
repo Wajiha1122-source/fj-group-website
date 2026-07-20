@@ -28,7 +28,7 @@ export default function CasesSection() {
         {/* GRID */}
         <div className="cases-grid">
 
-          {caseStudies.map((item, index) => (
+          {caseStudies.slice(0, 4).map((item, index) => (
             <motion.div
               className="case-card"
               key={index}

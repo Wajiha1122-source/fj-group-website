@@ -1,3 +1,6 @@
+import turbineUpgradationVideo from "../assets/videos/case-studies/turbine-upgradation.mp4"
+import technoAgriFarmsVideo from "../assets/videos/case-studies/techno-agri-farms-project.mp4"
+
 const case1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
 const case2 =
@@ -8,6 +11,82 @@ const case4 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
 
 export const caseStudies = [
+  {
+    title: "Turbine Upgradation",
+    location: "Cholistan Desert",
+    video: turbineUpgradationVideo,
+    desc:
+      "Launched a turbine-to-submersible pump upgradation campaign for deep water wells in Cholistan.",
+    slug: "turbine-upgradation",
+    category: "Pump Upgradation",
+    intro:
+      "FJ Group launched a turbine upgradation campaign for deep water wells in the Cholistan Desert, helping sites move from traditional turbine arrangements toward more practical submersible pumping systems. The campaign responds to real field challenges around depth, reliability, operating efficiency, and long-term water access.",
+    highlights: [
+      "Turbine-to-submersible pump conversion",
+      "Deep well pumping support in Cholistan",
+      "Improved reliability for remote water access"
+    ],
+    sections: [
+      {
+        heading: "Why upgradation matters",
+        paragraphs: [
+          "Deep water wells in desert conditions need pumping systems that can handle demanding operating environments. Traditional turbine setups can become harder to maintain where depth, access, alignment, and mechanical wear create repeated service challenges.",
+          "The upgradation campaign focuses on improving practical operation by shifting suitable wells toward submersible pumping arrangements that are easier to integrate, protect, and maintain."
+        ]
+      },
+      {
+        heading: "System assessment and conversion",
+        paragraphs: [
+          "Each well must be reviewed before conversion. Depth, discharge requirement, water behavior, electrical supply, rising main condition, and installation access all influence the selected pump and control approach.",
+          "FJ Group's role is to connect site assessment, pump selection, installation planning, and commissioning into one clear process so the upgraded system is aligned with real operating needs."
+        ]
+      },
+      {
+        heading: "Value for deep water wells",
+        paragraphs: [
+          "A properly planned turbine-to-submersible upgrade can support better reliability, simpler maintenance, and more consistent water delivery. For remote desert sites, these improvements are especially important because downtime and service access can directly affect field operations."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Techno Agri Farms Project",
+    location: "TAF - Techno Agri Farms",
+    video: technoAgriFarmsVideo,
+    desc:
+      "Delivered a successful 150 acre pivot project for TAF under the supervision of Dr. Fartab Rana Shoukat.",
+    slug: "techno-agri-farms-project",
+    category: "Central Pivot Irrigation",
+    intro:
+      "FJ Group delivered another successful 150 acre central pivot project for TAF - Techno Agri Farms under the supervision of Dr. Fartab Rana Shoukat. The project reflects coordinated irrigation planning, practical field execution, and dependable system delivery for large-scale agricultural operations.",
+    highlights: [
+      "150 acre central pivot coverage",
+      "Project delivered for TAF - Techno Agri Farms",
+      "Supervised by Dr. Fartab Rana Shoukat"
+    ],
+    sections: [
+      {
+        heading: "Large-scale irrigation requirement",
+        paragraphs: [
+          "A 150 acre pivot project requires careful coordination between field layout, water availability, pumping requirements, pipeline planning, and system movement. The irrigation design must support consistent coverage while remaining practical for daily farm operation.",
+          "For Techno Agri Farms, the project was planned around reliable water distribution, equipment placement, and long-term usability across a large agricultural area."
+        ]
+      },
+      {
+        heading: "Execution and supervision",
+        paragraphs: [
+          "The delivery process brought together site preparation, pivot installation support, water movement planning, and commissioning checks. Supervision by Dr. Fartab Rana Shoukat helped keep the project aligned with the farm's operational expectations and agricultural goals.",
+          "FJ Group focused on practical implementation so the completed system could move from installation to working field performance with confidence."
+        ]
+      },
+      {
+        heading: "Project outcome",
+        paragraphs: [
+          "The completed 150 acre pivot project supports efficient irrigation coverage for Techno Agri Farms and strengthens the farm's capacity for managed, large-scale cultivation. It also demonstrates FJ Group's ability to deliver central pivot solutions for demanding agricultural sites."
+        ]
+      }
+    ]
+  },
   {
     title: "DNT for Central Pivot System",
     location: "Pakistan",
