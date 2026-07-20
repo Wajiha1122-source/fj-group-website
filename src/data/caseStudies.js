@@ -1,5 +1,5 @@
 import turbineUpgradationVideo from "../assets/videos/case-studies/turbine-upgradation.mp4"
-import technoAgriFarmsVideo from "../assets/videos/case-studies/techno-agri-farms-project.mp4"
+import tecnoAgriFarmsVideo from "../assets/videos/case-studies/tecno-agri-farms-project.mp4"
 
 const case1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
@@ -50,18 +50,18 @@ export const caseStudies = [
     ]
   },
   {
-    title: "Techno Agri Farms Project",
-    location: "TAF - Techno Agri Farms",
-    video: technoAgriFarmsVideo,
+    title: "Tecno Agri Farms Project",
+    location: "TAF - Tecno Agri Farms",
+    video: tecnoAgriFarmsVideo,
     desc:
       "Delivered a successful 150 acre pivot project for TAF under the supervision of Dr. Fartab Rana Shoukat.",
-    slug: "techno-agri-farms-project",
+    slug: "tecno-agri-farms-project",
     category: "Central Pivot Irrigation",
     intro:
-      "FJ Group delivered another successful 150 acre central pivot project for TAF - Techno Agri Farms under the supervision of Dr. Fartab Rana Shoukat. The project reflects coordinated irrigation planning, practical field execution, and dependable system delivery for large-scale agricultural operations.",
+      "FJ Group delivered another successful 150 acre central pivot project for TAF - Tecno Agri Farms under the supervision of Dr. Fartab Rana Shoukat. The project reflects coordinated irrigation planning, practical field execution, and dependable system delivery for large-scale agricultural operations.",
     highlights: [
       "150 acre central pivot coverage",
-      "Project delivered for TAF - Techno Agri Farms",
+      "Project delivered for TAF - Tecno Agri Farms",
       "Supervised by Dr. Fartab Rana Shoukat"
     ],
     sections: [
@@ -69,7 +69,7 @@ export const caseStudies = [
         heading: "Large-scale irrigation requirement",
         paragraphs: [
           "A 150 acre pivot project requires careful coordination between field layout, water availability, pumping requirements, pipeline planning, and system movement. The irrigation design must support consistent coverage while remaining practical for daily farm operation.",
-          "For Techno Agri Farms, the project was planned around reliable water distribution, equipment placement, and long-term usability across a large agricultural area."
+          "For Tecno Agri Farms, the project was planned around reliable water distribution, equipment placement, and long-term usability across a large agricultural area."
         ]
       },
       {
@@ -82,7 +82,7 @@ export const caseStudies = [
       {
         heading: "Project outcome",
         paragraphs: [
-          "The completed 150 acre pivot project supports efficient irrigation coverage for Techno Agri Farms and strengthens the farm's capacity for managed, large-scale cultivation. It also demonstrates FJ Group's ability to deliver central pivot solutions for demanding agricultural sites."
+          "The completed 150 acre pivot project supports efficient irrigation coverage for Tecno Agri Farms and strengthens the farm's capacity for managed, large-scale cultivation. It also demonstrates FJ Group's ability to deliver central pivot solutions for demanding agricultural sites."
         ]
       }
     ]
