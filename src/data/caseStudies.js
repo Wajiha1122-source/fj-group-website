@@ -1,5 +1,6 @@
 import turbineUpgradationVideo from "../assets/videos/case-studies/turbine-upgradation.mp4"
 import tecnoAgriFarmsVideo from "../assets/videos/case-studies/tecno-agri-farms-project.mp4"
+import tecnoAgriFarmsCardVideo from "../assets/videos/case-studies/tecno-agri-farms-card.mp4"
 
 const case1 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
@@ -53,6 +54,7 @@ export const caseStudies = [
     title: "Tecno Agri Farms Project",
     location: "TAF - Tecno Agri Farms",
     video: tecnoAgriFarmsVideo,
+    cardVideo: tecnoAgriFarmsCardVideo,
     desc:
       "Delivered a successful 150 acre pivot project for TAF under the supervision of Dr. Fartab Rana Shoukat.",
     slug: "tecno-agri-farms-project",

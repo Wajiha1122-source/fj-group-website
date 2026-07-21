@@ -57,7 +57,7 @@ export default function CasesSection() {
                   loop
                   playsInline
                 >
-                  <source src={item.video} type="video/mp4" />
+                  <source src={item.cardVideo || item.video} type="video/mp4" />
                 </video>
 
                 <div className="case-overlay" />
