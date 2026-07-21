@@ -5,7 +5,7 @@ import solisPartnership from "../assets/images/partnerships/fj-solis-partnership
 import aePowerPartnership from "../assets/images/partnerships/fj-ae-power-partnership.jpeg"
 import psaExpo2026 from "../assets/images/news-psa-expo-2026.jpeg"
 import psaExpo2026Second from "../assets/images/news-psa-expo-2026-2.jpeg"
-import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.jpeg"
+import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.png"
 
 export const newsData = [
   {
