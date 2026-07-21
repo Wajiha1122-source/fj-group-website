@@ -288,23 +288,23 @@ export default function HeroSlider() {
             <div className="quote-grid">
 
               <div className="field">
-                <span className="label">Full Name</span>
-                <input name="name" onChange={handleChange} />
+                <label className="label" htmlFor="quote-name">Full Name</label>
+                <input id="quote-name" name="name" onChange={handleChange} />
               </div>
 
               <div className="field">
-                <span className="label">Phone Number</span>
-                <input name="phone" onChange={handleChange} />
+                <label className="label" htmlFor="quote-phone">Phone Number</label>
+                <input id="quote-phone" name="phone" onChange={handleChange} />
               </div>
 
               <div className="field">
-                <span className="label">City</span>
-                <input name="city" onChange={handleChange} />
+                <label className="label" htmlFor="quote-city">City</label>
+                <input id="quote-city" name="city" onChange={handleChange} />
               </div>
 
               <div className="field">
-                <span className="label">System Type</span>
-                <select name="system" defaultValue="" onChange={handleChange}>
+                <label className="label" htmlFor="quote-system">System Type</label>
+                <select id="quote-system" name="system" defaultValue="" onChange={handleChange}>
                   <option value="" disabled>Select system</option>
                   <option>Residential</option>
                   <option>Commercial</option>
@@ -316,8 +316,8 @@ export default function HeroSlider() {
             </div>
 
             <div className="field full">
-              <span className="label">Monthly Consumption (kWh)</span>
-              <input name="consumption" onChange={handleChange} />
+              <label className="label" htmlFor="quote-consumption">Monthly Consumption (kWh)</label>
+              <input id="quote-consumption" name="consumption" onChange={handleChange} />
             </div>
 
             <button className="submit-btn" onClick={handleSubmit}>Get My Quote</button>

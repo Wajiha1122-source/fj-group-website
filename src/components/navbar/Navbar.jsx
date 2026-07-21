@@ -148,9 +148,9 @@ export default function Navbar() {
         </div>
 
         {/* ✅ HAMBURGER (MOBILE ONLY) */}
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="hamburger" type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           ☰
-        </div>
+        </button>
 
       </div>
 
@@ -172,7 +172,13 @@ export default function Navbar() {
                 {item.type === "single" ? (
                   <Link to={item.path}>{item.title}</Link>
                 ) : (
-                  <Link to="#">{item.title}</Link>
+                  <button
+                    type="button"
+                    className="menu-trigger"
+                    aria-expanded={mobileSubmenuOpen === index || activeMenu === index}
+                  >
+                    {item.title}
+                  </button>
                 )}
                 {/* Mobile Submenu - only visible on mobile */}
                 {item.links && mobileSubmenuOpen === index && (
@@ -208,6 +214,7 @@ export default function Navbar() {
               <div className="search-box">
 
                 <input
+                  aria-label="Search website"
                   type="text"
                   placeholder="Search website..."
                   value={query}

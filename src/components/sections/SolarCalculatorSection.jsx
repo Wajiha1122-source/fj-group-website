@@ -52,8 +52,9 @@ export default function SolarCalculatorSection() {
           <h3>System Size Calculator</h3>
 
           <div className="field">
-            <label>Monthly Units (kWh)</label>
+            <label htmlFor="monthly-units">Monthly Units (kWh)</label>
             <input
+              id="monthly-units"
               type="number"
               placeholder="e.g. 500"
               value={units}

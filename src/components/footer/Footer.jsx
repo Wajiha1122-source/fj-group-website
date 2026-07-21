@@ -10,6 +10,42 @@ import {
   FaYoutube
 } from "react-icons/fa"
 
+const footerGroups = [
+  {
+    title: "About Us",
+    links: [
+      { label: "Who We Are", to: "/about/who-we-are" },
+      { label: "What We Do", to: "/about/what-we-do" },
+      { label: "Our Purpose", to: "/about/purpose" },
+      { label: "Our Partners", to: "/about/partners" },
+      { label: "Case Studies", to: "/about/case-studies" }
+    ]
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Services", to: "/solutions/services" },
+      { label: "Targeted Industries", to: "/solutions/industries" },
+      { label: "Applications", to: "/solutions/applications" },
+      { label: "Categories", to: "/solutions/categories" }
+    ]
+  },
+  {
+    title: "Contact Us",
+    links: [
+      { label: "Products & Services", to: "/contact/products&services" },
+      { label: "Other Enquiries", to: "/contact/enquiries" }
+    ]
+  },
+  {
+    title: "Media",
+    links: [
+      { label: "Latest News", to: "/media/news" },
+      { label: "Social Media", to: "/media/social" }
+    ]
+  }
+]
+
 export default function Footer() {
   return (
     <footer className="footer-main">
@@ -41,101 +77,21 @@ export default function Footer() {
 
           </div>
 
-          {/* ABOUT US */}
-          <div className="footer-col">
+          {footerGroups.map((group) => (
+            <div className="footer-col" key={group.title}>
 
-            <h6>About Us</h6>
+              <h6>{group.title}</h6>
 
-            <ul>
+              <ul>
+                {group.links.map((link) => (
+                  <li key={link.to}>
+                    <Link to={link.to}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
 
-              <Link to="/about/who-we-are">
-                <li>Who We Are</li>
-              </Link>
-
-              <Link to="/about/what-we-do">
-                <li>What We Do</li>
-              </Link>
-
-              <Link to="/about/purpose">
-                <li>Our Purpose</li>
-              </Link>
-
-              <Link to="/about/partners">
-                <li>Our Partners</li>
-              </Link>
-
-              <Link to="/about/case-studies">
-                <li>Case Studies</li>
-              </Link>
-
-            </ul>
-
-          </div>
-
-          {/* SOLUTIONS */}
-          <div className="footer-col">
-
-            <h6>Solutions</h6>
-
-            <ul>
-
-              <Link to="/solutions/services">
-                <li>Services</li>
-              </Link>
-
-              <Link to="/solutions/industries">
-                <li>Targeted Industries</li>
-              </Link>
-
-              <Link to="/solutions/applications">
-                <li>Applications</li>
-              </Link>
-
-              <Link to="/solutions/categories">
-                <li>Categories</li>
-              </Link>
-
-            </ul>
-
-          </div>
-
-          {/* CONTACT */}
-          <div className="footer-col">
-
-            <h6>Contact Us</h6>
-
-            <ul>
-
-              <Link to="/contact/products&services">
-                <li>Products & Services</li>
-              </Link>
-
-              <Link to="/contact/enquiries">
-                <li>Other Enquiries</li>
-              </Link>
-
-            </ul>
-
-          </div>
-
-          {/* MEDIA */}
-          <div className="footer-col">
-
-            <h6>Media</h6>
-
-            <ul>
-
-              <Link to="/media/news">
-                <li>Latest News</li>
-              </Link>
-
-              <Link to="/media/social">
-                <li>Social Media</li>
-              </Link>
-
-            </ul>
-
-          </div>
+            </div>
+          ))}
 
           {/* CONTACT INFO */}
           <div className="footer-contact">
@@ -180,15 +136,30 @@ export default function Footer() {
 
           <div className="social-icons">
 
-            <a href="https://www.facebook.com/fjtradingcorporation/">
+            <a
+              href="https://www.facebook.com/fjtradingcorporation/"
+              aria-label="FJ Group on Facebook"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="https://www.instagram.com/fjgroup.pk?igsh=dzRwdWY5am54dXAw">
+            <a
+              href="https://www.instagram.com/fjgroup.pk?igsh=dzRwdWY5am54dXAw"
+              aria-label="FJ Group on Instagram"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram />
             </a>
 
-            <a href="https://youtube.com/@fjgrouppk?si=f5DvNaA1kXabAEx2">
+            <a
+              href="https://youtube.com/@fjgrouppk?si=f5DvNaA1kXabAEx2"
+              aria-label="FJ Group on YouTube"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaYoutube />
             </a>
 

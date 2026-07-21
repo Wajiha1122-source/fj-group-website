@@ -231,23 +231,23 @@ export default function PersonalizedSolution() {
           <div className="form-grid">
 
             <div className="field">
-              <label>Name</label>
-              <input name="name" onChange={handleChange} />
+              <label htmlFor="personal-name">Name</label>
+              <input id="personal-name" name="name" onChange={handleChange} />
             </div>
 
             <div className="field">
-              <label>Phone</label>
-              <input name="phone" onChange={handleChange} />
+              <label htmlFor="personal-phone">Phone</label>
+              <input id="personal-phone" name="phone" onChange={handleChange} />
             </div>
 
             <div className="field">
-              <label>City</label>
-              <input name="city" onChange={handleChange} />
+              <label htmlFor="personal-city">City</label>
+              <input id="personal-city" name="city" onChange={handleChange} />
             </div>
 
             <div className="field">
-              <label>System Type</label>
-              <select name="system" defaultValue="" onChange={handleChange}>
+              <label htmlFor="personal-system">System Type</label>
+              <select id="personal-system" name="system" defaultValue="" onChange={handleChange}>
                 <option value="" disabled>Select</option>
                 <option>Residential</option>
                 <option>Commercial</option>
@@ -257,8 +257,8 @@ export default function PersonalizedSolution() {
             </div>
 
             <div className="field">
-              <label>Panel Type</label>
-              <select name="panelType" defaultValue="" onChange={handleChange}>
+              <label htmlFor="personal-panel-type">Panel Type</label>
+              <select id="personal-panel-type" name="panelType" defaultValue="" onChange={handleChange}>
                 <option value="" disabled>Select Panel</option>
                 <option>JINKO</option>
                 <option>CANADIAN</option>
@@ -275,8 +275,8 @@ export default function PersonalizedSolution() {
             </div>
 
             <div className="field">
-              <label>Inverter</label>
-              <select name="inverter" defaultValue="" onChange={handleChange}>
+              <label htmlFor="personal-inverter">Inverter</label>
+              <select id="personal-inverter" name="inverter" defaultValue="" onChange={handleChange}>
                 <option value="" disabled>Select Inverter</option>
                 <option>Solis</option>
                 <option>Aepower</option>
