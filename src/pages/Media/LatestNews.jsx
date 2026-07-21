@@ -40,7 +40,9 @@ export default function LatestNews() {
               viewport={{ once: false }}
             >
               <div className="news-image">
-                <img src={item.image} alt="" />
+                {(item.images || [item.image]).map((image) => (
+                  <img key={image} src={image} alt="" loading="lazy" decoding="async" />
+                ))}
               </div>
 
               <div className="news-content">

@@ -4,11 +4,13 @@ import news3 from "../assets/images/news3.png"
 import solisPartnership from "../assets/images/partnerships/fj-solis-partnership.jpeg"
 import aePowerPartnership from "../assets/images/partnerships/fj-ae-power-partnership.jpeg"
 import psaExpo2026 from "../assets/images/news-psa-expo-2026.jpeg"
+import psaExpo2026Second from "../assets/images/news-psa-expo-2026-2.jpeg"
 import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.jpeg"
 
 export const newsData = [
   {
     image: psaExpo2026,
+    images: [psaExpo2026, psaExpo2026Second],
     title: "FJ Group represents INVT at PSA Expo 2026",
     desc: "FJ Group represented INVT with its partner companies at PSA Expo 2026 at Expo Center Lahore.",
     number: "01",

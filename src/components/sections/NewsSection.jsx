@@ -37,7 +37,15 @@ export default function NewsSection() {
 
               {/* IMAGE */}
               <div className="news-image">
-                <img src={item.image} alt="" loading="lazy" decoding="async" />
+                {(item.images || [item.image]).map((image) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ))}
               </div>
 
 
