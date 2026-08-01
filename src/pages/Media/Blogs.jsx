@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { FiArrowRight, FiBookOpen, FiCheckCircle } from "react-icons/fi"
+import { FiArrowRight, FiBookOpen } from "react-icons/fi"
 
 import { blogData } from "../../data/blogData"
 import "../../styles/components/blogs.scss"
@@ -71,23 +71,7 @@ export default function Blogs() {
             </Link>
 
             <div className="blog-feature__content">
-              <div className="blog-feature__meta">    
-                <span>{blog.number}</span>
-                <span>{blog.category}</span>
-                <span>{blog.readTime}</span>
-              </div>
-
               <h2>{blog.title}</h2>
-              <p>{blog.subtitle}</p>
-
-              <ul className="blog-feature__highlights">
-                {blog.highlights.map((highlight) => (
-                  <li key={highlight}>
-                    <FiCheckCircle />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
 
               <div className="blog-feature__actions">
                 <Link to={`/blogs/${blog.slug}`}>
