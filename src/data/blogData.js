@@ -1,5 +1,7 @@
 import solarTubeWellPriceImage from "../assets/images/blogs/solar-tube-well-price-in-pakistan.png"
 import solarVsDieselTubeWellImage from "../assets/images/blogs/solar-vs-diesel-tube-well.png"
+import boreWellDrillingPoster from "../assets/images/blogs/bore-well-drilling-cost-pakistan-2026-poster.jpg"
+import boreWellDrillingVideo from "../assets/videos/blogs/bore-well-drilling-cost-pakistan-2026.mp4"
 
 export const blogData = [
   {
@@ -127,6 +129,73 @@ export const blogData = [
         paragraphs: [
           "A diesel tube well may still make sense where pumping is irregular, night operation is essential, or upfront budget is very limited. A solar tube well is usually stronger where daytime pumping is common, fuel access is difficult, and the owner wants lower long-term running costs.",
           "The best decision should be based on water demand, operating hours, bore depth, pump horsepower, site location, and expected payback period. For many agricultural applications, a properly designed solar tube well offers the better long-term model."
+        ]
+      }
+    ]
+  },
+  {
+    number: "03",
+    slug: "bore-well-drilling-cost-pakistan-2026",
+    category: "Bore Well Drilling",
+    readTime: "5 min read",
+    title: "Bore Well Drilling Cost in Pakistan (2026): A Quick Guide",
+    image: boreWellDrillingPoster,
+    video: boreWellDrillingVideo,
+    imageAlt:
+      "Bore well drilling site with water flowing from a large discharge pipe",
+    subtitle:
+      "A quick guide to the main factors that affect bore well drilling cost, from depth and ground conditions to casing, pumps, and solar options.",
+    accent: "pricing",
+    metaDescription:
+      "Learn what affects bore well drilling cost in Pakistan, from depth and ground conditions to casing, pumps and solar options.",
+    intro:
+      "A dependable water supply is essential for farms, homes, factories, and commercial projects. Bore well drilling provides access to groundwater, but the total cost can vary from one site to another. This quick guide explains the main factors that shape the price and help you plan the right solution.",
+    highlights: [
+      "Understand the drilling factors that shape the final quotation",
+      "Plan casing, bore development, and pump selection together",
+      "Compare electric and solar options for long-term operation"
+    ],
+    sections: [
+      {
+        heading: "What Affects Bore Well Drilling Cost?",
+        paragraphs: [
+          "The final cost depends mainly on drilling depth, soil or rock conditions, bore diameter, and the time required on site. Deeper drilling and hard formations generally need more equipment, fuel, and labour.",
+          "Access for the drilling rig can also affect the quotation. A site that is difficult to reach or prepare may require additional handling before drilling can begin safely."
+        ]
+      },
+      {
+        heading: "Casing and Bore Development",
+        paragraphs: [
+          "Good-quality casing protects the bore from collapse and helps prevent surface contamination. It is one of the most important parts of building a reliable groundwater source.",
+          "After drilling, the bore is developed to remove sand, mud, and debris. These steps are important for reliable water flow and a longer working life."
+        ]
+      },
+      {
+        heading: "Choosing the Right Pump",
+        paragraphs: [
+          "Pump selection depends on the bore depth, water level, required discharge, and application. A correctly sized submersible or turbine pump delivers better efficiency and reduces unnecessary maintenance.",
+          "The pump and installation are usually quoted separately from drilling because the final pumping system depends on site conditions and water demand."
+        ]
+      },
+      {
+        heading: "Electric or Solar Tube Well?",
+        paragraphs: [
+          "Where grid power is costly or unavailable, a solar tube well can reduce day-to-day operating expenses. The initial investment depends on pump size, solar panels, inverter, and system design.",
+          "For agricultural and remote sites, solar pumping can be a practical long-term choice when the system is designed around real water demand and daylight operating hours."
+        ]
+      },
+      {
+        heading: "Why a Site Assessment Matters",
+        paragraphs: [
+          "There is no single fixed rate for every bore well. A professional site assessment helps estimate the likely depth, ground conditions, water demand, and suitable equipment.",
+          "It also allows the contractor to provide a clearer quotation before work begins, reducing guesswork and helping the owner plan the full drilling and pumping scope."
+        ]
+      },
+      {
+        heading: "Conclusion",
+        paragraphs: [
+          "Bore well drilling cost in Pakistan depends on more than depth alone. Proper planning, suitable casing, and correct pump selection can improve performance and protect your investment.",
+          "Choosing an experienced drilling team is the best way to achieve a dependable water solution. Contact FJ Group for a site assessment and a solution tailored to your drilling, casing, pump, and solar requirements."
         ]
       }
     ]

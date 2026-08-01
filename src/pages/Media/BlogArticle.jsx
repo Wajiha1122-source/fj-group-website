@@ -58,7 +58,13 @@ export default function BlogArticle() {
             transition={{ duration: 0.65, delay: 0.08 }}
             viewport={{ once: false, amount: 0.22 }}
           >
-            <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+            {blog.video ? (
+              <video controls playsInline preload="metadata" poster={blog.image}>
+                <source src={blog.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+            )}
           </motion.figure>
 
           {blog.sections.map((section, index) => (

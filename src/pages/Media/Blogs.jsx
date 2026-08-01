@@ -53,7 +53,19 @@ export default function Blogs() {
               className={`blog-feature__media blog-feature__media--${blog.imageFit || "cover"}`}
               to={`/blogs/${blog.slug}`}
             >
-              <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+              {blog.video ? (
+                <video
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster={blog.image}
+                  aria-label={blog.imageAlt}
+                >
+                  <source src={blog.video} type="video/mp4" />
+                </video>
+              ) : (
+                <img src={blog.image} alt={blog.imageAlt} loading="lazy" />
+              )}
             </Link>
 
             <div className="blog-feature__content">
