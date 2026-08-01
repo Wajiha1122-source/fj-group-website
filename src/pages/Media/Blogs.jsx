@@ -55,9 +55,11 @@ export default function Blogs() {
             >
               {blog.video ? (
                 <video
+                  autoPlay
+                  loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   poster={blog.image}
                   aria-label={blog.imageAlt}
                 >
