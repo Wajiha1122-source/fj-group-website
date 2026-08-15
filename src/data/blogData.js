@@ -199,5 +199,86 @@ export const blogData = [
         ]
       }
     ]
+  },
+  {
+    number: "04",
+    slug: "choose-right-submersible-pump-bore-well-pakistan",
+    category: "Pumping Insights",
+    readTime: "6 min read",
+    title: "How to Choose the Right Submersible Pump for a Bore Well in Pakistan",
+    image: boreWellDrillingPoster,
+    imageAlt:
+      "Bore well pumping site with water flowing from a large discharge pipe",
+    subtitle:
+      "A practical guide to selecting a submersible pump based on water level, pumping head, flow rate, horsepower, power source, and site conditions.",
+    accent: "comparison",
+    metaDescription:
+      "Learn how to choose the right submersible pump for a bore well in Pakistan based on water level, pumping head, flow rate, horsepower, power source, and site conditions.",
+    intro:
+      "Choosing the right submersible pump is essential for reliable water supply, efficient energy use, and longer equipment life. The pump must match the bore depth, water level, required discharge, power source, and actual operating conditions.",
+    highlights: [
+      "Match the pump to the bore depth and pumping water level",
+      "Calculate the required discharge and total pumping head",
+      "Choose an efficient power source and suitable protection equipment"
+    ],
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "A bore well may be drilled correctly, but it cannot deliver dependable water without a properly selected pump. An undersized pump may provide insufficient flow, while an oversized pump can consume unnecessary energy and place extra pressure on the bore and delivery system.",
+          "For agricultural, domestic, commercial, and industrial users in Pakistan, pump selection should be based on site measurements rather than horsepower alone. A professional assessment helps ensure that the complete system performs efficiently."
+        ]
+      },
+      {
+        heading: "Bore Depth And Water Level",
+        paragraphs: [
+          "Bore depth and water level are two different measurements. Bore depth is the total drilled depth, while the water level shows where groundwater is available inside the bore.",
+          "The pump must lift water from its actual pumping level to the required delivery point. If the water level drops during operation, the pump must still provide enough pressure and flow. These measurements are necessary before choosing a pump model."
+        ]
+      },
+      {
+        heading: "Required Water Flow",
+        paragraphs: [
+          "The correct discharge depends on how the water will be used. A domestic property may require water for storage tanks and daily consumption, while a farm may need a much higher flow for irrigation.",
+          "Industrial facilities, livestock farms, housing projects, and central pivot systems may also have different operating requirements. Selecting a pump without calculating the required flow can result in weak performance or unnecessary energy consumption."
+        ]
+      },
+      {
+        heading: "Pumping Head And Pipe Conditions",
+        paragraphs: [
+          "Pumping head is the total height and pressure the pump must overcome to deliver water. It includes the water level, vertical delivery height, pipe length, pipe diameter, and pressure losses caused by fittings and valves.",
+          "Long pipelines, narrow pipes, and multiple bends increase resistance. A pump must therefore be selected according to the complete water-delivery system, not only the depth of the bore well."
+        ]
+      },
+      {
+        heading: "Pump Horsepower And Efficiency",
+        paragraphs: [
+          "A higher-horsepower pump is not automatically the better option. The selected motor should provide the required head and discharge while operating within an efficient range.",
+          "An oversized pump may increase electricity use and create excessive pressure. An undersized pump may run for longer periods without meeting the required water demand. Correct sizing improves performance and helps protect both the pump and motor."
+        ]
+      },
+      {
+        heading: "Electric Or Solar Submersible Pump",
+        paragraphs: [
+          "Submersible pumps can operate through grid electricity, generators, or solar power. The most suitable option depends on energy availability, operating hours, pump size, and site location.",
+          "Solar pumping is particularly useful for farms and remote areas where grid electricity is unreliable or diesel is expensive. An AC submersible pump can also be operated through a properly sized solar inverter, provided the panels, cables, controls, and protection equipment are designed for the motor."
+        ]
+      },
+      {
+        heading: "Installation And Pump Protection",
+        paragraphs: [
+          "Correct installation is important for the working life of a submersible pump. The pump should be positioned safely above the bottom of the bore and connected with suitable pipe, cable, control equipment, and safety devices.",
+          "Protection against dry running, voltage fluctuations, overloading, and phase failure can reduce the risk of damage. Regular inspection of electrical connections, water flow, and system pressure also helps prevent unexpected breakdowns."
+        ]
+      },
+      {
+        heading: "Which Submersible Pump Should You Choose?",
+        paragraphs: [
+          "The right submersible pump should be selected according to bore depth, pumping water level, required discharge, total pumping head, pipe conditions, operating hours, and available power source.",
+          "FJ Group provides bore well drilling, pump selection, installation, and solar pumping solutions for agricultural, domestic, commercial, and industrial projects. A professional site assessment can help identify the most suitable system for reliable and efficient water delivery.",
+          "Contact FJ Group for a site assessment and a pumping solution designed around your bore and water requirements."
+        ]
+      }
+    ]
   }
 ]
