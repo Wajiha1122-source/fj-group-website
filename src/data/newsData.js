@@ -17,7 +17,6 @@ export const newsData = [
       {
         type: "video",
         src: independenceDayVideo,
-        poster: independenceDayCelebration,
         alt: "FJ Group Independence Day celebration video"
       },
       {

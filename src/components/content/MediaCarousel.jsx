@@ -9,7 +9,7 @@ export default function MediaCarousel({ media, className = "", eager = false }) 
   useEffect(() => {
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % media.length)
-    }, 5000)
+    }, 3500)
 
     return () => window.clearInterval(interval)
   }, [media])
@@ -41,7 +41,7 @@ export default function MediaCarousel({ media, className = "", eager = false }) 
             loop
             playsInline
             preload="metadata"
-            poster={item.poster}
+            poster={item.poster || undefined}
             aria-label={item.alt}
           >
             <source src={item.src} type="video/mp4" />
