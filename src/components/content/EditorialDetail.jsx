@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { FiArrowLeft, FiArrowRight, FiCheck } from "react-icons/fi"
 
+import MediaCarousel from "./MediaCarousel"
 import "../../styles/components/editorialDetail.scss"
 
 export default function EditorialDetail({
@@ -42,14 +43,20 @@ export default function EditorialDetail({
       }`}
     >
       <header className="editorial-detail__hero">
-        {content.image && (
+        {content.media ? (
+          <MediaCarousel
+            media={content.media}
+            className="editorial-detail__hero-image"
+            eager
+          />
+        ) : content.image ? (
           <img
             className="editorial-detail__hero-image"
             src={content.image}
             alt=""
           />
-        )}
-        {content.video && (
+        ) : null}
+        {!content.media && content.video && (
           <video
             className="editorial-detail__hero-image"
             autoPlay

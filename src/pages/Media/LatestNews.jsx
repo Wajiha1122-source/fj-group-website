@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
+import MediaCarousel from "../../components/content/MediaCarousel"
 import { newsData } from "../../data/newsData"
 import "../../styles/components/latestnews.scss"
 
@@ -39,11 +40,15 @@ export default function LatestNews() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: false }}
             >
-              <div className="news-image">
-                {(item.images || [item.image]).map((image) => (
-                  <img key={image} src={image} alt="" loading="lazy" decoding="async" />
-                ))}
-              </div>
+              {item.media ? (
+                <MediaCarousel media={item.media} className="news-image" />
+              ) : (
+                <div className="news-image">
+                  {(item.images || [item.image]).map((image) => (
+                    <img key={image} src={image} alt="" loading="lazy" decoding="async" />
+                  ))}
+                </div>
+              )}
 
               <div className="news-content">
                 <div className="news-number">{item.number}</div>

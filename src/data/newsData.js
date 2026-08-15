@@ -6,14 +6,75 @@ import aePowerPartnership from "../assets/images/partnerships/fj-ae-power-partne
 import psaExpo2026 from "../assets/images/news-psa-expo-2026.jpeg"
 import psaExpo2026Second from "../assets/images/news-psa-expo-2026-2.jpeg"
 import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.jpg"
+import independenceDayCelebration from "../assets/images/news/independence-day-2026/celebration.webp"
+import independenceDayCake from "../assets/images/news/independence-day-2026/cake.webp"
+import independenceDayVideo from "../assets/videos/news/fj-group-independence-day-2026.mp4"
 
 export const newsData = [
+  {
+    image: independenceDayCelebration,
+    media: [
+      {
+        type: "video",
+        src: independenceDayVideo,
+        poster: independenceDayCelebration,
+        alt: "FJ Group Independence Day celebration video"
+      },
+      {
+        type: "image",
+        src: independenceDayCelebration,
+        alt: "FJ Group team and families celebrating Pakistan Independence Day"
+      },
+      {
+        type: "image",
+        src: independenceDayCake,
+        alt: "FJ Group Independence Day cake decorated in Pakistan's national colours"
+      }
+    ],
+    title: "FJ Group Celebrates Pakistan's Independence Day",
+    desc: "FJ Group marked 14 August with a joyful celebration of unity, pride, and Pakistan's independent spirit.",
+    number: "01",
+    slug: "fj-group-celebrates-pakistan-independence-day-2026",
+    category: "Company Updates",
+    readTime: "3 min read",
+    metaDescription:
+      "FJ Group celebrates Pakistan's Independence Day with its team and families, honouring unity, national pride, and the spirit of 14 August.",
+    intro:
+      "FJ Group celebrated Pakistan's Independence Day with a warm gathering that brought colleagues and families together in the national colours of green and white.",
+    highlights: [
+      "A shared celebration of Pakistan's independence",
+      "Colleagues and families joined the occasion",
+      "The gathering reflected unity, pride, and optimism"
+    ],
+    sections: [
+      {
+        heading: "Celebrating 14 August Together",
+        paragraphs: [
+          "The FJ Group team marked Independence Day with a joyful event inspired by Pakistan's national spirit. Green-and-white decorations, flags, and a commemorative cake created a festive setting for the occasion.",
+          "The celebration offered colleagues and families a chance to share meaningful moments and reflect on the values that bring communities together."
+        ]
+      },
+      {
+        heading: "A Message of Unity and Pride",
+        paragraphs: [
+          "Independence Day is an opportunity to honour the country's history while looking ahead with responsibility and confidence.",
+          "FJ Group remains committed to contributing through dependable engineering, sustainable solutions, and work that supports Pakistan's continued progress."
+        ]
+      },
+      {
+        heading: "Looking Forward Together",
+        paragraphs: [
+          "The gathering closed with a shared message of unity, optimism, and gratitude. FJ Group wishes everyone a peaceful and proud Independence Day. Pakistan Zindabad!"
+        ]
+      }
+    ]
+  },
   {
     image: psaExpo2026,
     images: [psaExpo2026, psaExpo2026Second],
     title: "FJ Group represents INVT at PSA Expo 2026",
     desc: "FJ Group represented INVT with its partner companies at PSA Expo 2026 at Expo Center Lahore.",
-    number: "01",
+    number: "02",
     slug: "fj-group-invt-psa-expo-2026",
     category: "Events",
     readTime: "4 min read",
@@ -52,7 +113,7 @@ export const newsData = [
     image: komaxFlagshipStore,
     title: "FJ Group launches KOMAX Motors and Pumps flagship store",
     desc: "FJ Group launched a flagship store for KOMAX Motors and Pumps in South Punjab.",
-    number: "02",
+    number: "03",
     slug: "komax-motors-pumps-flagship-store-south-punjab",
     category: "Company Updates",
     readTime: "4 min read",
@@ -91,7 +152,7 @@ export const newsData = [
     image: aePowerPartnership,
     title: "FJ Group strengthens solar collaboration with AE Power",
     desc: "Working together to expand access to practical, well-engineered solar energy solutions.",
-    number: "03",
+    number: "04",
     slug: "fj-group-partnership-ae-power",
     category: "Partnerships",
     readTime: "4 min read",
@@ -143,7 +204,7 @@ export const newsData = [
     image: solisPartnership,
     title: "FJ Group announces partnership with Solis",
     desc: "A new collaboration focused on dependable solar inverter technology and better-integrated energy solutions.",
-    number: "04",
+    number: "05",
     slug: "fj-group-partnership-solis",
     category: "Partnerships",
     readTime: "4 min read",
@@ -194,7 +255,7 @@ export const newsData = [
     image: news1,
     title: "FJ Group launches next-generation industrial systems",
     desc: "Building smarter infrastructure solutions for modern industries.",
-    number: "05",
+    number: "06",
     slug: "next-generation-industrial-systems",
     category: "Industrial Systems",
     readTime: "5 min read",
@@ -232,7 +293,7 @@ export const newsData = [
     image: news2,
     title: "Reducing energy consumption through intelligent engineering",
     desc: "Focused on efficient technologies for a sustainable future.",
-    number: "06",
+    number: "07",
     slug: "reducing-energy-consumption",
     category: "Energy Efficiency",
     readTime: "6 min read",
@@ -276,7 +337,7 @@ export const newsData = [
     image: news3,
     title: "Transforming industrial operations with automation",
     desc: "Delivering scalable and reliable enterprise-grade systems.",
-    number: "07",
+    number: "08",
     slug: "industrial-operations-automation",
     category: "Automation",
     readTime: "5 min read",
