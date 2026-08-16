@@ -1,4 +1,10 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
+
+import drillingImage from "../../assets/images/optimized/drilling-water-site-1200.jpg"
+import pumpingImage from "../../assets/images/optimized/solar-pump-flow-1200.jpg"
+import infrastructureImage from "../../assets/images/optimized/solar-water-system-1200.jpg"
+import renewableImage from "../../assets/images/optimized/solar-panel-field-1200.jpg"
 import "../../styles/components/categories.scss"
 
 // ================= CLOUDINARY VIDEOS =================
@@ -18,24 +24,51 @@ const categories = [
   {
     title: "Groundwater & Drilling Systems",
     desc: "Advanced drilling solutions designed for deep groundwater extraction, borewell development, and industrial exploration projects.",
-    video: vid1
+    video: vid1,
+    image: drillingImage
   },
   {
     title: "Fluid Transfer & Pumping Systems",
     desc: "High-efficiency pumping solutions for agriculture, industry, and municipal water distribution with long-term operational reliability.",
-    video: vid2
+    video: vid2,
+    image: pumpingImage
   },
   {
     title: "Water Infrastructure Components",
     desc: "Complete range of pipes, valves, fittings, and accessories supporting modern water supply and distribution networks.",
-    video: vid3
+    video: vid3,
+    image: infrastructureImage
   },
   {
     title: "Renewable Energy Water Systems",
     desc: "Solar-powered water pumping and energy systems using advanced inverter technology for sustainable infrastructure.",
-    video: vid4
+    video: vid4,
+    image: renewableImage
   }
 ]
+
+function CategoryMedia({ item }) {
+  const [videoFailed, setVideoFailed] = useState(false)
+
+  if (videoFailed) {
+    return <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+  }
+
+  return (
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster={item.image}
+      aria-label={item.title}
+      onError={() => setVideoFailed(true)}
+    >
+      <source src={item.video} type="video/mp4" />
+    </video>
+  )
+}
 
 export default function Categories() {
   return (
@@ -79,9 +112,7 @@ export default function Categories() {
 
             {/* VIDEO */}
             <div className="category-video">
-              <video autoPlay muted loop playsInline>
-                <source src={item.video} type="video/mp4" />
-              </video>
+              <CategoryMedia item={item} />
             </div>
 
             {/* TEXT */}

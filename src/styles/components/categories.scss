@@ -55,14 +55,17 @@
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 }
 
-.category-video video {
+.category-video video,
+.category-video img {
+  display: block;
   width: 100%;
   height: 380px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.category-video:hover video {
+.category-video:hover video,
+.category-video:hover img {
   transform: scale(1.05);
 }
 
@@ -101,7 +104,8 @@
     flex-direction: column;
   }
 
-  .category-video video {
+  .category-video video,
+  .category-video img {
     height: 260px;
   }
 
