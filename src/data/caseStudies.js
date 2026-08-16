@@ -4,11 +4,6 @@ import tecnoAgriFarmsCardVideo from "../assets/videos/case-studies/tecno-agri-fa
 import dntCentralPivotVideo from "../assets/videos/categories/groundwater-drilling.mp4"
 import solarIrrigationVideo from "../assets/videos/categories/renewable-energy-water.mp4"
 
-const case3 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
-const case4 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
-
 export const caseStudies = [
   {
     title: "Turbine Upgradation",
@@ -166,94 +161,6 @@ export const caseStudies = [
       {
         label: "INVT solar pump inverter solutions",
         url: "https://www.invt.com/solutions/solar-pump"
-      }
-    ]
-  },
-  {
-    title: "Deep Well Drilling Project",
-    location: "Rural Infrastructure",
-    video: case3,
-    desc:
-      "Executed precision deep-well drilling for reliable groundwater extraction.",
-    slug: "deep-well-drilling",
-    category: "Drilling",
-    intro:
-      "The deep-well project required a controlled drilling process and a practical completion strategy to support groundwater access for rural infrastructure.",
-    highlights: [
-      "Site and formation awareness",
-      "Controlled bore construction",
-      "Preparation for pump installation"
-    ],
-    sections: [
-      {
-        heading: "Understanding the site",
-        paragraphs: [
-          "A groundwater well must respond to local ground conditions, the intended abstraction requirement, and the equipment that will later operate inside the bore. Early planning considers expected depth, bore diameter, drilling method, casing needs, and site access.",
-          "Groundwater availability and quality can vary significantly, so field observations and appropriate testing remain important parts of well development."
-        ]
-      },
-      {
-        heading: "Drilling and well completion",
-        paragraphs: [
-          "The drilling process focused on maintaining bore control and preparing the well for reliable extraction. Casing, screen, gravel placement, cleaning, and development decisions depend on the encountered formation and the intended use.",
-          "The completed bore also needs to accommodate the selected pump, rising main, electrical cable, and maintenance requirements."
-        ]
-      },
-      {
-        heading: "From borehole to working water system",
-        paragraphs: [
-          "A drilled well becomes useful infrastructure only when pumping equipment, controls, discharge pipework, and protection are correctly integrated. Treating these elements as one system supports safer commissioning and more predictable operation."
-        ]
-      }
-    ],
-    sources: [
-      {
-        label: "U.S. Geological Survey - Groundwater wells",
-        url: "https://www.usgs.gov/special-topics/water-science-school/science/groundwater-wells"
-      }
-    ]
-  },
-  {
-    title: "Well Development and Yield Testing",
-    location: "Urban Development",
-    video: case4,
-    desc:
-      "Carried out well development and yield testing to assess sustainable groundwater output.",
-    slug: "well-development-yield-testing",
-    category: "Well Development",
-    intro:
-      "This project focused on well development and yield testing to understand the practical output of a groundwater source. The work helped assess how the well performs after development and what level of pumping can be supported with greater confidence.",
-    highlights: [
-      "Well cleaning and development support",
-      "Yield observation and pumping response",
-      "Practical output assessment"
-    ],
-    sections: [
-      {
-        heading: "Developing the well",
-        paragraphs: [
-          "Well development improves the connection between the bore and the surrounding water-bearing formation. The process helps remove fine material, improve flow paths, and prepare the well for more reliable pumping.",
-          "The work also gives the team a clearer view of water behavior before final operating assumptions are made."
-        ]
-      },
-      {
-        heading: "Testing practical yield",
-        paragraphs: [
-          "Yield testing observes how the well responds under pumping conditions. Flow rate, drawdown behavior, recovery, and operating stability are reviewed to understand what the source can support in practical use.",
-          "This information helps avoid overestimating capacity and supports better pump selection and operating planning."
-        ]
-      },
-      {
-        heading: "Supporting dependable operation",
-        paragraphs: [
-          "The results of development and yield testing provide a stronger basis for long-term groundwater use. A tested well is easier to operate responsibly because its real output and recovery behavior are better understood."
-        ]
-      }
-    ],
-    sources: [
-      {
-        label: "U.S. Geological Survey - Groundwater wells",
-        url: "https://www.usgs.gov/special-topics/water-science-school/science/groundwater-wells"
       }
     ]
   }
