@@ -126,11 +126,11 @@ export const caseStudies = [
     ]
   },
   {
-    title: "Solar Powered Irrigation Project",
+    title: "Solar Powered System",
     location: "Agriculture Sector",
     video: solarIrrigationVideo,
     desc:
-      "Implemented an INVT-based solar solution for off-grid irrigation systems.",
+      "Implemented a solar-powered solution for reliable off-grid irrigation.",
     slug: "solar-irrigation",
     category: "Solar Irrigation",
     intro:
@@ -151,7 +151,7 @@ export const caseStudies = [
       {
         heading: "Controlled solar pumping",
         paragraphs: [
-          "An INVT-based control arrangement was used to coordinate solar power with pump operation. Variable control allows the system to respond to available energy while maintaining appropriate motor protection and practical pumping behavior.",
+          "A variable-speed control arrangement was used to coordinate solar power with pump operation. Variable control allows the system to respond to available energy while maintaining appropriate motor protection and practical pumping behavior.",
           "The installation approach also considered panel orientation, cable management, earthing, protection, and access for inspection."
         ]
       },
