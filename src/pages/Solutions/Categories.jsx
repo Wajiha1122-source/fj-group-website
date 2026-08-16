@@ -5,44 +5,35 @@ import drillingImage from "../../assets/images/optimized/drilling-water-site-120
 import pumpingImage from "../../assets/images/optimized/solar-pump-flow-1200.jpg"
 import infrastructureImage from "../../assets/images/optimized/solar-water-system-1200.jpg"
 import renewableImage from "../../assets/images/optimized/solar-panel-field-1200.jpg"
+import drillingVideo from "../../assets/videos/categories/groundwater-drilling.mp4"
+import pumpingVideo from "../../assets/videos/categories/fluid-transfer-pumping.mp4"
+import infrastructureVideo from "../../assets/videos/categories/water-infrastructure.mp4"
+import renewableVideo from "../../assets/videos/categories/renewable-energy-water.mp4"
 import "../../styles/components/categories.scss"
-
-// ================= CLOUDINARY VIDEOS =================
-const vid1 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
-
-const vid2 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
-
-const vid3 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
-
-const vid4 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
 
 const categories = [
   {
     title: "Groundwater & Drilling Systems",
     desc: "Advanced drilling solutions designed for deep groundwater extraction, borewell development, and industrial exploration projects.",
-    video: vid1,
+    video: drillingVideo,
     image: drillingImage
   },
   {
     title: "Fluid Transfer & Pumping Systems",
     desc: "High-efficiency pumping solutions for agriculture, industry, and municipal water distribution with long-term operational reliability.",
-    video: vid2,
+    video: pumpingVideo,
     image: pumpingImage
   },
   {
     title: "Water Infrastructure Components",
     desc: "Complete range of pipes, valves, fittings, and accessories supporting modern water supply and distribution networks.",
-    video: vid3,
+    video: infrastructureVideo,
     image: infrastructureImage
   },
   {
     title: "Renewable Energy Water Systems",
     desc: "Solar-powered water pumping and energy systems using advanced inverter technology for sustainable infrastructure.",
-    video: vid4,
+    video: renewableVideo,
     image: renewableImage
   }
 ]
