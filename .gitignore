@@ -37,4 +37,6 @@ src/assets/videos/
 !src/assets/videos/news/fj-group-independence-day-2026.mp4
 !src/assets/videos/categories/
 !src/assets/videos/categories/*.mp4
+!src/assets/videos/services/
+!src/assets/videos/services/*.mp4
 .vercel

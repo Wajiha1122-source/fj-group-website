@@ -1,12 +1,10 @@
 import { motion } from "framer-motion"
+import servicesVideo from "../../assets/videos/services/engineering-in-action.mp4"
+import servicesVideoPoster from "../../assets/images/optimized/solar-pump-flow-1200.jpg"
 import "../../styles/components/services.scss"
 
 // icons
 import { FiTool, FiDroplet, FiSun, FiLayers } from "react-icons/fi"
-
-// ================= CLOUDINARY VIDEO =================
-const caseVideo =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
 
 const services = [
   {
@@ -111,8 +109,16 @@ export default function Services() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7 }}
           >
-            <video autoPlay muted loop playsInline>
-              <source src={caseVideo} type="video/mp4" />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={servicesVideoPoster}
+              aria-label="FJ Group engineering work in action"
+            >
+              <source src={servicesVideo} type="video/mp4" />
             </video>
           </motion.div>
 
