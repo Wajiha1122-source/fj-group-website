@@ -1,11 +1,9 @@
 import turbineUpgradationVideo from "../assets/videos/case-studies/turbine-upgradation.mp4"
 import tecnoAgriFarmsVideo from "../assets/videos/case-studies/tecno-agri-farms-project.mp4"
 import tecnoAgriFarmsCardVideo from "../assets/videos/case-studies/tecno-agri-farms-card.mp4"
+import dntCentralPivotVideo from "../assets/videos/categories/groundwater-drilling.mp4"
+import solarIrrigationVideo from "../assets/videos/categories/renewable-energy-water.mp4"
 
-const case1 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/case1_ok7wsk.mp4"
-const case2 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
 const case3 =
   "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520279/case3_simxkg.mp4"
 const case4 =
@@ -92,7 +90,7 @@ export const caseStudies = [
   {
     title: "DNT for Central Pivot System",
     location: "Pakistan",
-    video: case1,
+    video: dntCentralPivotVideo,
     desc:
       "Delivered DNT work for a central pivot irrigation system to support reliable field water coverage.",
     slug: "dnt-central-pivot-system",
@@ -130,7 +128,7 @@ export const caseStudies = [
   {
     title: "Solar Powered Irrigation Project",
     location: "Agriculture Sector",
-    video: case2,
+    video: solarIrrigationVideo,
     desc:
       "Implemented an INVT-based solar solution for off-grid irrigation systems.",
     slug: "solar-irrigation",
