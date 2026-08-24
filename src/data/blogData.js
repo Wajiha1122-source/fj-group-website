@@ -2,6 +2,7 @@ import solarTubeWellPriceImage from "../assets/images/blogs/solar-tube-well-pric
 import solarVsDieselTubeWellImage from "../assets/images/blogs/solar-vs-diesel-tube-well.png"
 import boreWellDrillingPoster from "../assets/images/blogs/bore-well-drilling-cost-pakistan-2026-poster.jpg"
 import boreWellDrillingVideo from "../assets/videos/blogs/bore-well-drilling-cost-pakistan-2026.mp4"
+import pumpMaintenanceImage from "../assets/images/optimized/solar-pump-flow-1200.jpg"
 
 export const blogData = [
   {
@@ -277,6 +278,110 @@ export const blogData = [
           "The right submersible pump should be selected according to bore depth, pumping water level, required discharge, total pumping head, pipe conditions, operating hours, and available power source.",
           "FJ Group provides bore well drilling, pump selection, installation, and solar pumping solutions for agricultural, domestic, commercial, and industrial projects. A professional site assessment can help identify the most suitable system for reliable and efficient water delivery.",
           "Contact FJ Group for a site assessment and a pumping solution designed around your bore and water requirements."
+        ]
+      }
+    ]
+  },
+  {
+    number: "05",
+    slug: "water-pump-maintenance-guide-pakistan",
+    category: "Pump Maintenance",
+    readTime: "6 min read",
+    title: "Preventive Maintenance Guide for Water Pumps in Pakistan",
+    image: pumpMaintenanceImage,
+    imageAlt:
+      "Water pumping system operating at an agricultural site in Pakistan",
+    subtitle:
+      "A practical maintenance guide for improving pump reliability, reducing energy costs, and preventing unexpected breakdowns.",
+    accent: "comparison",
+    metaDescription:
+      "Learn how preventive maintenance can improve water-pump reliability, reduce energy costs, prevent breakdowns, and extend equipment life in Pakistan.",
+    intro:
+      "Water pumps support agricultural irrigation, commercial buildings, factories, groundwater systems, and municipal infrastructure across Pakistan. Preventive maintenance helps identify developing problems before they interrupt water supply, damage equipment, or lead to expensive emergency repairs.",
+    highlights: [
+      "Detect hydraulic, electrical, and mechanical problems early",
+      "Reduce energy waste and unexpected operating interruptions",
+      "Extend the working life of pumps, motors, and control equipment"
+    ],
+    sections: [
+      {
+        heading: "Why Preventive Maintenance Matters",
+        paragraphs: [
+          "A water pump may continue operating even when its performance has started to decline. Reduced discharge, unusual vibration, overheating, or rising electricity consumption can indicate an underlying problem.",
+          "Ignoring these warning signs can damage bearings, seals, impellers, motors, cables, or control equipment. A planned maintenance programme allows technicians to correct smaller problems before they affect the complete pumping system.",
+          "Preventive maintenance also makes operating expenses more predictable. Scheduled servicing is generally easier to manage than an unexpected failure during an important irrigation or production period."
+        ]
+      },
+      {
+        heading: "Monitor Water Flow and Pressure",
+        paragraphs: [
+          "Flow rate and delivery pressure provide valuable information about pump condition. A noticeable reduction may be caused by a blocked intake, worn impeller, leaking pipeline, low groundwater level, incorrect valve position, or electrical problem.",
+          "Operators should record normal flow and pressure after installation or commissioning. Future readings can then be compared with this operating baseline.",
+          "A gradual decline should be investigated rather than corrected by simply increasing operating hours. Running an inefficient pump for longer periods increases energy use without resolving the original problem."
+        ]
+      },
+      {
+        heading: "Check the Motor and Electrical System",
+        paragraphs: [
+          "Electrical faults are a common cause of pump failure. Voltage imbalance, loose terminals, damaged cables, poor earthing, overload, phase failure, and unsuitable protection settings can place excessive stress on the motor.",
+          "Control panels, breakers, contactors, cable connections, and protection devices should be inspected regularly by a qualified technician. Current readings should also be compared across phases where applicable.",
+          "Repeated tripping must never be ignored. A protection device usually operates because it has detected an unsafe condition. Restarting the system without identifying the cause may result in serious motor damage."
+        ]
+      },
+      {
+        heading: "Inspect Vibration, Noise, and Temperature",
+        paragraphs: [
+          "Changes in sound or vibration can provide an early warning of mechanical problems. Damaged bearings, shaft misalignment, loose foundations, worn components, or unsuitable operating conditions may cause the pump to vibrate more than normal.",
+          "The pump and motor should also be checked for excessive temperature. Overheating may result from overloading, restricted cooling, poor electrical supply, bearing problems, or operation outside the recommended performance range.",
+          "Maintenance teams should become familiar with the system's normal sound, vibration, and temperature. Any significant change should be recorded and investigated promptly."
+        ]
+      },
+      {
+        heading: "Protect Submersible Pumps from Dry Running",
+        paragraphs: [
+          "A submersible pump depends on suitable water conditions for reliable operation. If the water level falls below the pump intake, the equipment may run without adequate cooling or water flow.",
+          "Dry-running protection can stop the pump automatically when unsafe water conditions are detected. Water-level sensors, current monitoring, suitable controllers, and correctly configured protection equipment can reduce the risk of damage.",
+          "The pumping water level should also be reviewed periodically, particularly where groundwater conditions change seasonally or abstraction has increased."
+        ]
+      },
+      {
+        heading: "Maintain Pipes, Valves, and Filtration",
+        paragraphs: [
+          "Pump performance depends on the complete water-delivery system. Blocked filters, leaking pipes, damaged non-return valves, restricted fittings, or partially closed valves can reduce discharge and increase the load on the pump.",
+          "Pipelines should be checked for visible leakage, unusual pressure loss, corrosion, and damaged supports. Filters and strainers must be cleaned according to site conditions.",
+          "A pump should not be assessed separately from its pipework. Even a correctly selected pump will perform poorly if the connected system creates unnecessary resistance or allows water to escape."
+        ]
+      },
+      {
+        heading: "Keep Solar Pumping Systems Clean",
+        paragraphs: [
+          "For solar-powered pumping systems, panel cleanliness directly affects available energy. Dust, bird droppings, vegetation, and shading can reduce solar output and limit water delivery.",
+          "Panels should be cleaned using a safe method appropriate for the installation. Mounting structures, cables, connectors, earthing, inverter ventilation, and protective equipment should also be inspected.",
+          "Operators should compare water output under similar sunlight conditions. A noticeable reduction may indicate dirty panels, an electrical issue, a pump problem, or changes in the water level."
+        ]
+      },
+      {
+        heading: "Follow a Practical Maintenance Schedule",
+        paragraphs: [
+          "Maintenance frequency depends on operating hours, site conditions, water quality, pump type, and application. A frequently used agricultural or industrial pump may require closer monitoring than a lightly used domestic system.",
+          "A practical schedule should cover flow, pressure, current, noise, vibration, temperature, cables, terminals, control panels, protection devices, solar panels, filters, strainers, valves, pipework, and mounting arrangements.",
+          "Maintenance records make it easier to identify repeated problems and determine when performance begins to decline. Record faults, repairs, readings, servicing dates, and component replacements."
+        ]
+      },
+      {
+        heading: "When to Request Professional Support",
+        paragraphs: [
+          "Professional inspection is recommended when a pump repeatedly trips, produces insufficient water, draws abnormal current, overheats, vibrates excessively, or requires frequent repairs.",
+          "The problem may be caused by incorrect pump sizing, changing water levels, damaged equipment, unsuitable pipework, electrical supply conditions, or incomplete protection.",
+          "FJ Group supports pump assessment, selection, installation, maintenance, control systems, and solar pumping solutions for agricultural, commercial, industrial, and water-infrastructure projects."
+        ]
+      },
+      {
+        heading: "Conclusion",
+        paragraphs: [
+          "Preventive maintenance helps protect water availability, equipment life, energy efficiency, and operating budgets. The most effective approach is to monitor the complete system rather than waiting for the pump to stop working.",
+          "Regular checks of hydraulic performance, electrical conditions, mechanical behaviour, pipework, water levels, and solar equipment can reveal problems early and reduce unplanned downtime.",
+          "Contact FJ Group for an assessment of your pumping system and a maintenance solution designed around your site and operating requirements."
         ]
       }
     ]
