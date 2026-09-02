@@ -27,6 +27,7 @@ dist-ssr
 src/assets/videos/
 *.mp4
 !src/assets/videos/
+!src/assets/videos/case1.mp4
 !src/assets/videos/case-studies/
 !src/assets/videos/case-studies/turbine-upgradation.mp4
 !src/assets/videos/case-studies/tecno-agri-farms-card.mp4
