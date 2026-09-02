@@ -35,6 +35,7 @@ const caseStudySlugs = [
 ]
 
 const blogSlugs = [
+  "central-pivot-irrigation-system-pakistan-guide",
   "solar-tube-well-price-in-pakistan",
   "solar-vs-diesel-tube-well",
   "bore-well-drilling-cost-pakistan-2026",

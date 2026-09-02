@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Navigate, Link, useParams } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi"
@@ -8,6 +9,60 @@ import "../../styles/components/blogs.scss"
 export default function BlogArticle() {
   const { slug } = useParams()
   const blog = blogData.find((item) => item.slug === slug)
+
+  useEffect(() => {
+    if (!blog) return undefined
+
+    const previousTitle = document.title
+    const canonical = document.querySelector('link[rel="canonical"]')
+    const previousCanonical = canonical?.getAttribute("href")
+    let description = document.querySelector('meta[name="description"]')
+    const descriptionWasCreated = !description
+    const previousDescription = description?.getAttribute("content")
+
+    if (!description) {
+      description = document.createElement("meta")
+      description.setAttribute("name", "description")
+      document.head.appendChild(description)
+    }
+
+    const canonicalUrl = `https://www.fjgroup.pk/blogs/${blog.slug}`
+    const schema = document.createElement("script")
+    schema.type = "application/ld+json"
+    schema.dataset.blogSchema = blog.slug
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: blog.title,
+      description: blog.metaDescription || blog.subtitle,
+      image: new URL(blog.image, window.location.origin).href,
+      datePublished: blog.publishedDate,
+      dateModified: blog.publishedDate,
+      mainEntityOfPage: canonicalUrl,
+      author: { "@type": "Organization", name: "FJ Group" },
+      publisher: {
+        "@type": "Organization",
+        name: "FJ Group",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.fjgroup.pk/android-chrome-512x512.png"
+        }
+      }
+    })
+
+    document.title = `${blog.title} | FJ Group`
+    description.setAttribute("content", blog.metaDescription || blog.subtitle)
+    canonical?.setAttribute("href", canonicalUrl)
+    document.head.appendChild(schema)
+
+    return () => {
+      document.title = previousTitle
+      if (descriptionWasCreated) description.remove()
+      else if (previousDescription) description.setAttribute("content", previousDescription)
+      if (canonical && previousCanonical) canonical.setAttribute("href", previousCanonical)
+      schema.remove()
+    }
+  }, [blog])
 
   if (!blog) return <Navigate to="/blogs" replace />
 

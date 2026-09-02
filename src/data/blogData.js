@@ -3,8 +3,108 @@ import solarVsDieselTubeWellImage from "../assets/images/blogs/solar-vs-diesel-t
 import boreWellDrillingPoster from "../assets/images/blogs/bore-well-drilling-cost-pakistan-2026-poster.jpg"
 import boreWellDrillingVideo from "../assets/videos/blogs/bore-well-drilling-cost-pakistan-2026.mp4"
 import pumpMaintenanceImage from "../assets/images/optimized/solar-pump-flow-1200.jpg"
+import centralPivotImage from "../assets/images/cp1.jpg"
+import centralPivotVideo from "../assets/videos/case1.mp4"
 
 export const blogData = [
+  {
+    number: "06",
+    slug: "central-pivot-irrigation-system-pakistan-guide",
+    category: "Central Pivot Irrigation",
+    readTime: "8 min read",
+    publishedDate: "2026-09-02",
+    title: "Central Pivot Irrigation System in Pakistan: A Practical Planning Guide",
+    image: centralPivotImage,
+    video: centralPivotVideo,
+    imageAlt:
+      "Central pivot irrigation system distributing water across agricultural land in Pakistan",
+    subtitle:
+      "Learn how central pivot irrigation works and what to assess before planning a system for a farm in Pakistan.",
+    accent: "comparison",
+    metaDescription:
+      "Learn how central pivot irrigation systems work in Pakistan, including benefits, water supply, pump sizing, field layout, power and maintenance planning.",
+    intro:
+      "A central pivot irrigation system can automate water application across a large agricultural field, but successful performance depends on much more than the pivot structure itself. Water availability, pump duty, field geometry, soil infiltration, crop demand, pressure, power supply, and maintenance access must all be planned as one connected system.",
+    highlights: [
+      "Match the pivot capacity to crop demand and the available water source",
+      "Plan pumping, pressure, sprinklers, power, and field layout together",
+      "Protect irrigation uniformity through correct operation and maintenance"
+    ],
+    sections: [
+      {
+        heading: "What Is a Central Pivot Irrigation System?",
+        paragraphs: [
+          "A central pivot is a mechanised sprinkler irrigation system that rotates around a fixed point. A long pipeline, supported by mobile towers, carries water from the centre of the field to sprinklers positioned along the machine.",
+          "As the pivot moves, each sprinkler applies water over its section of the field. Because the outer spans travel across a larger area than the inner spans, nozzle sizes and application rates must be designed along the full length of the machine rather than selected as one uniform package.",
+          "The system normally irrigates a circular area. Corner equipment and sector controls can extend or restrict coverage where field shape, roads, buildings, drains, trees, or other obstacles affect movement."
+        ]
+      },
+      {
+        heading: "Why Farms in Pakistan Consider Central Pivot Irrigation",
+        paragraphs: [
+          "Large farms often need a repeatable way to apply water with less manual movement of pipes and sprinklers. A central pivot can cover a planned area automatically and allow operators to adjust travel speed and irrigation depth for changing crop requirements.",
+          "The system can support frequent, controlled applications when water supply and scheduling are managed correctly. This may help farms reduce the uneven distribution that can occur when field irrigation is affected by poor levelling, inconsistent flow, or difficult labour requirements.",
+          "Central pivot irrigation is not automatically the right choice for every site. Its value depends on field size and shape, crop plan, soil conditions, available discharge, energy cost, management capability, and the economics of the complete installation."
+        ]
+      },
+      {
+        heading: "Start with Water Availability and Crop Demand",
+        paragraphs: [
+          "Planning should begin with the crop water requirement during the period of highest demand. The pivot must be able to deliver the required seasonal and peak irrigation volume within the available operating hours.",
+          "The water source may be a bore well, canal-fed storage, reservoir, or another dependable supply. Its sustainable flow rate and water quality should be assessed before deciding the pivot length or irrigated area. A machine designed for more water than the source can reliably provide will not meet the intended irrigation schedule.",
+          "Where groundwater is used, pumping water level and expected seasonal variation matter. Water quality should also be reviewed because sediment or dissolved material can affect pumps, pipelines, pressure regulators, and sprinkler nozzles."
+        ]
+      },
+      {
+        heading: "Pump Sizing, Pressure, and Pipeline Design",
+        paragraphs: [
+          "The pump must provide the required flow at the total operating head of the system. This head includes the vertical lift from the water source, pressure needed at the pivot inlet, friction losses in pipes and fittings, and elevation differences across the field.",
+          "Selecting a pump by horsepower alone can produce poor results. The operating point should be checked against the pump curve so the pump, motor, controls, mainline, pivot pipe, and sprinkler package work together efficiently.",
+          "Pressure that is too low can reduce sprinkler performance and distribution uniformity. Excessive pressure wastes energy and can increase wear. Pressure regulators and a correctly designed nozzle package help maintain the intended application along the pivot."
+        ]
+      },
+      {
+        heading: "Field Shape, Soil, and Infiltration",
+        paragraphs: [
+          "Central pivots are generally most straightforward on open fields that allow the machine to complete its planned circle. Before installation, the route should be checked for buildings, power lines, trees, channels, uneven ground, and other obstacles that could interfere with the towers or spans.",
+          "Soil infiltration is equally important. Water must enter the soil at a suitable rate instead of collecting on the surface or running away. The outer end of a pivot covers more land in the same rotation, so application intensity can become particularly important there.",
+          "Sprinkler type, nozzle selection, mounting height, spacing, travel speed, and wetted diameter should be matched to soil and field conditions. Surface residue and field management may also help reduce runoff and protect infiltration."
+        ]
+      },
+      {
+        heading: "Choosing the Power and Control System",
+        paragraphs: [
+          "A pivot installation needs power for the pumping system and for movement and control of the machine. The practical choice may involve grid electricity, a generator, solar energy, or a coordinated hybrid arrangement, depending on operating hours and site conditions.",
+          "Solar integration should be designed around the combined electrical and hydraulic duty. Available solar power changes through the day, while the pivot and pump require stable operating conditions. Suitable drives, controls, protection, and operating logic are therefore essential.",
+          "Modern control options can provide start-stop scheduling, pressure monitoring, fault alerts, position information, and remote supervision. These tools are useful only when sensors, communication, safety circuits, and operator procedures are dependable."
+        ]
+      },
+      {
+        heading: "Irrigation Scheduling and Water Application",
+        paragraphs: [
+          "Owning a central pivot does not remove the need for irrigation scheduling. Operators still need to decide when to irrigate and how much water to apply based on crop stage, recent weather, soil moisture, rooting depth, and the effective rainfall received by the field.",
+          "Travel speed is commonly adjusted to change application depth. Faster movement generally applies less water per pass, while slower movement applies more. The selected setting must remain within the capacity of the source, pump, sprinklers, soil, and crop plan.",
+          "Records of operating hours, pressure, flow, rainfall, field observations, and irrigation settings make future decisions more reliable. Soil-moisture measurements can add useful site-specific information when sensors are installed and interpreted correctly."
+        ]
+      },
+      {
+        heading: "Maintenance That Protects Uniformity",
+        paragraphs: [
+          "A pivot may continue moving even when water distribution has started to decline. Blocked or worn nozzles, incorrect regulators, leaks, pressure changes, damaged drop hoses, wheel-track problems, and alignment faults can all affect performance.",
+          "Routine inspection should cover sprinklers, regulators, joints, drains, tower drives, tyres, gearboxes, electrical connections, safety switches, alignment controls, mainline equipment, pump performance, and filtration where installed.",
+          "Uniformity should be investigated when parts of the crop appear consistently over-watered or under-watered. Correcting a pressure, nozzle, or movement problem early can protect crop performance and prevent unnecessary pumping costs."
+        ]
+      },
+      {
+        heading: "How to Plan the Right Central Pivot Project",
+        paragraphs: [
+          "A reliable project starts with a site survey and a clear design basis. Record the field boundaries and elevation, obstacles, proposed pivot point, crop plan, soil characteristics, water-source performance, power availability, required operating window, and future expansion needs.",
+          "The supplier should then coordinate the pivot length, tower arrangement, system flow, mainline, pump duty, inlet pressure, sprinkler package, controls, electrical protection, civil works, installation, commissioning, and operator training.",
+          "FJ Group supports central pivot irrigation planning as part of a complete water and energy system. Contact our team to discuss field assessment, groundwater development, pumps, solar integration, controls, installation, and long-term service for your agricultural project in Pakistan."
+        ]
+      }
+    ]
+  },
   {
     number: "01",
     slug: "solar-tube-well-price-in-pakistan",
