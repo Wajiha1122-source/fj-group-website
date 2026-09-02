@@ -10,9 +10,26 @@
   place-items: center;
   overflow: hidden;
   color: #ffffff;
-  background: transparent;
+  background: #071a2f;
   isolation: isolate;
-  animation: fj-launcher-finish 6.2s linear both;
+  transition: opacity 0.8s cubic-bezier(0.7, 0, 0.3, 1),
+    transform 0.8s cubic-bezier(0.7, 0, 0.3, 1),
+    filter 0.8s ease;
+}
+
+.fj-launcher--leaving {
+  opacity: 0;
+  transform: scale(1.035);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.fj-launcher__brand {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
 .fj-launcher__grid {
@@ -287,14 +304,192 @@
   }
 }
 
-@keyframes fj-launcher-finish {
-  0%,
-  96% {
-    visibility: visible;
-  }
-  100% {
-    visibility: hidden;
-  }
+.fj-launcher__skip {
+  position: fixed;
+  right: clamp(18px, 3vw, 42px);
+  bottom: clamp(18px, 3vw, 36px);
+  z-index: 20;
+  padding: 9px 14px;
+  border: 1px solid rgba(139, 210, 237, 0.24);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.68);
+  background: rgba(4, 17, 31, 0.45);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.fj-launcher__skip:hover {
+  color: #ffffff;
+  border-color: rgba(139, 210, 237, 0.64);
+  transform: translateY(-2px);
+}
+
+.fj-solar-intro {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(36, 136, 190, 0.24), transparent 34%),
+    linear-gradient(145deg, #04101e 0%, #071a2f 52%, #020913 100%);
+  animation: fj-solar-arrive 0.8s ease-out both;
+}
+
+.fj-solar-intro__grid {
+  position: absolute;
+  inset: 48% -20% -45%;
+  background-image:
+    linear-gradient(rgba(105, 189, 225, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 189, 225, 0.1) 1px, transparent 1px);
+  background-size: 54px 54px;
+  transform: perspective(660px) rotateX(64deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(to bottom, transparent, #000 24%, transparent 78%);
+  opacity: 0;
+  animation: fj-solar-grid-in 1.2s 0.1s ease-out forwards;
+}
+
+.fj-solar-intro__halo {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: min(76vw, 850px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(113, 205, 239, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 70px rgba(102, 190, 226, 0.025),
+    0 0 0 150px rgba(102, 190, 226, 0.018);
+  animation: fj-halo-breathe 4s ease-in-out infinite;
+}
+
+.fj-solar-intro__canvas {
+  position: absolute;
+  inset: -2% 0 6%;
+  z-index: 2;
+}
+
+.fj-solar-intro__fallback {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: min(62vw, 640px);
+  aspect-ratio: 1.7;
+  border: 7px solid #91a7b8;
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(127, 205, 235, 0.5) 50%, transparent 50.5%),
+    linear-gradient(rgba(127, 205, 235, 0.42) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 205, 235, 0.42) 1px, transparent 1px),
+    #0d3f72;
+  background-size: 100%, 12.5% 20%, 12.5% 20%, 100%;
+  transform: translate(-50%, -50%) perspective(700px) rotateX(10deg) rotateY(-12deg);
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.48);
+}
+
+.fj-solar-intro__copy {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(58px, 8vh, 88px);
+  z-index: 5;
+  width: min(90vw, 780px);
+  text-align: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.fj-solar-intro__copy > span {
+  display: block;
+  color: #8bd2ed;
+  font-size: clamp(0.58rem, 1vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fj-solar-copy-in 0.7s 3.45s ease-out forwards;
+}
+
+.fj-solar-intro__copy h2 {
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  text-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(8px);
+  animation: fj-solar-copy-in 0.9s 3.78s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fj-solar-intro__copy p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: clamp(0.62rem, 1vw, 0.76rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fj-solar-copy-in 0.7s 4.15s ease-out forwards;
+}
+
+.fj-solar-intro__copy i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #72c7e8;
+  box-shadow: 0 0 8px #72c7e8;
+}
+
+.fj-solar-intro__progress {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  z-index: 6;
+  width: min(220px, 40vw);
+  height: 1px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(-50%);
+}
+
+.fj-solar-intro__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #2f6fb2, #8bd2ed);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fj-solar-progress 6.2s linear forwards;
+}
+
+@keyframes fj-solar-arrive {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fj-solar-grid-in {
+  to { opacity: 0.72; }
+}
+
+@keyframes fj-halo-breathe {
+  50% { opacity: 0.48; transform: translate(-50%, -50%) scale(1.035); }
+}
+
+@keyframes fj-solar-copy-in {
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes fj-solar-progress {
+  to { transform: scaleX(1); }
 }
 
 @media (max-width: 600px) {
@@ -316,6 +511,22 @@
     max-width: 250px;
     justify-content: center;
     line-height: 1.6;
+  }
+
+  .fj-solar-intro__canvas {
+    inset: 2% -28% 15%;
+  }
+
+  .fj-solar-intro__copy {
+    bottom: 78px;
+  }
+
+  .fj-solar-intro__copy h2 {
+    font-size: clamp(2.1rem, 11vw, 3.2rem);
+  }
+
+  .fj-solar-intro__progress {
+    bottom: 44px;
   }
 }
 
