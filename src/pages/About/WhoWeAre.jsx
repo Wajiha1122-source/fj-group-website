@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 import "../../styles/components/whoWeAre.scss"
-import teamImg from "../../assets/images/news2.png"
+import teamImg from "../../assets/images/news2-transparent.png"
 
 export default function WhoWeAre() {
 
