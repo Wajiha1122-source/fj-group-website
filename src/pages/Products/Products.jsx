@@ -3,11 +3,11 @@ import { AnimatePresence, motion } from "framer-motion"
 import { FiArrowRight } from "react-icons/fi"
 import "../../styles/components/products.scss"
 
-import handPump from "../../assets/images/products-showcase/hand-pump.jpeg"
-import productSlide1 from "../../assets/images/products-showcase/product-slide-1.jpeg"
-import productSlide2 from "../../assets/images/products-showcase/product-slide-2.jpeg"
+import handPump from "../../assets/images/products-showcase/hand-pump-transparent.png"
+import productSlide1 from "../../assets/images/products-showcase/product-slide-1-transparent.png"
+import productSlide2 from "../../assets/images/products-showcase/product-slide-2-transparent.png"
 import productSlide3 from "../../assets/images/products-showcase/product-slide-3.jpeg"
-import productSlide4 from "../../assets/images/products-showcase/product-slide-4.jpeg"
+import productSlide4 from "../../assets/images/products-showcase/product-slide-4-transparent.png"
 
 const productSlides = [
   {
