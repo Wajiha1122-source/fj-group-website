@@ -1,17 +1,25 @@
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
+import CountUp from "react-countup"
 import { FiUsers, FiCalendar, FiBarChart2, FiGlobe } from "react-icons/fi"
+import { useInView } from "react-intersection-observer"
 import "../../styles/components/about-glance.scss"
 
 const stats = [
-  { icon: <FiUsers />, value: "500+", label: "Employees Nationwide" },
-  { icon: <FiCalendar />, value: "1984", label: "Founded" },
-  { icon: <FiBarChart2 />, value: "$120M+", label: "Annual Revenue" },
-  { icon: <FiGlobe />, value: "30+", label: "Cities Served" }
+  { icon: <FiUsers />, value: 500, suffix: "+", label: "Employees Nationwide" },
+  { icon: <FiCalendar />, value: 1984, label: "Founded" },
+  { icon: <FiBarChart2 />, value: 120, prefix: "$", suffix: "M+", label: "Annual Revenue" },
+  { icon: <FiGlobe />, value: 30, suffix: "+", label: "Cities Served" }
 ]
 
 export default function AboutGlanceSection() {
+  const reduceMotion = useReducedMotion()
+  const { ref, inView } = useInView({
+    threshold: 0.35,
+    triggerOnce: false
+  })
+
   return (
-    <section className="about-glance-section">
+    <section className="about-glance-section" ref={ref}>
 
       <div className="container">
 
@@ -45,7 +53,25 @@ export default function AboutGlanceSection() {
                 {item.icon}
               </div>
 
-              <h3>{item.value}</h3>
+              <h3 aria-label={`${item.prefix || ""}${item.value}${item.suffix || ""}`}>
+                {reduceMotion ? (
+                  `${item.prefix || ""}${item.value}${item.suffix || ""}`
+                ) : inView ? (
+                  <CountUp
+                    key={`stat-${index}-${inView}`}
+                    start={0}
+                    end={item.value}
+                    duration={1.85}
+                    delay={index * 0.08}
+                    prefix={item.prefix || ""}
+                    suffix={item.suffix || ""}
+                    separator=""
+                    useEasing
+                  />
+                ) : (
+                  `${item.prefix || ""}0${item.suffix || ""}`
+                )}
+              </h3>
               <p>{item.label}</p>
             </motion.div>
           ))}

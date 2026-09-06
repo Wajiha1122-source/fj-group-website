@@ -69,6 +69,13 @@
   font-size: 52px;
   color: #0b1f3a;
   margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+  transform-origin: center bottom;
+}
+
+.stat-card h3 span {
+  display: inline-block;
+  animation: glance-number-settle 1.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .stat-card p {
@@ -96,5 +103,21 @@
 
   .glance-header h2 {
     font-size: 38px;
+  }
+}
+
+@keyframes glance-number-settle {
+  0% {
+    opacity: 0.28;
+    transform: translateY(8px) scale(0.92);
+    filter: blur(3px);
+  }
+  28% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
