@@ -98,7 +98,7 @@ export default function Footer() {
 
             <h6>Get in Touch</h6>
 
-            <p>📞 03111777286</p>
+            <p>📞 +923 111 777 286</p>
 
             <p>✉ Info@fjgroup.pk</p>
 

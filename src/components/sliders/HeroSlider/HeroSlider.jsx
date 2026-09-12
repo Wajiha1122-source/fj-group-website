@@ -123,7 +123,7 @@ export default function HeroSlider() {
       // Open WhatsApp with a message
       const message = `Hello! I've attached my quote request invoice for FJ Group. Please review the details.`
       const encodedMessage = encodeURIComponent(message)
-      const whatsappNumber = '923459637111'
+      const whatsappNumber = '923111777286'
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
 
       // Open WhatsApp in a new tab
@@ -243,7 +243,7 @@ export default function HeroSlider() {
               textAlign: 'center'
             }}>
               <p style={{ color: '#999', fontSize: '12px', margin: '0' }}>🌐 Generated via FJ Group Website</p>
-              <p style={{ color: '#667eea', fontSize: '14px', margin: '5px 0 0 0', fontWeight: 'bold' }}>📞 +92 345 963 7111</p>
+              <p style={{ color: '#667eea', fontSize: '14px', margin: '5px 0 0 0', fontWeight: 'bold' }}>📞 +923 111 777 286</p>
             </div>
           </div>
         </div>

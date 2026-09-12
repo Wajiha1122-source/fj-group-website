@@ -75,7 +75,7 @@ export default function Contact() {
                 <div className="info-icon"><FiPhone /></div>
                 <div>
                   <h4>Phone Number</h4>
-                  <p>03111777286</p>
+                  <p>+923 111 777 286</p>
                 </div>
               </div>
 
