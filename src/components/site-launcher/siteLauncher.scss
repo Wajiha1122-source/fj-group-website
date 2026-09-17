@@ -560,6 +560,12 @@
   overflow: hidden;
 }
 
+.fj-solar-assembly__product {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  transform: translateY(-4px) rotate(-3deg) skewX(-5deg) scale(0.96);
+}
+
 @media (max-height: 500px) and (orientation: landscape) {
   .fj-solar-intro__canvas { inset: 0 40% 0 0; }
   .fj-solar-intro__copy { left: 73%; width: 48%; bottom: 25%; }

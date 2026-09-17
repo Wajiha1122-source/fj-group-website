@@ -63,24 +63,35 @@ export default function SolarAssemblyScene({ onReady, onComplete, onProgress }) 
     <svg ref={scene} className="fj-solar-assembly" viewBox="0 0 700 500" aria-hidden="true">
       <defs>
         <linearGradient id="assembly-cell" x2="0.8" y2="1">
-          <stop stopColor="#24689b" /><stop offset="1" stopColor="#061d39" />
+          <stop stopColor="#152c47" /><stop offset="0.45" stopColor="#081421" /><stop offset="1" stopColor="#10263d" />
         </linearGradient>
         <linearGradient id="assembly-metal" x2="0.3" y2="1">
-          <stop stopColor="#e0edf5" /><stop offset="0.5" stopColor="#6f899e" /><stop offset="1" stopColor="#b9cedc" />
+          <stop stopColor="#eff5f9" /><stop offset="0.16" stopColor="#9cabb8" /><stop offset="0.38" stopColor="#344353" /><stop offset="0.55" stopColor="#637788" /><stop offset="0.85" stopColor="#c2ced7" /><stop offset="1" stopColor="#465868" />
         </linearGradient>
         <linearGradient id="assembly-shine">
           <stop stopColor="#c9f7ff" stopOpacity="0" /><stop offset="0.5" stopColor="#c9f7ff" stopOpacity="0.8" /><stop offset="1" stopColor="#c9f7ff" stopOpacity="0" />
         </linearGradient>
         <clipPath id="assembly-window"><rect x="108" y="116" width="484" height="284" rx="4" /></clipPath>
+        <pattern id="assembly-fingers" width="6" height="6" patternUnits="userSpaceOnUse">
+          <path d="M0 0H6" stroke="#adc7db" strokeOpacity="0.22" strokeWidth="0.45" />
+        </pattern>
+        <linearGradient id="assembly-glass" x1="0" y1="0" x2="1" y2="1">
+          <stop stopColor="#d9f0ff" stopOpacity="0.17" /><stop offset="0.48" stopColor="#d9f0ff" stopOpacity="0.02" /><stop offset="0.49" stopColor="#fff" stopOpacity="0.09" /><stop offset="0.75" stopColor="#fff" stopOpacity="0" />
+        </linearGradient>
       </defs>
-      <ellipse cx="350" cy="436" rx="225" ry="15" fill="#000" opacity="0.22" />
+      <ellipse cx="350" cy="441" rx="220" ry="18" fill="#000" opacity="0.12" />
+      <ellipse cx="350" cy="441" rx="175" ry="9" fill="#000" opacity="0.2" />
+      <g className="fj-solar-assembly__product">
       <g {...part(0.15, 0, 130)}>
-        <rect x="99" y="107" width="502" height="302" rx="8" fill="#06172a" stroke="#45647e" strokeWidth="3" />
+        <path d="M99 403H602L610 415H107Z" fill="#263645" />
+        <path d="M601 108L610 120V415L601 404Z" fill="#536474" />
+        <rect x="99" y="107" width="502" height="302" rx="3" fill="#030b13" stroke="#718496" strokeWidth="1" />
       </g>
       {cells.map((cell, index) => (
         <g key={index} {...part(cell.delay, cell.dx, cell.dy)}>
-          <rect x={cell.x} y={cell.y} width="54" height="49" rx="3" fill="url(#assembly-cell)" stroke="#5593b7" strokeWidth="0.8" />
-          {[13, 27, 41].map((x) => <path key={x} d={`M${cell.x + x} ${cell.y + 3}v43`} stroke="#99d6ed" strokeOpacity="0.55" strokeWidth="0.7" />)}
+          <path d={`M${cell.x + 4} ${cell.y}h46l4 4v41l-4 4h-46l-4-4v-41Z`} fill="url(#assembly-cell)" stroke="#718ba0" strokeOpacity="0.5" strokeWidth="0.45" />
+          <rect x={cell.x + 3} y={cell.y + 3} width="48" height="43" fill="url(#assembly-fingers)" />
+          {[10, 21, 33, 44].map((x) => <path key={x} d={`M${cell.x + x} ${cell.y + 2}v45`} stroke="#c4d5e0" strokeOpacity="0.4" strokeWidth="0.55" />)}
         </g>
       ))}
       <rect {...part(3.2, 0, -120)} x="96" y="104" width="508" height="12" rx="3" fill="url(#assembly-metal)" />
@@ -88,7 +99,13 @@ export default function SolarAssemblyScene({ onReady, onComplete, onProgress }) 
       <rect {...part(3.6, -150, 0)} x="96" y="112" width="12" height="292" rx="3" fill="url(#assembly-metal)" />
       <rect {...part(3.8, 150, 0)} x="592" y="112" width="12" height="292" rx="3" fill="url(#assembly-metal)" />
       <g clipPath="url(#assembly-window)">
+        <rect {...part(4.2, 0, -24)} x="108" y="116" width="484" height="284" fill="url(#assembly-glass)" />
         <rect data-sweep x="0" y="116" width="100" height="284" fill="url(#assembly-shine)" opacity="0" />
+      </g>
+      <g {...part(4.3, 0, 0)} fill="none" stroke="#e4f2fc" strokeWidth="0.65" strokeOpacity="0.7">
+        <path d="M99 105H601M97 108V398" />
+        <path d="M110 117H590V399" strokeOpacity="0.25" />
+      </g>
       </g>
     </svg>
   )
