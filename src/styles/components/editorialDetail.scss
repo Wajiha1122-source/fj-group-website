@@ -6,6 +6,24 @@
   --detail-accent-soft: #eaf2f9;
 }
 
+.editorial-detail__project-image {
+  margin: 0 0 40px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  figcaption {
+    margin-top: 12px;
+    color: #526477;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
 .editorial-detail__hero {
   position: relative;
   min-height: 590px;

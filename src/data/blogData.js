@@ -1,9 +1,10 @@
-import solarTubeWellPriceImage from "../assets/images/blogs/solar-tube-well-price-in-pakistan.png"
+import solarTubeWellPriceImage from "../assets/images/optimized/solar-water-system-1200.jpg"
 import solarVsDieselTubeWellImage from "../assets/images/blogs/solar-vs-diesel-tube-well.png"
-import boreWellDrillingPoster from "../assets/images/blogs/bore-well-drilling-cost-pakistan-2026-poster.jpg"
+import boreWellDrillingPoster from "../assets/images/optimized/drilling-water-site-1200.jpg"
+import submersiblePumpImage from "../assets/images/products-showcase/product-slide-4.jpeg"
 import boreWellDrillingVideo from "../assets/videos/blogs/bore-well-drilling-cost-pakistan-2026.mp4"
 import pumpMaintenanceImage from "../assets/images/optimized/solar-pump-flow-1200.jpg"
-import centralPivotImage from "../assets/images/cp1.jpg"
+import centralPivotImage from "../assets/images/cp3.jpg"
 import centralPivotVideo from "../assets/videos/case1.mp4"
 
 export const blogData = [
@@ -113,7 +114,7 @@ export const blogData = [
     title: "Solar Tube Well Price in Pakistan",
     image: solarTubeWellPriceImage,
     imageAlt:
-      "Solar panels powering a tube well water pump in an agricultural field",
+      "Installed solar panel array and tube well discharge pipe at a water pumping site",
     subtitle:
       "A practical pricing guide for farmers, landowners, and agricultural investors planning a solar-powered tube well system.",
     accent: "pricing",
@@ -243,7 +244,7 @@ export const blogData = [
     image: boreWellDrillingPoster,
     video: boreWellDrillingVideo,
     imageAlt:
-      "Bore well drilling site with water flowing from a large discharge pipe",
+      "Aerial view of a drilling rig beside a water basin at a bore well site",
     subtitle:
       "A quick guide to the main factors that affect bore well drilling cost, from depth and ground conditions to casing, pumps, and solar options.",
     accent: "pricing",
@@ -307,9 +308,10 @@ export const blogData = [
     category: "Pumping Insights",
     readTime: "6 min read",
     title: "How to Choose the Right Submersible Pump for a Bore Well in Pakistan",
-    image: boreWellDrillingPoster,
+    image: submersiblePumpImage,
+    imageFit: "contain",
     imageAlt:
-      "Bore well pumping site with water flowing from a large discharge pipe",
+      "Stainless steel submersible bore well pump shown for pump selection",
     subtitle:
       "A practical guide to selecting a submersible pump based on water level, pumping head, flow rate, horsepower, power source, and site conditions.",
     accent: "comparison",

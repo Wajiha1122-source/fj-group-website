@@ -44,6 +44,7 @@ const blogSlugs = [
 ]
 
 const newsSlugs = [
+  "cholistan-187kw-solar-center-pivot-irrigation",
   "fj-group-celebrates-pakistan-independence-day-2026",
   "fj-group-invt-psa-expo-2026",
   "komax-motors-pumps-flagship-store-south-punjab",

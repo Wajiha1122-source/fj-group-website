@@ -8,11 +8,7 @@ import solarArrayWideMobile from "../../../assets/images/optimized/solar-array-w
 import drillingWaterSite from "../../../assets/images/optimized/drilling-water-site-1200.jpg"
 import { loadHtml2Canvas } from "../../../utils/loadHtml2Canvas.js"
 
-const video1 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/slide1_n5hgxh.mp4"
-
-const video2 =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520228/slide2_bontor.mp4"
+import video2 from "../../../assets/videos/slide2.mp4"
 
 const heroScenes = [
   {

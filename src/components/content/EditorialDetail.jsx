@@ -93,6 +93,12 @@ export default function EditorialDetail({
 
       <div className="container editorial-detail__layout">
         <main className="editorial-detail__main">
+          {content.articleImage && (
+            <figure className="editorial-detail__project-image">
+              <img src={content.articleImage} alt={content.imageAlt || content.title} loading="lazy" />
+              {content.imageCaption && <figcaption>{content.imageCaption}</figcaption>}
+            </figure>
+          )}
           {content.sections.map((section, index) => (
             <section
               className="editorial-detail__section"

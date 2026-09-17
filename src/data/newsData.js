@@ -9,8 +9,68 @@ import komaxFlagshipStore from "../assets/images/news-komax-flagship-store.jpg"
 import independenceDayCelebration from "../assets/images/news/independence-day-2026/celebration.webp"
 import independenceDayCake from "../assets/images/news/independence-day-2026/cake.webp"
 import independenceDayVideo from "../assets/videos/news/fj-group-independence-day-2026.mp4"
+import cholistanSolarPivot from "../assets/images/news/cholistan-187kw-solar-pivot.jpeg"
 
 export const newsData = [
+  {
+    image: cholistanSolarPivot,
+    imageAlt: "187 kW solar installation with center pivot irrigation in Cholistan",
+    articleImage: cholistanSolarPivot,
+    imageCaption: "FJ Group's Cholistan installation: a 187 kW solar system integrated with center pivot irrigation.",
+    title: "FJ Group Installs 187 kW Solar System with Center Pivot Irrigation in Cholistan",
+    desc: "Powering agriculture with clean energy: a 187 kW solar installation integrated with center pivot irrigation in Cholistan.",
+    number: "01",
+    slug: "cholistan-187kw-solar-center-pivot-irrigation",
+    category: "Project Updates",
+    location: "Cholistan, Pakistan",
+    readTime: "4 min read",
+    metaDescription: "FJ Group announces a 187 kW solar installation in Cholistan, Pakistan, integrated with center pivot irrigation to connect clean energy with agricultural water delivery.",
+    intro: "FJ Group has installed a 187 kW solar system in Cholistan, Pakistan, integrated with center pivot irrigation. The project brings solar energy and agricultural water delivery together at one site, reflecting the company's focus on practical energy and irrigation solutions for farming.",
+    highlights: [
+      "187 kW installed solar system capacity",
+      "Project located in Cholistan, Pakistan",
+      "Solar system integrated with center pivot irrigation",
+      "Clean energy connected with agricultural water delivery"
+    ],
+    sections: [
+      {
+        heading: "A New Solar and Irrigation Installation in Cholistan",
+        paragraphs: [
+          "The installation combines a ground-mounted solar array with a center pivot irrigation system. Its announced solar capacity is 187 kW, bringing a substantial renewable-energy component to the farm's irrigation infrastructure.",
+          "The project announcement captures the purpose of the installation: powering agriculture with clean energy. Bringing energy supply and irrigation together allows both to be considered as parts of the same agricultural operation."
+        ]
+      },
+      {
+        heading: "A Closer Look at the Project Photograph",
+        paragraphs: [
+          "The aerial photograph shows several banks of solar panels arranged around a small site building. The panels occupy separate rows with space between them, while a blue tank and visible pipework sit near the central working area.",
+          "A long irrigation structure extends across the upper part of the photograph, showing the center pivot equipment alongside the solar installation. Tractors, a trailer, and people are also visible around the site, placing the energy equipment within a working agricultural setting.",
+          "Together, these features show the physical relationship between the solar array, the site's water infrastructure, and the irrigation equipment. The supplied project graphic identifies the solar installation as 187 kW and confirms its integration with center pivot irrigation."
+        ]
+      },
+      {
+        heading: "Connecting Solar Power with Center Pivot Irrigation",
+        paragraphs: [
+          "A center pivot carries water along an elevated pipeline supported by wheeled towers. As the structure moves around its central point, sprinklers distribute water over the surrounding field. Pumping, pressure, movement, and controls need to work together for the irrigation system to operate as intended.",
+          "Integrating solar energy with irrigation links daytime power generation to agricultural work. The available solar output varies through the day, so irrigation scheduling and system controls remain important to matching energy availability with water demand."
+        ]
+      },
+      {
+        heading: "What the 187 kW Capacity Means",
+        paragraphs: [
+          "The 187 kW figure describes the announced capacity of the installed solar system. It is a power rating, rather than a statement of daily electricity generation, irrigated acreage, or water discharge.",
+          "Actual energy production and irrigation output depend on operating conditions, sunlight, equipment performance, pumping requirements, and the irrigation schedule. The project brings these energy and water requirements together in one installation."
+        ]
+      },
+      {
+        heading: "Supporting Agriculture with Integrated Engineering",
+        paragraphs: [
+          "The Cholistan installation demonstrates FJ Group's work at the intersection of solar energy and agricultural irrigation. Its focus is on connecting energy infrastructure with the equipment that delivers water to the field.",
+          "For farms considering a similar approach, planning starts with water availability, field layout, crop requirements, pumping duty, and the intended operating hours. FJ Group welcomes enquiries about solar and irrigation projects through its project consultation team."
+        ]
+      }
+    ]
+  },
   {
     image: independenceDayCelebration,
     media: [
@@ -32,7 +92,7 @@ export const newsData = [
     ],
     title: "FJ Group Celebrates Pakistan's Independence Day",
     desc: "FJ Group marked 14 August with a joyful celebration of unity, pride, and Pakistan's independent spirit.",
-    number: "01",
+    number: "02",
     slug: "fj-group-celebrates-pakistan-independence-day-2026",
     category: "Company Updates",
     readTime: "3 min read",
@@ -73,7 +133,7 @@ export const newsData = [
     images: [psaExpo2026, psaExpo2026Second],
     title: "FJ Group represents INVT at PSA Expo 2026",
     desc: "FJ Group represented INVT with its partner companies at PSA Expo 2026 at Expo Center Lahore.",
-    number: "02",
+    number: "03",
     slug: "fj-group-invt-psa-expo-2026",
     category: "Events",
     readTime: "4 min read",
@@ -112,7 +172,7 @@ export const newsData = [
     image: komaxFlagshipStore,
     title: "FJ Group launches KOMAX Motors and Pumps flagship store",
     desc: "FJ Group launched a flagship store for KOMAX Motors and Pumps in South Punjab.",
-    number: "03",
+    number: "04",
     slug: "komax-motors-pumps-flagship-store-south-punjab",
     category: "Company Updates",
     readTime: "4 min read",
@@ -151,7 +211,7 @@ export const newsData = [
     image: aePowerPartnership,
     title: "FJ Group strengthens solar collaboration with AE Power",
     desc: "Working together to expand access to practical, well-engineered solar energy solutions.",
-    number: "04",
+    number: "05",
     slug: "fj-group-partnership-ae-power",
     category: "Partnerships",
     readTime: "4 min read",
@@ -203,7 +263,7 @@ export const newsData = [
     image: solisPartnership,
     title: "FJ Group announces partnership with Solis",
     desc: "A new collaboration focused on dependable solar inverter technology and better-integrated energy solutions.",
-    number: "05",
+    number: "06",
     slug: "fj-group-partnership-solis",
     category: "Partnerships",
     readTime: "4 min read",
@@ -254,7 +314,7 @@ export const newsData = [
     image: news1,
     title: "FJ Group launches next-generation industrial systems",
     desc: "Building smarter infrastructure solutions for modern industries.",
-    number: "06",
+    number: "07",
     slug: "next-generation-industrial-systems",
     category: "Industrial Systems",
     readTime: "5 min read",
@@ -292,7 +352,7 @@ export const newsData = [
     image: news2,
     title: "Reducing energy consumption through intelligent engineering",
     desc: "Focused on efficient technologies for a sustainable future.",
-    number: "07",
+    number: "08",
     slug: "reducing-energy-consumption",
     category: "Energy Efficiency",
     readTime: "6 min read",
@@ -336,7 +396,7 @@ export const newsData = [
     image: news3,
     title: "Transforming industrial operations with automation",
     desc: "Delivering scalable and reliable enterprise-grade systems.",
-    number: "08",
+    number: "09",
     slug: "industrial-operations-automation",
     category: "Automation",
     readTime: "5 min read",
