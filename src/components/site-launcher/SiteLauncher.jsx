@@ -12,7 +12,7 @@ class SceneBoundary extends Component {
   render() { return this.state.failed ? null : this.props.children }
 }
 
-const STORAGE_KEY = "fj-group-site-intro-seen-v7"
+const STORAGE_KEY = "fj-group-site-intro-seen-v8"
 const BRAND_DURATION = 6200
 
 export default function SiteLauncher() {
@@ -43,7 +43,7 @@ export default function SiteLauncher() {
 
     document.body.classList.add("fj-site-launching")
     try { sessionStorage.setItem(STORAGE_KEY, "true") } catch { /* Storage may be disabled. */ }
-    // Preload the lightweight assembly while the brand animation runs.
+    // Download the assembly renderer while the brand animation runs.
     loadScene().catch(skipIntro)
 
     const solarTimer = window.setTimeout(() => setPhase("solar"), BRAND_DURATION)
