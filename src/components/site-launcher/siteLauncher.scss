@@ -562,7 +562,7 @@
 .fj-solar-assembly__product {
   transform-box: view-box;
   transform-origin: 50% 50%;
-  transform: translateY(-4px) rotate(-7deg) skewX(-9deg) scale(0.96);
+  transform: translateY(-4px) scale(0.96);
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
