@@ -19,9 +19,27 @@
 
 .fj-launcher--leaving {
   opacity: 0;
-  transform: scale(1.035);
-  filter: blur(5px);
   pointer-events: none;
+}
+
+.fj-solar-intro__canvas canvas {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fj-solar-intro.is-loading {
+  .fj-solar-intro__canvas canvas { opacity: 0; }
+  .fj-solar-intro__copy > *, .fj-solar-intro__progress span {
+    animation-play-state: paused;
+  }
+  .fj-solar-intro__fallback {
+    animation: fj-solar-loading 1.2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fj-solar-loading {
+  from { opacity: 0.35; }
+  to { opacity: 0.85; }
 }
 
 .fj-launcher__brand {

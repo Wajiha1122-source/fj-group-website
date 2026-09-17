@@ -1,10 +1,30 @@
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Environment, Float } from "@react-three/drei"
-import { useMemo, useRef } from "react"
+import { createContext, useContext, useEffect, useMemo, useRef } from "react"
 import * as THREE from "three"
 
 const easeOutQuint = (value) => 1 - Math.pow(1 - value, 5)
 const clamp01 = (value) => Math.min(1, Math.max(0, value))
+const AnimationTime = createContext(null)
+
+function Timeline({ children, onReady, onComplete }) {
+  const time = useRef(0)
+  const frames = useRef(0)
+  const complete = useRef(false)
+
+  useFrame((_, delta) => {
+    frames.current += 1
+    // Let the first render compile shaders before starting the assembly clock.
+    if (frames.current === 2) onReady()
+    if (frames.current <= 2 || document.hidden) return
+    time.current += Math.min(delta, 0.05)
+    if (time.current >= 6.8 && !complete.current) {
+      complete.current = true
+      onComplete()
+    }
+  }, -1)
+
+  return <AnimationTime.Provider value={time}>{children}</AnimationTime.Provider>
+}
 
 function AnimatedPart({
   children,
@@ -15,11 +35,12 @@ function AnimatedPart({
   position = [0, 0, 0],
 }) {
   const ref = useRef(null)
+  const time = useContext(AnimationTime)
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!ref.current) return
     const progress = easeOutQuint(
-      clamp01((clock.getElapsedTime() - delay) / duration)
+      clamp01((time.current - delay) / duration)
     )
 
     ref.current.position.set(
@@ -35,18 +56,19 @@ function AnimatedPart({
     ref.current.scale.setScalar(Math.max(0.001, progress))
   })
 
-  return <group ref={ref}>{children}</group>
+  return <group ref={ref} scale={0.001}>{children}</group>
 }
 
 function SolarCell({ position, index }) {
   const glowRef = useRef(null)
+  const timeline = useContext(AnimationTime)
   const column = index % 8
   const row = Math.floor(index / 8)
   const direction = column < 4 ? -1 : 1
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!glowRef.current) return
-    const time = clock.getElapsedTime()
+    const time = timeline.current
     const pulse = clamp01((time - 4.05 - index * 0.018) / 0.42)
     glowRef.current.emissiveIntensity = pulse * (1.1 - pulse * 0.62)
   })
@@ -84,6 +106,7 @@ function SolarCell({ position, index }) {
 }
 
 function PanelModel() {
+  const timeline = useContext(AnimationTime)
   const panelRef = useRef(null)
   const energyRef = useRef(null)
   const cells = useMemo(() => {
@@ -100,8 +123,8 @@ function PanelModel() {
     return positions
   }, [])
 
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime()
+  useFrame(() => {
+    const time = timeline.current
     if (panelRef.current) {
       const settle = easeOutQuint(clamp01(time / 2.6))
       panelRef.current.rotation.x = THREE.MathUtils.lerp(-0.46, -0.18, settle)
@@ -125,7 +148,7 @@ function PanelModel() {
   })
 
   return (
-    <Float speed={1.1} rotationIntensity={0.06} floatIntensity={0.08}>
+    <group>
       <group ref={panelRef}>
         <AnimatedPart delay={0.15} duration={1.15} from={[0, -3.8, -1.8]}>
           <mesh receiveShadow>
@@ -171,8 +194,6 @@ function PanelModel() {
               transparent
               opacity={0.12}
               roughness={0.05}
-              transmission={0.62}
-              thickness={0.2}
             />
           </mesh>
         </AnimatedPart>
@@ -195,17 +216,20 @@ function PanelModel() {
           />
         </mesh>
       </group>
-    </Float>
+    </group>
   )
 }
 
-export default function SolarAssemblyScene() {
+export default function SolarAssemblyScene({ onReady, onComplete, onError }) {
   return (
     <Canvas
-      dpr={[1, 1.65]}
+      dpr={[1, 1.25]}
       camera={{ position: [0, 0, 7.4], fov: 42 }}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-      shadows
+      fallback={<SceneUnavailable onError={onError} />}
+      onCreated={({ gl }) => {
+        gl.domElement.addEventListener("webglcontextlost", onError, { once: true })
+      }}
     >
       <ambientLight intensity={0.7} />
       <directionalLight
@@ -215,8 +239,15 @@ export default function SolarAssemblyScene() {
         color="#d9f5ff"
       />
       <pointLight position={[-4, -2, 4]} intensity={28} color="#238fca" distance={9} />
-      <PanelModel />
-      <Environment preset="city" environmentIntensity={0.34} />
+      <hemisphereLight args={["#d9f5ff", "#173047", 1.4]} />
+      <Timeline onReady={onReady} onComplete={onComplete}>
+        <PanelModel />
+      </Timeline>
     </Canvas>
   )
+}
+
+function SceneUnavailable({ onError }) {
+  useEffect(onError, [onError])
+  return null
 }

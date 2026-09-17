@@ -1,58 +1,73 @@
-import { lazy, Suspense, useEffect, useState } from "react"
+import { Component, lazy, Suspense, useCallback, useEffect, useState } from "react"
 
 import "./siteLauncher.scss"
 
-const SolarAssemblyScene = lazy(() => import("./SolarAssemblyScene.jsx"))
+const loadScene = () => import("./SolarAssemblyScene.jsx")
+const SolarAssemblyScene = lazy(loadScene)
+
+class SceneBoundary extends Component {
+  state = { failed: false }
+  static getDerivedStateFromError() { return { failed: true } }
+  componentDidCatch() { this.props.onError() }
+  render() { return this.state.failed ? null : this.props.children }
+}
 
 const STORAGE_KEY = "fj-group-site-intro-seen-v5"
 const BRAND_DURATION = 6200
-const SOLAR_DURATION = 6800
-const INTRO_DURATION = BRAND_DURATION + SOLAR_DURATION
 
 export default function SiteLauncher() {
   const [phase, setPhase] = useState("brand")
+  const [exiting, setExiting] = useState(false)
+  const [sceneReady, setSceneReady] = useState(false)
   const [visible, setVisible] = useState(() => {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches
 
-    return !reducedMotion && !sessionStorage.getItem(STORAGE_KEY)
+    try {
+      return !reducedMotion && !sessionStorage.getItem(STORAGE_KEY)
+    } catch {
+      return !reducedMotion
+    }
   })
 
+  const skipIntro = useCallback(() => setExiting(true), [])
+  const handleReady = useCallback(() => setSceneReady(true), [])
+
   useEffect(() => {
-    if (!visible) return undefined
+    if (!visible || exiting) return undefined
 
     document.body.classList.add("fj-site-launching")
-    sessionStorage.setItem(STORAGE_KEY, "true")
+    try { sessionStorage.setItem(STORAGE_KEY, "true") } catch { /* Storage may be disabled. */ }
+    // Download the 3D module while the lightweight brand animation runs.
+    loadScene().catch(skipIntro)
 
     const solarTimer = window.setTimeout(() => setPhase("solar"), BRAND_DURATION)
-    const finishTimer = window.setTimeout(() => {
-      setPhase("leaving")
-      window.setTimeout(() => {
-        setVisible(false)
-        document.body.classList.remove("fj-site-launching")
-      }, 850)
-    }, INTRO_DURATION)
 
     return () => {
       window.clearTimeout(solarTimer)
-      window.clearTimeout(finishTimer)
       document.body.classList.remove("fj-site-launching")
     }
-  }, [visible])
+  }, [visible, exiting, skipIntro])
 
-  const skipIntro = () => {
-    setPhase("leaving")
-    window.setTimeout(() => {
-      setVisible(false)
-      document.body.classList.remove("fj-site-launching")
-    }, 500)
-  }
+  useEffect(() => {
+    if (!visible) return undefined
+    if (exiting) {
+      const timeout = window.setTimeout(() => setVisible(false), 850)
+      return () => window.clearTimeout(timeout)
+    }
+    // Never leave visitors behind a failed download, lost context, or stalled GPU.
+    if (phase === "solar") {
+      const timeout = window.setTimeout(skipIntro, 14000)
+      return () => window.clearTimeout(timeout)
+    }
+    return undefined
+  }, [phase, visible, exiting, skipIntro])
 
   if (!visible) return null
 
   return (
-    <div className={`fj-launcher fj-launcher--${phase}`}>
+    <div className={`fj-launcher fj-launcher--${exiting ? "leaving" : phase}`}>
       {phase === "brand" && (
         <div className="fj-launcher__brand" aria-hidden="true">
           <div className="fj-launcher__grid" />
@@ -83,14 +98,17 @@ export default function SiteLauncher() {
         </div>
       )}
 
-      {(phase === "solar" || phase === "leaving") && (
-        <div className="fj-solar-intro">
+      {phase === "solar" && (
+        <div className={`fj-solar-intro${sceneReady ? " is-ready" : " is-loading"}`}>
           <div className="fj-solar-intro__grid" />
           <div className="fj-solar-intro__halo" />
           <div className="fj-solar-intro__canvas" aria-hidden="true">
-            <Suspense fallback={<div className="fj-solar-intro__fallback" />}>
-              <SolarAssemblyScene />
-            </Suspense>
+            {!sceneReady && <div className="fj-solar-intro__fallback" />}
+            <SceneBoundary onError={skipIntro}>
+              <Suspense fallback={null}>
+                <SolarAssemblyScene onReady={handleReady} onComplete={skipIntro} onError={skipIntro} />
+              </Suspense>
+            </SceneBoundary>
           </div>
 
           <div className="fj-solar-intro__copy">
