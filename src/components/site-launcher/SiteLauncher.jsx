@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, useCallback, useEffect, useState } from "react"
+import { Component, lazy, Suspense, useCallback, useEffect, useRef, useState } from "react"
 
 import "./siteLauncher.scss"
 
@@ -12,13 +12,17 @@ class SceneBoundary extends Component {
   render() { return this.state.failed ? null : this.props.children }
 }
 
-const STORAGE_KEY = "fj-group-site-intro-seen-v5"
+const STORAGE_KEY = "fj-group-site-intro-seen-v6"
 const BRAND_DURATION = 6200
 
 export default function SiteLauncher() {
   const [phase, setPhase] = useState("brand")
   const [exiting, setExiting] = useState(false)
   const [sceneReady, setSceneReady] = useState(false)
+  const progressRef = useRef(null)
+  const handleProgress = useCallback((progress) => {
+    if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`
+  }, [])
   const [visible, setVisible] = useState(() => {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -56,13 +60,13 @@ export default function SiteLauncher() {
       const timeout = window.setTimeout(() => setVisible(false), 850)
       return () => window.clearTimeout(timeout)
     }
-    // Never leave visitors behind a failed download, lost context, or stalled GPU.
-    if (phase === "solar") {
-      const timeout = window.setTimeout(skipIntro, 14000)
+    // Bound loading only. Once rendering starts, the scene owns completion.
+    if (phase === "solar" && !sceneReady) {
+      const timeout = window.setTimeout(skipIntro, 30000)
       return () => window.clearTimeout(timeout)
     }
     return undefined
-  }, [phase, visible, exiting, skipIntro])
+  }, [phase, visible, exiting, sceneReady, skipIntro])
 
   if (!visible) return null
 
@@ -106,7 +110,7 @@ export default function SiteLauncher() {
             {!sceneReady && <div className="fj-solar-intro__fallback" />}
             <SceneBoundary onError={skipIntro}>
               <Suspense fallback={null}>
-                <SolarAssemblyScene onReady={handleReady} onComplete={skipIntro} onError={skipIntro} />
+                <SolarAssemblyScene onReady={handleReady} onComplete={skipIntro} onError={skipIntro} onProgress={handleProgress} />
               </Suspense>
             </SceneBoundary>
           </div>
@@ -118,7 +122,7 @@ export default function SiteLauncher() {
           </div>
 
           <div className="fj-solar-intro__progress">
-            <span />
+            <span ref={progressRef} />
           </div>
         </div>
       )}

@@ -486,7 +486,7 @@
   background: linear-gradient(90deg, #2f6fb2, #8bd2ed);
   transform: scaleX(0);
   transform-origin: left;
-  animation: fj-solar-progress 6.2s linear forwards;
+  will-change: transform;
 }
 
 @keyframes fj-solar-arrive {

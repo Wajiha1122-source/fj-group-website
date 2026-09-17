@@ -1,12 +1,13 @@
 import { Canvas, useFrame } from "@react-three/fiber"
 import { createContext, useContext, useEffect, useMemo, useRef } from "react"
 import * as THREE from "three"
+import { advanceAssemblyTime, ASSEMBLY_END } from "./assemblyTiming.js"
 
 const easeOutQuint = (value) => 1 - Math.pow(1 - value, 5)
 const clamp01 = (value) => Math.min(1, Math.max(0, value))
 const AnimationTime = createContext(null)
 
-function Timeline({ children, onReady, onComplete }) {
+function Timeline({ children, onReady, onComplete, onProgress }) {
   const time = useRef(0)
   const frames = useRef(0)
   const complete = useRef(false)
@@ -16,8 +17,9 @@ function Timeline({ children, onReady, onComplete }) {
     // Let the first render compile shaders before starting the assembly clock.
     if (frames.current === 2) onReady()
     if (frames.current <= 2 || document.hidden) return
-    time.current += Math.min(delta, 0.05)
-    if (time.current >= 6.8 && !complete.current) {
+    time.current = advanceAssemblyTime(time.current, delta, document.hidden)
+    onProgress(time.current / ASSEMBLY_END)
+    if (time.current >= ASSEMBLY_END && !complete.current) {
       complete.current = true
       onComplete()
     }
@@ -220,7 +222,7 @@ function PanelModel() {
   )
 }
 
-export default function SolarAssemblyScene({ onReady, onComplete, onError }) {
+export default function SolarAssemblyScene({ onReady, onComplete, onError, onProgress }) {
   return (
     <Canvas
       dpr={[1, 1.25]}
@@ -240,7 +242,7 @@ export default function SolarAssemblyScene({ onReady, onComplete, onError }) {
       />
       <pointLight position={[-4, -2, 4]} intensity={28} color="#238fca" distance={9} />
       <hemisphereLight args={["#d9f5ff", "#173047", 1.4]} />
-      <Timeline onReady={onReady} onComplete={onComplete}>
+      <Timeline onReady={onReady} onComplete={onComplete} onProgress={onProgress}>
         <PanelModel />
       </Timeline>
     </Canvas>
