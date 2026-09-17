@@ -116,8 +116,8 @@ export default function SiteLauncher() {
           </div>
 
           <div className="fj-solar-intro__copy">
-            <span>Precision in every layer</span>
-            <h2>Engineering sunlight<br />into progress.</h2>
+            <span>FJ GROUP · SOLAR ENGINEERING</span>
+            <h2>Pure energy.<br />Precisely engineered.</h2>
             <p>Water <i /> Energy <i /> Industry</p>
           </div>
 

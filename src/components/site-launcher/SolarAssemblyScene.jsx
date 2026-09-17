@@ -2,12 +2,12 @@ import { useEffect, useRef } from "react"
 import { advanceAssemblyTime, ASSEMBLY_END } from "./assemblyTiming.js"
 
 const clamp = (n) => Math.max(0, Math.min(1, n))
-const cells = Array.from({ length: 40 }, (_, i) => ({
-  x: 116 + (i % 8) * 59,
-  y: 125 + Math.floor(i / 8) * 54,
-  delay: 1.1 + i * 0.045,
-  dx: i % 8 < 4 ? -170 : 170,
-  dy: (Math.floor(i / 8) - 2) * 60,
+const cells = Array.from({ length: 96 }, (_, i) => ({
+  x: 115 + (i % 12) * 39.2,
+  y: 124 + Math.floor(i / 12) * 33.5,
+  delay: 0.8 + Math.floor(i / 12) * 0.17 + (i % 12) * 0.035,
+  dx: i % 12 < 6 ? -75 : 75,
+  dy: (Math.floor(i / 12) - 3.5) * 24,
 }))
 
 export default function SolarAssemblyScene({ onReady, onComplete, onProgress }) {
@@ -63,10 +63,10 @@ export default function SolarAssemblyScene({ onReady, onComplete, onProgress }) 
     <svg ref={scene} className="fj-solar-assembly" viewBox="0 0 700 500" aria-hidden="true">
       <defs>
         <linearGradient id="assembly-cell" x2="0.8" y2="1">
-          <stop stopColor="#152c47" /><stop offset="0.45" stopColor="#081421" /><stop offset="1" stopColor="#10263d" />
+          <stop stopColor="#1b242e" /><stop offset="0.45" stopColor="#060a10" /><stop offset="1" stopColor="#111a26" />
         </linearGradient>
         <linearGradient id="assembly-metal" x2="0.3" y2="1">
-          <stop stopColor="#eff5f9" /><stop offset="0.16" stopColor="#9cabb8" /><stop offset="0.38" stopColor="#344353" /><stop offset="0.55" stopColor="#637788" /><stop offset="0.85" stopColor="#c2ced7" /><stop offset="1" stopColor="#465868" />
+          <stop stopColor="#87919b" /><stop offset="0.16" stopColor="#2b333c" /><stop offset="0.38" stopColor="#090e14" /><stop offset="0.55" stopColor="#1c252f" /><stop offset="0.85" stopColor="#586575" /><stop offset="1" stopColor="#151c25" />
         </linearGradient>
         <linearGradient id="assembly-shine">
           <stop stopColor="#c9f7ff" stopOpacity="0" /><stop offset="0.5" stopColor="#c9f7ff" stopOpacity="0.8" /><stop offset="1" stopColor="#c9f7ff" stopOpacity="0" />
@@ -89,15 +89,15 @@ export default function SolarAssemblyScene({ onReady, onComplete, onProgress }) 
       </g>
       {cells.map((cell, index) => (
         <g key={index} {...part(cell.delay, cell.dx, cell.dy)}>
-          <path d={`M${cell.x + 4} ${cell.y}h46l4 4v41l-4 4h-46l-4-4v-41Z`} fill="url(#assembly-cell)" stroke="#718ba0" strokeOpacity="0.5" strokeWidth="0.45" />
-          <rect x={cell.x + 3} y={cell.y + 3} width="48" height="43" fill="url(#assembly-fingers)" />
-          {[10, 21, 33, 44].map((x) => <path key={x} d={`M${cell.x + x} ${cell.y + 2}v45`} stroke="#c4d5e0" strokeOpacity="0.4" strokeWidth="0.55" />)}
+          <path d={`M${cell.x + 2} ${cell.y}h31l2 2v26l-2 2h-31l-2-2v-26Z`} fill="url(#assembly-cell)" stroke="#718ba0" strokeOpacity="0.22" strokeWidth="0.35" />
+          <rect x={cell.x + 3} y={cell.y + 3} width="29" height="24" fill="url(#assembly-fingers)" />
+          {[9, 18, 27].map((x) => <path key={x} d={`M${cell.x + x} ${cell.y + 2}v26`} stroke="#c4d5e0" strokeOpacity="0.2" strokeWidth="0.35" />)}
         </g>
       ))}
-      <rect {...part(3.2, 0, -120)} x="96" y="104" width="508" height="12" rx="3" fill="url(#assembly-metal)" />
-      <rect {...part(3.4, 0, 120)} x="96" y="400" width="508" height="12" rx="3" fill="url(#assembly-metal)" />
-      <rect {...part(3.6, -150, 0)} x="96" y="112" width="12" height="292" rx="3" fill="url(#assembly-metal)" />
-      <rect {...part(3.8, 150, 0)} x="592" y="112" width="12" height="292" rx="3" fill="url(#assembly-metal)" />
+      <rect {...part(3.2, 0, -120)} x="101" y="109" width="498" height="7" rx="1" fill="url(#assembly-metal)" />
+      <rect {...part(3.4, 0, 120)} x="101" y="400" width="498" height="7" rx="1" fill="url(#assembly-metal)" />
+      <rect {...part(3.6, -150, 0)} x="101" y="112" width="7" height="292" rx="1" fill="url(#assembly-metal)" />
+      <rect {...part(3.8, 150, 0)} x="592" y="112" width="7" height="292" rx="1" fill="url(#assembly-metal)" />
       <g clipPath="url(#assembly-window)">
         <rect {...part(4.2, 0, -24)} x="108" y="116" width="484" height="284" fill="url(#assembly-glass)" />
         <rect data-sweep x="0" y="116" width="100" height="284" fill="url(#assembly-shine)" opacity="0" />

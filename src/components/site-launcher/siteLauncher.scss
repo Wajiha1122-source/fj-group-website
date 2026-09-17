@@ -351,12 +351,13 @@
   inset: 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 42%, rgba(36, 136, 190, 0.24), transparent 34%),
-    linear-gradient(145deg, #04101e 0%, #071a2f 52%, #020913 100%);
+    radial-gradient(ellipse at 48% 32%, rgba(126, 146, 164, 0.16), transparent 48%),
+    linear-gradient(145deg, #10151b 0%, #05080d 60%, #020407 100%);
   animation: fj-solar-arrive 0.8s ease-out both;
 }
 
 .fj-solar-intro__grid {
+  display: none;
   position: absolute;
   inset: 48% -20% -45%;
   background-image:
@@ -376,12 +377,10 @@
   top: 47%;
   width: min(76vw, 850px);
   aspect-ratio: 1;
-  border: 1px solid rgba(113, 205, 239, 0.1);
+  border: 0;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow:
-    0 0 0 70px rgba(102, 190, 226, 0.025),
-    0 0 0 150px rgba(102, 190, 226, 0.018);
+  background: radial-gradient(ellipse, rgba(183, 198, 211, 0.07), transparent 65%);
   animation: fj-halo-breathe 4s ease-in-out infinite;
 }
 
@@ -421,7 +420,7 @@
 
 .fj-solar-intro__copy > span {
   display: block;
-  color: #8bd2ed;
+  color: #c5b99d;
   font-size: clamp(0.58rem, 1vw, 0.72rem);
   font-weight: 800;
   letter-spacing: 0.38em;
@@ -434,9 +433,9 @@
   margin: 10px 0 0;
   color: #ffffff;
   font-size: clamp(2rem, 5vw, 4.4rem);
-  font-weight: 600;
-  line-height: 0.96;
-  letter-spacing: -0.05em;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
   text-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
   opacity: 0;
   transform: translateY(22px);
@@ -563,7 +562,7 @@
 .fj-solar-assembly__product {
   transform-box: view-box;
   transform-origin: 50% 50%;
-  transform: translateY(-4px) rotate(-3deg) skewX(-5deg) scale(0.96);
+  transform: translateY(-4px) rotate(-7deg) skewX(-9deg) scale(0.96);
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
