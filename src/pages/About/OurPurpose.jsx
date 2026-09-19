@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"
 import "../../styles/components/ourPurpose.scss"
 
-// ================= CLOUDINARY VIDEO =================
-const sampleVideo =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520306/case4_xtxceh.mp4"
+import sampleVideo from "../../assets/videos/case4.mp4"
+import videoPoster from "../../assets/images/optimized/solar-water-system-1200.jpg"
 
 export default function OurPurpose() {
 
@@ -48,6 +47,7 @@ export default function OurPurpose() {
       {/* VIDEO SECTION */}
       <section className="purpose-video">
         <motion.div
+          className="purpose-video__media"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -60,6 +60,8 @@ export default function OurPurpose() {
             muted
             loop
             playsInline
+            preload="metadata"
+            poster={videoPoster}
           />
         </motion.div>
 

@@ -91,3 +91,67 @@ img {
 @import "./components/navbar.scss";
 @import "./components/hero.scss";
 @import "./components/footer.scss";
+/* Interaction refinements: individual translate does not fight Motion transforms. */
+.who-values .value-card,
+.purpose-pillars .pillar-card,
+.partners-page .partner-row,
+.office-map {
+  transition: translate 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .who-values .value-card:hover,
+  .purpose-pillars .pillar-card:hover,
+  .partners-page .partner-row:hover {
+    translate: 0 -7px;
+    box-shadow: 0 24px 48px rgba(11, 31, 58, 0.16);
+    border-color: rgba(47, 111, 178, 0.32);
+  }
+  .partners-page .partner-row:hover img { transform: scale(1.06); }
+  .office-map:hover, .office-map:focus-within {
+    translate: 0 -5px;
+    box-shadow: 0 22px 48px rgba(11, 31, 58, 0.2);
+  }
+  .footer-main .footer-brand > a:hover .footer-logo { scale: 1.06; }
+  .footer-main ul li a:hover { translate: 4px 0; color: #9ed9ef; }
+  .footer-main .social-icons a:hover { translate: 0 -4px; }
+}
+
+.footer-main .footer-logo {
+  transition: scale 0.3s ease;
+}
+.footer-main ul li a {
+  display: inline-block;
+  transition: translate 0.25s ease, color 0.25s ease;
+}
+.footer-main a:focus-visible {
+  outline: 2px solid #9ed9ef;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+.footer-main ul li a:focus-visible { color: #9ed9ef; }
+.office-map {
+  border: 1px solid rgba(47, 111, 178, 0.2);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.office-map iframe { display: block; }
+.purpose-video__media { height: 100%; }
+.contact-page .contact-video video { position: absolute; inset: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .who-values .value-card,
+  .purpose-pillars .pillar-card,
+  .partners-page .partner-row,
+  .office-map,
+  .office-map iframe,
+  .footer-main a,
+  .footer-main li,
+  .footer-main .footer-logo,
+  .blog-feature__media img,
+  .blog-feature__media video { transition: none; }
+  .blog-feature:hover .blog-feature__media img,
+  .blog-feature:hover .blog-feature__media video,
+  .partner-image:hover img,
+  .office-map iframe:hover { transform: none; }
+}

@@ -281,6 +281,8 @@ export default function PersonalizedSolution() {
                 <option>Solis</option>
                 <option>Aepower</option>
                 <option>INVT</option>
+                <option>Goodwe</option>
+                <option>Canadian solar</option>
                 <option>VFD's</option>
               </select>
             </div>

@@ -152,7 +152,7 @@
 
 .blog-feature:hover .blog-feature__media--contain img,
 .blog-feature:hover .blog-feature__media--contain video {
-  transform: none;
+  transform: scale(1.04);
 }
 
 .blog-feature__content {

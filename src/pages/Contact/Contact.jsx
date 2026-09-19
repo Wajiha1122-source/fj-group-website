@@ -9,9 +9,8 @@ import {
 
 import "../../styles/components/contact.scss"
 
-// ================= CLOUDINARY VIDEO =================
-const caseVideo =
-  "https://res.cloudinary.com/dcbcubcrq/video/upload/v1779520244/case2_jndrdt.mp4"
+import caseVideo from "../../assets/videos/case2.mp4"
+import videoPoster from "../../assets/images/optimized/drilling-water-site-1200.jpg"
 
 import logo from "../../assets/icons/logo1.png"
 
@@ -119,7 +118,7 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
           >
 
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline preload="metadata" poster={videoPoster}>
               <source src={caseVideo} type="video/mp4" />
             </video>
 

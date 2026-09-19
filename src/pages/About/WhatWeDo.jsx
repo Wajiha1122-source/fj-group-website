@@ -12,6 +12,13 @@ import "../../styles/components/whatWeDo.scss"
 
 const solutions = [
   {
+    icon: <FiDroplet />,
+    title: "Central Pivot System",
+    desc: "We plan and integrate central pivot irrigation systems for consistent water distribution across agricultural fields.",
+    details: "Field layout, water supply, pumping, solar power, and controls are coordinated to suit each farm's irrigation requirements.",
+    to: "/central-pivot-irrigation"
+  },
+  {
     icon: <FiSettings />,
     title: "Industrial Drilling",
     desc: "We provide advanced drilling systems engineered for infrastructure, industrial, and water extraction projects with a focus on precision, operational efficiency, and long-term durability.",
@@ -192,7 +199,7 @@ export default function WhatWeDo() {
 
                 <Link
                   className="solution-learn-more"
-                  to={`/about/what-we-do/${item.slug}`}
+                  to={item.to || `/about/what-we-do/${item.slug}`}
                 >
                   Learn More
                   <FiArrowRight />
