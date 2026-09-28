@@ -9,6 +9,7 @@ import { advanceAssemblyTime, ASSEMBLY_END } from "./assemblyTiming.js"
 const easeOutQuint = (value) => 1 - Math.pow(1 - value, 5)
 const clamp01 = (value) => Math.min(1, Math.max(0, value))
 const AnimationTime = createContext(null)
+const CellResources = createContext(null)
 
 function Timeline({ children, onReady, onComplete, onProgress, onError }) {
   const { gl, scene, camera, size } = useThree()
@@ -94,9 +95,10 @@ function AnimatedPart({
 }) {
   const ref = useRef(null)
   const time = useContext(AnimationTime)
+  const settled = useRef(false)
 
   useFrame(() => {
-    if (!ref.current) return
+    if (!ref.current || settled.current) return
     const progress = easeOutQuint(
       clamp01((time.current - delay) / duration)
     )
@@ -112,6 +114,11 @@ function AnimatedPart({
       THREE.MathUtils.lerp(rotationFrom[2], 0, progress)
     )
     ref.current.scale.setScalar(Math.max(0.001, progress))
+    if (progress === 1) {
+      ref.current.updateMatrix()
+      ref.current.matrixAutoUpdate = false
+      settled.current = true
+    }
   })
 
   return <group ref={ref} scale={0.001}>{children}</group>
@@ -119,16 +126,19 @@ function AnimatedPart({
 
 function SolarCell({ position, index }) {
   const glowRef = useRef(null)
+  const glowComplete = useRef(false)
+  const resources = useContext(CellResources)
   const timeline = useContext(AnimationTime)
   const column = index % 8
   const row = Math.floor(index / 8)
   const direction = column < 4 ? -1 : 1
 
   useFrame(() => {
-    if (!glowRef.current) return
+    if (!glowRef.current || glowComplete.current) return
     const time = timeline.current
     const pulse = clamp01((time - 4.05 - index * 0.018) / 0.42)
     glowRef.current.emissiveIntensity = pulse * (1.1 - pulse * 0.62)
+    glowComplete.current = pulse === 1
   })
 
   return (
@@ -144,7 +154,7 @@ function SolarCell({ position, index }) {
       position={position}
     >
       <mesh castShadow receiveShadow>
-        <boxGeometry args={[0.43, 0.39, 0.045]} />
+        <primitive object={resources.cell} attach="geometry" />
         <meshPhysicalMaterial
           ref={glowRef}
           color="#0d3f72"
@@ -156,8 +166,8 @@ function SolarCell({ position, index }) {
         />
       </mesh>
       <mesh position={[0, 0, 0.025]}>
-        <planeGeometry args={[0.012, 0.36]} />
-        <meshBasicMaterial color="#8bc9e5" transparent opacity={0.62} />
+        <primitive object={resources.stripe} attach="geometry" />
+        <primitive object={resources.stripeMaterial} attach="material" />
       </mesh>
     </AnimatedPart>
   )
@@ -167,6 +177,18 @@ function PanelModel() {
   const timeline = useContext(AnimationTime)
   const panelRef = useRef(null)
   const energyRef = useRef(null)
+  const resources = useMemo(() => ({
+    cell: new THREE.BoxGeometry(0.43, 0.39, 0.045),
+    stripe: new THREE.PlaneGeometry(0.012, 0.36),
+    stripeMaterial: new THREE.MeshBasicMaterial({
+      color: "#8bc9e5", transparent: true, opacity: 0.62,
+    }),
+  }), [])
+  useEffect(() => () => {
+    resources.cell.dispose()
+    resources.stripe.dispose()
+    resources.stripeMaterial.dispose()
+  }, [resources])
   const cells = useMemo(() => {
     const positions = []
     for (let row = 0; row < 5; row += 1) {
@@ -215,9 +237,11 @@ function PanelModel() {
           </mesh>
         </AnimatedPart>
 
+        <CellResources.Provider value={resources}>
         {cells.map((position, index) => (
           <SolarCell key={`${position[0]}-${position[1]}`} position={position} index={index} />
         ))}
+        </CellResources.Provider>
 
         <AnimatedPart delay={2.35} duration={0.9} from={[0, 3.7, 1.7]} position={[0, 1.24, 0.16]} rotationFrom={[0.4, 0, 0.3]}>
           <mesh castShadow>

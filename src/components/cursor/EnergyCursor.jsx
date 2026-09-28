@@ -42,6 +42,10 @@ export default function EnergyCursor() {
     document.documentElement.classList.add("fj-energy-cursor-active")
 
     const render = () => {
+      frameRef.current = 0
+      if (document.hidden) return
+      const previousX = trailRef.current.x
+      const previousY = trailRef.current.y
       trailRef.current.x += (pointerRef.current.x - trailRef.current.x) * 0.18
       trailRef.current.y += (pointerRef.current.y - trailRef.current.y) * 0.18
 
@@ -53,12 +57,16 @@ export default function EnergyCursor() {
         coreRef.current.style.transform = `translate3d(${pointerRef.current.x}px, ${pointerRef.current.y}px, 0)`
       }
 
-      frameRef.current = window.requestAnimationFrame(render)
+      // Keep the exact easing; stop only when floating-point positions settle.
+      if (previousX !== trailRef.current.x || previousY !== trailRef.current.y) {
+        frameRef.current = window.requestAnimationFrame(render)
+      }
     }
 
     const onPointerMove = (event) => {
       pointerRef.current = { x: event.clientX, y: event.clientY }
       setHovering(Boolean(event.target.closest?.(INTERACTIVE_SELECTOR)))
+      if (!frameRef.current) frameRef.current = window.requestAnimationFrame(render)
     }
 
     const onPointerDown = () => setPressed(true)
@@ -71,22 +79,30 @@ export default function EnergyCursor() {
       cursorRef.current?.classList.remove("is-hidden")
       coreRef.current?.classList.remove("is-hidden")
     }
+    const onVisibilityChange = () => {
+      window.cancelAnimationFrame(frameRef.current)
+      frameRef.current = 0
+      if (!document.hidden) frameRef.current = window.requestAnimationFrame(render)
+    }
 
     window.addEventListener("pointermove", onPointerMove, { passive: true })
     window.addEventListener("pointerdown", onPointerDown, { passive: true })
     window.addEventListener("pointerup", onPointerUp, { passive: true })
     document.documentElement.addEventListener("mouseleave", onPointerLeave)
     document.documentElement.addEventListener("mouseenter", onPointerEnter)
+    document.addEventListener("visibilitychange", onVisibilityChange)
     frameRef.current = window.requestAnimationFrame(render)
 
     return () => {
       document.documentElement.classList.remove("fj-energy-cursor-active")
       window.cancelAnimationFrame(frameRef.current)
+      frameRef.current = 0
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerdown", onPointerDown)
       window.removeEventListener("pointerup", onPointerUp)
       document.documentElement.removeEventListener("mouseleave", onPointerLeave)
       document.documentElement.removeEventListener("mouseenter", onPointerEnter)
+      document.removeEventListener("visibilitychange", onVisibilityChange)
     }
   }, [enabled])
 

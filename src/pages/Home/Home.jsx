@@ -61,13 +61,19 @@ export default function Home() {
     const updateScrollDrift = () => {
       const viewportCenter = window.innerHeight / 2
 
-      motionSections.forEach((section) => {
+      // Finish all layout reads before changing any styles.
+      const drifts = motionSections.map((section) => {
         const rect = section.getBoundingClientRect()
         const sectionCenter = rect.top + rect.height / 2
         const distance = (sectionCenter - viewportCenter) / window.innerHeight
         const drift = Math.max(-1, Math.min(1, distance)) * -18
 
-        section.style.setProperty("--home-scroll-drift", `${drift.toFixed(2)}px`)
+        return `${drift.toFixed(2)}px`
+      })
+      motionSections.forEach((section, index) => {
+        if (section.style.getPropertyValue("--home-scroll-drift") !== drifts[index]) {
+          section.style.setProperty("--home-scroll-drift", drifts[index])
+        }
       })
 
       rafId = 0

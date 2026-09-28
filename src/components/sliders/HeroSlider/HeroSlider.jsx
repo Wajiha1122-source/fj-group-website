@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import CentralPivotHighlight from "../../sections/CentralPivotHighlight"
 
 import solarPumpFlow from "../../../assets/images/optimized/solar-pump-flow-1200.jpg"
 import solarWaterSystem from "../../../assets/images/optimized/solar-water-system-1200.jpg"
@@ -325,6 +326,7 @@ export default function HeroSlider() {
       )}
 
       {/* ================= CINEMATIC HERO ================= */}
+      <CentralPivotHighlight />
       <section
         className={`fj-hero-showcase fj-hero-showcase--${activeScene.variant}`}
         aria-label="FJ Group hero showcase"

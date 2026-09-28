@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "../../styles/components/cases.scss"
 import { caseStudies } from "../../data/caseStudies"
+import ViewportVideo from "../media/ViewportVideo"
 
 export default function CasesSection() {
   return (
@@ -38,15 +39,10 @@ export default function CasesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
 
-              <video
+              <ViewportVideo
                 className="case-video"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src={item.cardVideo || item.video} type="video/mp4" />
-              </video>
+                src={item.cardVideo || item.video}
+              />
 
               <div className="case-overlay" />
 

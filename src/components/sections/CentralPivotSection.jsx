@@ -47,7 +47,7 @@ export default function CentralPivotSection() {
   const currentImage = pivotImages[activeImage]
 
   return (
-    <section className="central-pivot-section">
+    <section className="central-pivot-section" id="central-pivot" tabIndex={-1} aria-labelledby="central-pivot-heading">
       <div className="container central-pivot-layout">
         <motion.div
           className="central-pivot-content"
@@ -57,7 +57,7 @@ export default function CentralPivotSection() {
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <span className="central-pivot-tag">PREMIUM IRRIGATION SERVICE</span>
-          <h2>Central Pivot Irrigation Systems</h2>
+          <h2 id="central-pivot-heading">Central Pivot Irrigation Systems</h2>
           <p>
             A central pivot system helps irrigate large agricultural fields through a rotating
             pipeline structure, giving farms consistent water coverage with efficient planning,

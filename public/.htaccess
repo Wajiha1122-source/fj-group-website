@@ -1,0 +1,11 @@
+# Optional Apache/LiteSpeed delivery rules for Hostinger static hosting.
+# No rewrites: keep the existing deployment and generated route files intact.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|json|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
