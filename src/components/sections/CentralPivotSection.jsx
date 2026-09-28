@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
-import { FiArrowRight } from "react-icons/fi"
+import { FiArrowRight, FiPhone } from "react-icons/fi"
 import { FaTint, FaTools, FaDraftingCompass } from "react-icons/fa"
 import "../../styles/components/centralPivot.scss"
 
@@ -89,10 +89,16 @@ export default function CentralPivotSection() {
             })}
           </div>
 
+          <div className="central-pivot-actions">
           <Link className="central-pivot-btn" to="/central-pivot-irrigation">
             Learn More
             <FiArrowRight />
           </Link>
+            <a className="central-pivot-contact" href="tel:+923111777286" aria-label="Call our UAN at +923 111 777 286">
+              <FiPhone aria-hidden="true" />
+              <span><small>CONTACT UAN</small><strong>+923 111 777 286</strong></span>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div

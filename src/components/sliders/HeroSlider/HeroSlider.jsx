@@ -326,7 +326,6 @@ export default function HeroSlider() {
       )}
 
       {/* ================= CINEMATIC HERO ================= */}
-      <CentralPivotHighlight />
       <section
         className={`fj-hero-showcase fj-hero-showcase--${activeScene.variant}`}
         aria-label="FJ Group hero showcase"
@@ -362,11 +361,14 @@ export default function HeroSlider() {
             <h1>{activeScene.title}</h1>
             {activeScene.subtitle && <h2>{activeScene.subtitle}</h2>}
             <p>{activeScene.copy}</p>
+            <div className="fj-hero-actions">
             {activeScene.button && (
               <button type="button" onClick={openModal}>
                 {activeScene.button}
               </button>
             )}
+              <CentralPivotHighlight />
+            </div>
           </div>
 
           {activeScene.variant === "video" && (

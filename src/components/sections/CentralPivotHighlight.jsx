@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react"
 import { FiArrowDownRight } from "react-icons/fi"
-import pivotImage from "../../assets/images/optimized/cp2-1200.jpg"
 import "../../styles/components/centralPivotHighlight.scss"
 
 export default function CentralPivotHighlight() {
@@ -40,18 +39,9 @@ export default function CentralPivotHighlight() {
   }
 
   return (
-    <aside className="container fj-pivot-highlight" aria-label="Featured irrigation service">
-      <a className="fj-pivot-highlight__card" href="#central-pivot" onClick={explorePivot}>
-        <img src={pivotImage} alt="" width="120" height="84" decoding="async" />
-        <span className="fj-pivot-highlight__copy">
-          <span className="fj-pivot-highlight__eyebrow">PRECISION IRRIGATION</span>
-          <strong>Central Pivot Irrigation Systems</strong>
-          <span className="fj-pivot-highlight__description">Explore complete irrigation solutions for your farm.</span>
-        </span>
-        <span className="fj-pivot-highlight__action">
-          Explore Central Pivot <FiArrowDownRight aria-hidden="true" />
-        </span>
-      </a>
-    </aside>
+    <a className="fj-pivot-highlight" href="#central-pivot" onClick={explorePivot}>
+      <span>Explore Central Pivot Irrigation</span>
+      <FiArrowDownRight aria-hidden="true" />
+    </a>
   )
 }
