@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { FiArrowDownRight } from "react-icons/fi"
 import "../../styles/components/centralPivotHighlight.scss"
 
-export default function CentralPivotHighlight() {
+export default function CentralPivotHighlight({ children, className = "fj-pivot-discover", label }) {
   const pendingScroll = useRef(null)
   useEffect(() => () => pendingScroll.current?.(), [])
 
@@ -39,9 +39,8 @@ export default function CentralPivotHighlight() {
   }
 
   return (
-    <a className="fj-pivot-highlight" href="#central-pivot" onClick={explorePivot}>
-      <span>Explore Central Pivot Irrigation</span>
-      <FiArrowDownRight aria-hidden="true" />
+    <a className={`fj-pivot-link ${className}`} href="#central-pivot" onClick={explorePivot} aria-label={label}>
+      {children || <><span>Discover our irrigation solutions</span><FiArrowDownRight aria-hidden="true" /></>}
     </a>
   )
 }

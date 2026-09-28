@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import CentralPivotHighlight from "../../sections/CentralPivotHighlight"
+import pivotField from "../../../assets/images/optimized/cp2-1200.jpg"
 
 import solarPumpFlow from "../../../assets/images/optimized/solar-pump-flow-1200.jpg"
 import solarWaterSystem from "../../../assets/images/optimized/solar-water-system-1200.jpg"
@@ -12,6 +13,15 @@ import { loadHtml2Canvas } from "../../../utils/loadHtml2Canvas.js"
 import video2 from "../../../assets/videos/slide2.mp4"
 
 const heroScenes = [
+  {
+    variant: "image",
+    pivot: true,
+    eyebrow: "PRECISION IRRIGATION",
+    title: "Central Pivot Irrigation Systems",
+    copy: "Uniform water coverage, engineered field layouts, and complete installation support for your farm.",
+    media: pivotField,
+    backdrop: pivotField,
+  },
   {
     variant: "statement",
     eyebrow: "FJ GROUP SYSTEMS",
@@ -74,11 +84,19 @@ export default function HeroSlider() {
   const activeScene = heroScenes[activeSlide]
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((current) => (current + 1) % heroScenes.length)
-    }, 3600)
-
-    return () => clearInterval(timer)
+    let timer
+    const startSlides = () => {
+      if (document.querySelector(".fj-launcher")) return
+      observer.disconnect()
+      timer = window.setInterval(() => {
+        setActiveSlide((current) => (current + 1) % heroScenes.length)
+      }, 3600)
+    }
+    // Keep Central Pivot first until the opening assembly has fully left.
+    const observer = new MutationObserver(startSlides)
+    observer.observe(document.body, { childList: true, subtree: true })
+    startSlides()
+    return () => { observer.disconnect(); window.clearInterval(timer) }
   }, [])
 
   const handleChange = (e) => {
@@ -358,17 +376,17 @@ export default function HeroSlider() {
         <div className="container fj-hero-layout" key={`scene-${activeSlide}`}>
           <div className="fj-hero-copy">
             <span className="fj-hero-kicker">{activeScene.eyebrow}</span>
-            <h1>{activeScene.title}</h1>
+            <h1>{activeScene.pivot
+              ? <CentralPivotHighlight className="fj-pivot-title">{activeScene.title}</CentralPivotHighlight>
+              : activeScene.title}</h1>
             {activeScene.subtitle && <h2>{activeScene.subtitle}</h2>}
             <p>{activeScene.copy}</p>
-            <div className="fj-hero-actions">
             {activeScene.button && (
               <button type="button" onClick={openModal}>
                 {activeScene.button}
               </button>
             )}
-              <CentralPivotHighlight />
-            </div>
+            {activeScene.pivot && <CentralPivotHighlight />}
           </div>
 
           {activeScene.variant === "video" && (
@@ -391,7 +409,12 @@ export default function HeroSlider() {
             </div>
           )}
 
-          {activeScene.variant === "image" && (
+          {activeScene.pivot ? (
+            <CentralPivotHighlight className="fj-image-mask fj-pivot-image" label="Explore Central Pivot Irrigation Systems">
+              <img src={pivotField} alt="Central pivot irrigation system watering agricultural fields" width="1200" height="569" fetchPriority="high" decoding="async" />
+              <span>Precision irrigation for your farm</span>
+            </CentralPivotHighlight>
+          ) : activeScene.variant === "image" && (
             <div className="fj-image-mask">
               <img
                 src={activeScene.media}
