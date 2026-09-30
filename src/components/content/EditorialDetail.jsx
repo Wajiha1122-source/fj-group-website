@@ -80,6 +80,7 @@ export default function EditorialDetail({
               <span>{typeLabel}</span>
               <span>{content.category}</span>
               {content.readTime && <span>{content.readTime}</span>}
+              {content.date && <span>{content.date}</span>}
               {content.location && <span>{content.location}</span>}
             </div>
           </div>
@@ -93,6 +94,14 @@ export default function EditorialDetail({
 
       <div className="container editorial-detail__layout">
         <main className="editorial-detail__main">
+          {content.articleVideo && (
+            <figure className="editorial-detail__project-image">
+              <video controls playsInline preload="metadata" poster={content.image} aria-label={content.title} style={{ width: "100%", maxHeight: "70vh", background: "#071a2f" }}>
+                <source src={content.articleVideo} type="video/mp4" />
+              </video>
+              {content.videoCaption && <figcaption>{content.videoCaption}</figcaption>}
+            </figure>
+          )}
           {content.articleImage && (
             <figure className="editorial-detail__project-image">
               <img src={content.articleImage} alt={content.imageAlt || content.title} loading="lazy" />
@@ -153,6 +162,12 @@ export default function EditorialDetail({
           </div>
 
           <div className="editorial-detail__contact">
+            {content.salesPhone ? <>
+              <span>Sales enquiries</span>
+              <h2>Order your KOMAX motor</h2>
+              <p>Contact our team for model availability, pricing, and orders from our physical or ecommerce store.</p>
+              <a href={content.salesHref}>UAN: {content.salesPhone}</a>
+            </> : <>
             <span>Discuss your project</span>
             <h2>Need an engineering solution?</h2>
             <p>
@@ -162,6 +177,7 @@ export default function EditorialDetail({
               Contact our team
               <FiArrowRight />
             </Link>
+            </>}
           </div>
         </aside>
       </div>

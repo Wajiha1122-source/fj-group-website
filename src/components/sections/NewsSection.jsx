@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "../../styles/components/news.scss"
 
 import { newsData } from "../../data/newsData"
+import ViewportVideo from "../media/ViewportVideo"
 
 export default function NewsSection() {
   return (
@@ -37,7 +38,7 @@ export default function NewsSection() {
 
               {/* IMAGE */}
               <div className="news-image">
-                {(item.images || [item.image]).map((image) => (
+                {item.cardVideo ? <ViewportVideo src={item.cardVideo} rootMargin="0px" poster={item.image} controls aria-label={item.title} /> : (item.images || [item.image]).map((image) => (
                   <img
                     key={image}
                     src={image}

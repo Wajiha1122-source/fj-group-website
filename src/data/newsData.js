@@ -10,8 +10,60 @@ import independenceDayCelebration from "../assets/images/news/independence-day-2
 import independenceDayCake from "../assets/images/news/independence-day-2026/cake.webp"
 import independenceDayVideo from "../assets/videos/news/fj-group-independence-day-2026.mp4"
 import cholistanSolarPivot from "../assets/images/news/cholistan-187kw-solar-pivot.jpeg"
+import komaxRestockVideo from "../assets/videos/news/komax-motors-restocked-september-2026.mp4"
 
 export const newsData = [
+  {
+    image: komaxFlagshipStore,
+    cardVideo: komaxRestockVideo,
+    articleVideo: komaxRestockVideo,
+    videoCaption: "KOMAX motors restocked at FJ Group — all series from 5 HP to 200 HP, available through our physical store and ecommerce store.",
+    title: "KOMAX Motors Restocked: 5 HP to 200 HP",
+    desc: "All series of KOMAX motors from 5 HP to 200 HP are back in stock at our physical and ecommerce stores. Sales UAN: +923 111 777 286.",
+    slug: "komax-motors-restocked-5hp-200hp-september-2026",
+    category: "Stock Updates",
+    date: "30 September 2026",
+    readTime: "2 min read",
+    salesPhone: "+923 111 777 286",
+    salesHref: "tel:+923111777286",
+    metaDescription: "KOMAX motors are back in stock at FJ Group. All series from 5 HP to 200 HP are available in our physical and ecommerce stores. Sales: +923 111 777 286.",
+    intro: "FJ Group is pleased to announce that KOMAX motor stock has been replenished. All series from 5 HP to 200 HP are now available through our physical store and ecommerce store, giving customers convenient access to the motor range for new requirements and replacement purchases.",
+    highlights: [
+      "KOMAX motor stock replenished",
+      "All series available from 5 HP to 200 HP",
+      "Available through our physical and ecommerce stores",
+      "Sales enquiries: +923 111 777 286"
+    ],
+    sections: [
+      {
+        heading: "KOMAX Motor Stock Is Now Replenished",
+        paragraphs: [
+          "Our latest restock brings KOMAX motors across all series, covering ratings from 5 HP to 200 HP. Customers planning new installations, replacement purchases, or upcoming equipment requirements can now contact FJ Group to discuss the available range.",
+          "The accompanying stock update video introduces this latest availability announcement. Share your required motor series, horsepower, and quantity with our sales team for product-specific assistance."
+        ]
+      },
+      {
+        heading: "Available at Our Physical Store and Ecommerce Store",
+        paragraphs: [
+          "The replenished KOMAX range is available through both our physical store and ecommerce store. Customers can visit the store to discuss their requirements in person or use the ecommerce store to arrange their purchase online.",
+          "For a particular model or a multiple-unit requirement, contact our sales team to confirm current quantities, pricing, and order arrangements before placing your order."
+        ]
+      },
+      {
+        heading: "Find the Right Motor for Your Requirement",
+        paragraphs: [
+          "To help us respond accurately, please provide your required horsepower, motor series or model, supply voltage, and intended application. For replacements, a clear photograph of the existing motor nameplate can help identify the specifications you need.",
+          "Our sales team can assist with available product options and purchasing enquiries, helping you move from a requirement to an informed order."
+        ]
+      },
+      {
+        heading: "Contact FJ Group Sales for KOMAX Availability",
+        paragraphs: [
+          "For KOMAX motor sales, quotations, and availability enquiries, call our UAN: +923 111 777 286. Whether you prefer our physical store or ecommerce store, our team is ready to assist with your next purchase."
+        ]
+      }
+    ]
+  },
   {
     image: cholistanSolarPivot,
     imageAlt: "187 kW solar installation with center pivot irrigation in Cholistan",
@@ -431,5 +483,7 @@ export const newsData = [
     ]
   }
 ]
+
+newsData.forEach((item, index) => { item.number = String(index + 1).padStart(2, "0") })
 
 export const latestNews = newsData[0]

@@ -3,6 +3,7 @@ import { FiArrowRight, FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi
 import { useNavigate } from "react-router-dom"
 
 import { newsData } from "../../data/newsData"
+import ViewportVideo from "../media/ViewportVideo"
 import "../../styles/components/latestNewsNotification.scss"
 
 const featuredNews = newsData.slice(0, 3)
@@ -52,14 +53,14 @@ export default function LatestNewsNotification() {
   }, [])
 
   useEffect(() => {
-    if (!visible || paused || featuredNews.length < 2) return undefined
+    if (!visible || paused || activeNews.cardVideo || featuredNews.length < 2) return undefined
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % featuredNews.length)
     }, 5000)
 
     return () => window.clearInterval(timer)
-  }, [paused, visible])
+  }, [paused, visible, activeNews.cardVideo])
 
   const closeNotification = () => {
     setClosing(true)
@@ -86,7 +87,7 @@ export default function LatestNewsNotification() {
 
   return (
     <aside
-      className={`latest-news-notification ${closing ? "is-closing" : ""}`}
+      className={`latest-news-notification ${activeNews.cardVideo ? "has-video" : ""} ${closing ? "is-closing" : ""}`}
       aria-label="Latest FJ Group news"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -98,7 +99,9 @@ export default function LatestNewsNotification() {
       <div className="latest-news-notification__signal" />
 
       <div className="latest-news-notification__image" key={`image-${activeNews.slug}`}>
-        <img src={activeNews.image} alt="" width="1280" height="720" decoding="async" />
+        {activeNews.cardVideo
+          ? <ViewportVideo src={activeNews.cardVideo} poster={activeNews.image} controls aria-label={activeNews.title} />
+          : <img src={activeNews.image} alt="" width="1280" height="720" decoding="async" />}
         <div className="latest-news-notification__shade" />
         <div className="latest-news-notification__sweep" />
       </div>
@@ -129,6 +132,7 @@ export default function LatestNewsNotification() {
         </div>
         <h3>{activeNews.title}</h3>
         <p>{activeNews.desc}</p>
+        {activeNews.salesPhone && <a className="latest-news-notification__sales" href={activeNews.salesHref}>Sales UAN: {activeNews.salesPhone}</a>}
 
         <button
           className="latest-news-notification__action"

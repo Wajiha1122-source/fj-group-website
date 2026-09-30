@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 import MediaCarousel from "../../components/content/MediaCarousel"
+import ViewportVideo from "../../components/media/ViewportVideo"
 import { newsData } from "../../data/newsData"
 import "../../styles/components/latestnews.scss"
 
@@ -40,7 +41,9 @@ export default function LatestNews() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: false }}
             >
-              {item.media ? (
+              {item.cardVideo ? (
+                <div className="news-image"><ViewportVideo src={item.cardVideo} rootMargin="0px" poster={item.image} controls aria-label={item.title} /></div>
+              ) : item.media ? (
                 <MediaCarousel media={item.media} className="news-image" />
               ) : (
                 <div className="news-image">
