@@ -11,8 +11,71 @@ import independenceDayCake from "../assets/images/news/independence-day-2026/cak
 import independenceDayVideo from "../assets/videos/news/fj-group-independence-day-2026.mp4"
 import cholistanSolarPivot from "../assets/images/news/cholistan-187kw-solar-pivot.jpeg"
 import komaxRestockVideo from "../assets/videos/news/komax-motors-restocked-september-2026.mp4"
+import cholistanProgressVideo from "../assets/videos/news/cholistan-work-in-progress-october-2026.mp4"
+import cholistanProgressPoster from "../assets/images/news/cholistan-work-in-progress-october-2026.jpg"
 
 export const newsData = [
+  {
+    image: cholistanProgressPoster,
+    cardVideo: cholistanProgressVideo,
+    articleVideo: cholistanProgressVideo,
+    videoCaption: "Work in progress at FJ Group's Cholistan site: ground checks, drilling equipment, tractors, and machinery movement across the site.",
+    title: "Cholistan Site Update: Work in Progress",
+    desc: "Work is progressing at our Cholistan site, with on-site ground checks and the movement of drilling equipment and support machinery. Watch the latest field update.",
+    slug: "cholistan-site-work-in-progress-october-2026",
+    category: "Project Updates",
+    location: "Cholistan, Pakistan",
+    date: "6 October 2026",
+    readTime: "3 min read",
+    salesPhone: "+923 111 777 286",
+    salesHref: "tel:+923111777286",
+    contactHeading: "Discuss your site requirements",
+    contactDescription: "Contact FJ Group for drilling, pumping, and water infrastructure project enquiries.",
+    metaDescription: "See work in progress at FJ Group's Cholistan site, including ground checks, drilling equipment mobilisation, and support machinery in the latest site video.",
+    intro: "Work is in progress at FJ Group's Cholistan site. Our latest video update shares a closer look at field activity, from team members checking the ground to tractors and drilling equipment moving through the sandy landscape. The footage captures the preparation and coordination taking place as work continues on site.",
+    highlights: [
+      "Work in progress at the Cholistan site",
+      "Team members carrying out on-site ground checks",
+      "Drilling equipment and tractors visible in the field",
+      "Latest video documents equipment movement and site preparation"
+    ],
+    sections: [
+      {
+        heading: "Field Activity Continues at Our Cholistan Site",
+        paragraphs: [
+          "FJ Group is sharing a new progress update from Cholistan, where our site work is ongoing. The video opens with a work-in-progress message and views of tractors and drilling equipment positioned in the desert landscape.",
+          "The update focuses on the practical groundwork behind field execution: checking the working area, bringing equipment into position, and coordinating machinery movement around the site."
+        ]
+      },
+      {
+        heading: "A Closer Look at the Work Shown in the Video",
+        paragraphs: [
+          "Early in the footage, team members gather around a point on the ground, with one person bending down to check it. Subsequent views show tractors, a drilling rig with its mast lowered, and pipe sections carried alongside the equipment.",
+          "The camera follows machinery travelling along sandy tracks before returning to closer views of the rig and support vehicles. Together, these scenes document equipment mobilisation and on-site preparation; they do not present a completed installation or a finished drilling operation."
+        ]
+      },
+      {
+        heading: "Why Preparation Matters Before Drilling Work",
+        paragraphs: [
+          "In general, drilling work involves more than bringing a rig to a location. The drilling approach, equipment, and sampling methods need to suit the ground conditions and the purpose of the work. USGS technical guidance describes how drilling and sampling techniques help teams obtain useful information about conditions below the surface.",
+          "This provides background to the equipment seen in the clip. The specific bore depth, ground formations, water yield, and final equipment specifications for this site are not announced in this update."
+        ]
+      },
+      {
+        heading: "Follow the Project as Work Moves Forward",
+        paragraphs: [
+          "The current status remains work in progress. This update records the visible field activity and preparation at our Cholistan site, with further milestones to be shared as project information becomes available.",
+          "For enquiries about drilling, pumping systems, or water infrastructure projects, contact FJ Group on UAN +923 111 777 286. Our team can discuss your location, application, and site requirements."
+        ]
+      }
+    ],
+    sources: [
+      {
+        label: "USGS: Background on drilling, coring, and sampling techniques",
+        url: "https://www.usgs.gov/publications/application-drilling-coring-and-sampling-techniques-test-holes-and-wells"
+      }
+    ]
+  },
   {
     image: komaxFlagshipStore,
     cardVideo: komaxRestockVideo,

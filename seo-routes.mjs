@@ -44,6 +44,7 @@ const blogSlugs = [
 ]
 
 const newsSlugs = [
+  "cholistan-site-work-in-progress-october-2026",
   "komax-motors-restocked-5hp-200hp-september-2026",
   "cholistan-187kw-solar-center-pivot-irrigation",
   "fj-group-celebrates-pakistan-independence-day-2026",

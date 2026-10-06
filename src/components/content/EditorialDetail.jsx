@@ -164,8 +164,8 @@ export default function EditorialDetail({
           <div className="editorial-detail__contact">
             {content.salesPhone ? <>
               <span>Sales enquiries</span>
-              <h2>Order your KOMAX motor</h2>
-              <p>Contact our team for model availability, pricing, and orders from our physical or ecommerce store.</p>
+              <h2>{content.contactHeading || "Order your KOMAX motor"}</h2>
+              <p>{content.contactDescription || "Contact our team for model availability, pricing, and orders from our physical or ecommerce store."}</p>
               <a href={content.salesHref}>UAN: {content.salesPhone}</a>
             </> : <>
             <span>Discuss your project</span>
