@@ -3,8 +3,64 @@ import tecnoAgriFarmsVideo from "../assets/videos/case-studies/tecno-agri-farms-
 import tecnoAgriFarmsCardVideo from "../assets/videos/case-studies/tecno-agri-farms-card.mp4"
 import dntCentralPivotVideo from "../assets/videos/categories/groundwater-drilling.mp4"
 import solarIrrigationVideo from "../assets/videos/categories/renewable-energy-water.mp4"
+import cholistanProgressVideo from "../assets/videos/news/cholistan-work-in-progress-october-2026.mp4"
+import cholistanProgressPoster from "../assets/images/news/cholistan-work-in-progress-october-2026.jpg"
 
 export const caseStudies = [
+  {
+    title: "Cholistan Site Preparation — Work in Progress",
+    location: "Cholistan, Pakistan",
+    image: cholistanProgressPoster,
+    cardVideo: cholistanProgressVideo,
+    articleVideo: cholistanProgressVideo,
+    videoCaption: "Cholistan field update: ground checks, drilling equipment, tractors, and machinery movement during ongoing site preparation.",
+    desc: "An ongoing field case study documenting ground checks, drilling equipment mobilisation, and machinery movement at our Cholistan site.",
+    slug: "cholistan-site-preparation",
+    category: "Site Preparation · Work in Progress",
+    readTime: "3 min read",
+    metaDescription: "Explore FJ Group's ongoing Cholistan case study, with site preparation footage, drilling equipment mobilisation, and field coordination in progress.",
+    intro: "This ongoing case study documents site preparation and equipment mobilisation at FJ Group's Cholistan site. The supplied field video shows team members checking the ground, tractors and drilling equipment on site, and machinery travelling across sandy tracks. It records the current preparation stage as work continues.",
+    salesPhone: "+923 111 777 286",
+    salesHref: "tel:+923111777286",
+    contactHeading: "Discuss your site requirements",
+    contactDescription: "Speak with FJ Group about drilling, pumping, and water infrastructure project requirements.",
+    highlights: [
+      "Project status: work in progress",
+      "Location: Cholistan, Pakistan",
+      "Documented activity: ground checks and equipment mobilisation",
+      "Original site video available to watch in full"
+    ],
+    sections: [
+      {
+        heading: "Project Setting and the Current Stage of Work",
+        paragraphs: [
+          "The footage places the work in an open, sandy landscape in Cholistan. Tracks through the sand and views of support vehicles establish the setting in which the team and machinery are operating.",
+          "This case study focuses on the visible preparation stage: ground checks, equipment positioning, and movement around the site. The project's current status is work in progress."
+        ]
+      },
+      {
+        heading: "Coordinating People and Equipment in the Field",
+        paragraphs: [
+          "The video shows team members gathered around a point on the ground, with one person bending down to examine it. Other sequences show tractors alongside drilling equipment and pipe sections carried with the rig.",
+          "A rig with its mast lowered is visible in several shots, followed by machinery moving along sandy tracks. These scenes document the equipment and field activity supporting site preparation."
+        ]
+      },
+      {
+        heading: "What the Site Video Demonstrates at This Stage",
+        paragraphs: [
+          "The recorded progress is the presence and movement of equipment, on-site ground checks, and coordination within the working area. The full video provides a direct view of this activity rather than a completed-project summary.",
+          "No final bore depth, water yield, installed capacity, or commissioning result is reported in this case study. Those details require confirmed project records as work advances."
+        ]
+      },
+      {
+        heading: "Ongoing Progress and Project Enquiries",
+        paragraphs: [
+          "The Cholistan work remains ongoing. This case study captures the preparation and mobilisation phase, providing a starting point for documenting further confirmed project milestones.",
+          "For drilling, pumping, or water infrastructure enquiries, call FJ Group on UAN +923 111 777 286. Share your location and requirements so our team can discuss the needs of your site."
+        ]
+      }
+    ]
+  },
   {
     title: "Turbine Upgradation",
     location: "Cholistan Desert",

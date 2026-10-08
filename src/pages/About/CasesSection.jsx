@@ -52,6 +52,7 @@ export default function CasesSection() {
 
                 <video
                   className="case-video"
+                  poster={item.image}
                   autoPlay
                   muted
                   loop

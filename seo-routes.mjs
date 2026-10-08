@@ -28,6 +28,7 @@ const solutionSlugs = [
 ]
 
 const caseStudySlugs = [
+  "cholistan-site-preparation",
   "turbine-upgradation",
   "tecno-agri-farms-project",
   "dnt-central-pivot-system",
